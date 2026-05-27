@@ -1,26 +1,411 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #050713;
+  color: #ffffff;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: white;
+}
+
+/* =========================
+   BACKGROUND UTAMA
+========================= */
+
+.portfolio-bg {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.38), transparent 22%),
+    radial-gradient(circle at 85% 10%, rgba(168, 85, 247, 0.36), transparent 24%),
+    radial-gradient(circle at 78% 48%, rgba(236, 72, 153, 0.28), transparent 26%),
+    radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.26), transparent 26%),
+    linear-gradient(135deg, #030712 0%, #07111f 32%, #16092d 66%, #030712 100%);
+}
+
+/* layer warna besar */
+.portfolio-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.42), transparent 18%),
+    radial-gradient(circle at 86% 18%, rgba(168, 85, 247, 0.38), transparent 20%),
+    radial-gradient(circle at 72% 54%, rgba(236, 72, 153, 0.26), transparent 22%),
+    radial-gradient(circle at 24% 82%, rgba(14, 165, 233, 0.28), transparent 22%),
+    radial-gradient(circle at 50% 38%, rgba(99, 102, 241, 0.22), transparent 26%);
+  filter: blur(18px);
+  opacity: 1;
+}
+
+/* texture + motif yang lebih kelihatan */
+.portfolio-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.16) 1px, transparent 1.5px),
+    radial-gradient(circle at 10% 28%, transparent 0 190px, rgba(255, 255, 255, 0.14) 191px, transparent 193px),
+    radial-gradient(circle at 88% 22%, transparent 0 280px, rgba(255, 255, 255, 0.12) 281px, transparent 283px),
+    radial-gradient(circle at 70% 78%, transparent 0 220px, rgba(255, 255, 255, 0.1) 221px, transparent 223px),
+    radial-gradient(circle at 26% 84%, transparent 0 165px, rgba(255, 255, 255, 0.09) 166px, transparent 168px);
+  background-size:
+    70px 70px,
+    70px 70px,
+    20px 20px,
+    auto,
+    auto,
+    auto,
+    auto;
+  opacity: 0.45;
+  mask-image: radial-gradient(circle at center, black 0%, black 70%, transparent 100%);
+}
+
+/* tambahan motif wave/aurora biar tidak polos */
+.portfolio-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(56, 189, 248, 0.08) 24%,
+      transparent 42%,
+      rgba(168, 85, 247, 0.08) 66%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 42px
+    );
+  opacity: 0.5;
+}
+
+/* vignette biar tetap premium */
+.portfolio-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, transparent 0%, transparent 55%, rgba(3, 7, 18, 0.5) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 18%, transparent 80%, rgba(255, 255, 255, 0.03));
+}
+
+nav,
+section,
+footer {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   LIQUID GLASS BASE
+========================= */
+
+.liquid-nav,
+.liquid-card,
+.liquid-button,
+.liquid-pill,
+.liquid-chip,
+.liquid-icon,
+.liquid-active {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.08) 34%,
+      rgba(255, 255, 255, 0.04) 68%,
+      rgba(255, 255, 255, 0.025) 100%
+    );
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.28),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(56, 189, 248, 0.08);
+}
+
+/* khusus yang memang butuh relative */
+.liquid-nav,
+.liquid-card,
+.liquid-button,
+.liquid-pill,
+.liquid-chip,
+.liquid-active {
+  position: relative;
+}
+
+.liquid-icon {
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.04)
+    );
+}
+
+.project-arrow {
+  position: absolute !important;
+  right: 1.25rem;
+  top: 1.25rem;
+  z-index: 40;
+}
+
+.project-arrow svg {
+  position: relative;
+  z-index: 5;
+}
+
+.liquid-nav {
+  border-radius: 999px;
+}
+
+.liquid-card {
+  border-radius: 2rem;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.liquid-button,
+.liquid-pill,
+.liquid-chip,
+.liquid-active {
+  border-radius: 999px;
+}
+
+/* =========================
+   CARD REFLECTION
+========================= */
+
+.liquid-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+  background:
+    linear-gradient(
+      128deg,
+      rgba(255, 255, 255, 0.32) 0%,
+      rgba(255, 255, 255, 0.11) 7%,
+      rgba(255, 255, 255, 0.04) 14%,
+      transparent 24%
+    );
+  opacity: 0.42;
+}
+
+.liquid-card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 1px;
+  border-radius: inherit;
+  z-index: 0;
+  background:
+    radial-gradient(
+      ellipse at 86% 84%,
+      rgba(56, 189, 248, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 74% 76%,
+      rgba(168, 85, 247, 0.08),
+      transparent 24%
+    );
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+/* =========================
+   BUTTON/PILL/CHIP/ICON REFLECTION
+========================= */
+
+.liquid-button::before,
+.liquid-pill::before,
+.liquid-chip::before,
+.liquid-icon::before,
+.liquid-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+  background:
+    linear-gradient(
+      126deg,
+      rgba(255, 255, 255, 0.44) 0%,
+      rgba(255, 255, 255, 0.16) 8%,
+      rgba(255, 255, 255, 0.06) 16%,
+      transparent 28%
+    );
+  opacity: 0.48;
+}
+
+.liquid-button::after,
+.liquid-pill::after,
+.liquid-chip::after,
+.liquid-icon::after,
+.liquid-nav::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 1px;
+  border-radius: inherit;
+  z-index: 1;
+  background:
+    radial-gradient(
+      circle at 20% 18%,
+      rgba(255, 255, 255, 0.16),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 82% 82%,
+      rgba(56, 189, 248, 0.18),
+      transparent 28%
+    );
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+.liquid-active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+  background:
+    linear-gradient(
+      126deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.14) 9%,
+      rgba(255, 255, 255, 0.05) 18%,
+      transparent 30%
+    );
+  opacity: 0.5;
+}
+
+.liquid-active::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 82% 78%, rgba(56, 189, 248, 0.22), transparent 30%);
+  opacity: 0.75;
+}
+
+.liquid-card > *,
+.liquid-button > *,
+.liquid-pill > *,
+.liquid-chip > *,
+.liquid-icon > *,
+.liquid-nav > *,
+.liquid-active > * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.liquid-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 211, 252, 0.42);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.095) 36%,
+      rgba(255, 255, 255, 0.05) 68%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.34),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.08),
+    0 16px 36px rgba(0, 0, 0, 0.38),
+    0 0 30px rgba(56, 189, 248, 0.16);
+}
+
+.liquid-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.liquid-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 211, 252, 0.48);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.36),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.08),
+    0 12px 26px rgba(0, 0, 0, 0.38),
+    0 0 24px rgba(56, 189, 248, 0.18);
+}
+
+.liquid-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(226, 232, 240, 0.94);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    0 5px 12px rgba(0, 0, 0, 0.14);
+}
+
+.liquid-active {
+  color: white;
+  border-color: rgba(125, 211, 252, 0.46);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.2),
+      rgba(255, 255, 255, 0.08) 45%,
+      rgba(255, 255, 255, 0.04)
+    );
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 0 18px rgba(56, 189, 248, 0.14);
 }
