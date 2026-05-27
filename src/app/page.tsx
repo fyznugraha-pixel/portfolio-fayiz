@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -18,25 +18,19 @@ import {
 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const navItems = [
-  { label: "Home", href: "#home", id: "home" },
-  { label: "About", href: "#about", id: "about" },
-  { label: "Skills", href: "#skills", id: "skills" },
-  { label: "Projects", href: "#projects", id: "projects" },
-  { label: "Contact", href: "#contact", id: "contact" },
-];
-
 const projects = [
   {
     title: "Campus Care",
+    slug: "campus-care",
     category: "Web App & Flutter Mobile App",
     image: "/projects/campus-care.png",
     description:
-      "Aplikasi pelaporan fasilitas kampus yang terdiri dari web dashboard dan aplikasi mobile Flutter. Sistem ini membantu mahasiswa membuat laporan fasilitas rusak, melihat riwayat laporan secara publik, serta memudahkan admin dan satpam dalam memantau status perbaikan.",
-    tools: ["Flutter", "Laravel", "REST API", "UI Design"],
+      "Campus Care adalah sistem berbasis web dan mobile untuk mendukung layanan kampus. Pada versi web, sistem menyediakan fitur Lost & Found serta pengelolaan laporan fasilitas. Sementara pada aplikasi mobile, fitur utamanya berfokus pada pelaporan fasilitas kampus agar mahasiswa dapat membuat dan memantau laporan dengan lebih mudah.",
+    tools: ["Flutter", "Laravel", "REST API", "MySQL", "UI Design"],
   },
   {
     title: "LiteraPlus",
+    slug: "literaplus",
     category: "Web App / Microservice",
     image: "/projects/literaplus.png",
     description:
@@ -45,6 +39,7 @@ const projects = [
   },
   {
     title: "PT Proteksindo",
+    slug: "proteksindo",
     category: "UI Design / Figma",
     image: "/projects/proteksindo.png",
     description:
@@ -53,6 +48,7 @@ const projects = [
   },
   {
     title: "UpSelf",
+    slug: "upself",
     category: "UI Design / Upskilling Platform",
     image: "/projects/upself.png",
     description:
@@ -85,6 +81,7 @@ const skillGroups = [
       "PHP",
       "Laravel",
       "Laravel Blade",
+      "NodeJS",
       "C#",
       "REST API Integration",
       "MySQL",
@@ -128,6 +125,7 @@ const services = [
 
 type Project = {
   title: string;
+  slug: string;
   category: string;
   image: string;
   description: string;
@@ -152,13 +150,13 @@ function ProjectCard({ project }: { project: Project }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#050713]/75 via-transparent to-transparent" />
 
-        <a
-          href="#"
+        <Link
+          href={`/projects/${project.slug}`}
           aria-label={`Open ${project.title}`}
           className="project-arrow liquid-icon flex h-11 w-11 items-center justify-center rounded-full text-slate-950 transition duration-300 group-hover:scale-105"
         >
           <ArrowUpRight size={18} strokeWidth={2.4} />
-        </a>
+        </Link>
       </div>
 
       <div className="relative z-10 p-7">
@@ -168,7 +166,7 @@ function ProjectCard({ project }: { project: Project }) {
           <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
         </div>
 
-        <p className="leading-7 text-slate-400">{project.description}</p>
+        <p className="leading-7 text-slate-300/90">{project.description}</p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tools.map((tool) => (
@@ -183,70 +181,10 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sectionIds = navItems.map((item) => item.id);
-
-      for (const sectionId of sectionIds) {
-        const section = document.getElementById(sectionId);
-
-        if (section) {
-          const rect = section.getBoundingClientRect();
-
-          if (rect.top <= 160 && rect.bottom >= 160) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <main className="portfolio-bg min-h-screen overflow-hidden text-white">
       <div className="portfolio-decor" aria-hidden="true" />
       <div className="portfolio-noise" aria-hidden="true" />
-
-      <nav className="liquid-nav fixed left-1/2 top-5 z-50 w-[92%] max-w-6xl -translate-x-1/2 px-5 py-3">
-        <div className="relative z-10 flex items-center justify-between">
-          <a href="#home" className="text-sm font-semibold tracking-wide">
-            Fayiz<span className="text-sky-300">.</span>
-          </a>
-
-          <div className="hidden items-center gap-2 text-sm text-slate-300 md:flex">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  className={`rounded-full px-4 py-2 transition ${
-                    isActive
-                      ? "liquid-active text-white"
-                      : "text-slate-300 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-          </div>
-
-          <a href="#contact" className="liquid-button px-4 py-2 text-sm">
-            Let’s Talk
-          </a>
-        </div>
-      </nav>
 
       <section
         id="home"
@@ -278,7 +216,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="mt-6 max-w-2xl text-base leading-8 text-slate-400 md:text-lg"
+          className="mt-6 max-w-2xl text-base leading-8 text-slate-300/90 md:text-lg"
         >
           Hi, I’m Fayiz Apriwansyah Nugraha. I create modern web interfaces,
           mobile app designs, and responsive digital experiences with a clean,
@@ -323,7 +261,7 @@ export default function Home() {
                 I blend design taste with front-end implementation.
               </h2>
 
-              <p className="mt-5 leading-8 text-slate-400">
+              <p className="mt-5 leading-8 text-slate-300/90">
                 Saya adalah mahasiswa Sistem Informasi yang memiliki
                 ketertarikan pada front-end development dan UI design. Saya
                 terbiasa merancang tampilan digital menggunakan Figma, lalu
@@ -341,7 +279,7 @@ export default function Home() {
 
               <h3 className="text-xl font-semibold">Design Focus</h3>
 
-              <p className="mt-3 leading-7 text-slate-400">
+              <p className="mt-3 leading-7 text-slate-300/90">
                 Clean layout, modern visual, responsive design, dan pengalaman
                 pengguna yang sederhana.
               </p>
@@ -359,7 +297,7 @@ export default function Home() {
 
                 <h3 className="text-xl font-semibold">{service.title}</h3>
 
-                <p className="mt-3 leading-7 text-slate-400">
+                <p className="mt-3 leading-7 text-slate-300/90">
                   {service.description}
                 </p>
               </div>
@@ -379,7 +317,7 @@ export default function Home() {
               Tools & technologies I use.
             </h2>
 
-            <p className="mt-4 max-w-2xl leading-7 text-slate-400">
+            <p className="mt-4 max-w-2xl leading-7 text-slate-300/90">
               Skill yang saya gunakan untuk merancang UI, membangun tampilan
               web, dan menghubungkan interface dengan kebutuhan sistem.
             </p>
@@ -407,7 +345,7 @@ export default function Home() {
 
                 <h3 className="text-xl font-semibold">{group.title}</h3>
 
-                <p className="mt-3 min-h-[56px] leading-7 text-slate-400">
+                <p className="mt-3 min-h-[56px] leading-7 text-slate-300/90">
                   {group.description}
                 </p>
 
@@ -434,7 +372,7 @@ export default function Home() {
             Selected works.
           </h2>
 
-          <p className="mt-4 max-w-2xl leading-7 text-slate-400">
+          <p className="mt-4 max-w-2xl leading-7 text-slate-300/90">
             Beberapa project yang menunjukkan kombinasi kemampuan saya dalam
             membangun tampilan web, aplikasi mobile, dan desain UI berbasis
             Figma.
@@ -459,14 +397,16 @@ export default function Home() {
               Let’s build something clean and meaningful.
             </h2>
 
-            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-400">
+            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-300/90">
               Tertarik bekerja sama, berdiskusi project, atau melihat karya saya
               lebih lanjut? Silakan hubungi saya melalui platform berikut.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="liquid-button px-5 py-3 text-sm"
               >
                 <Mail size={16} className="mr-2 inline" />
@@ -484,7 +424,7 @@ export default function Home() {
               </a>
 
               <a
-                href="http://www.linkedin.com/in/fayiznugraha"
+                href="https://www.linkedin.com/in/fayiznugraha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="liquid-button px-5 py-3 text-sm"
@@ -507,8 +447,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="relative z-10 border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">
-        BISSMILLAH DAPET KERJAAN
+      <footer className="relative z-10 border-t border-white/10 px-6 py-8 text-center text-sm text-slate-400">
+        BISMILLAH DAPET KERJAAN
       </footer>
     </main>
   );
