@@ -27,11 +27,11 @@ body {
   position: relative;
   isolation: isolate;
   background:
-    radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.38), transparent 22%),
-    radial-gradient(circle at 85% 10%, rgba(168, 85, 247, 0.36), transparent 24%),
-    radial-gradient(circle at 78% 48%, rgba(236, 72, 153, 0.28), transparent 26%),
-    radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.26), transparent 26%),
-    linear-gradient(135deg, #030712 0%, #07111f 32%, #16092d 66%, #030712 100%);
+    radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.36), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.26), transparent 26%),
+    radial-gradient(circle at 78% 48%, rgba(37, 99, 235, 0.2), transparent 28%),
+    radial-gradient(circle at 18% 78%, rgba(14, 165, 233, 0.24), transparent 28%),
+    linear-gradient(135deg, #020617 0%, #061526 35%, #082f49 68%, #020617 100%);
 }
 
 /* layer warna besar */
@@ -41,42 +41,40 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.42), transparent 18%),
-    radial-gradient(circle at 86% 18%, rgba(168, 85, 247, 0.38), transparent 20%),
-    radial-gradient(circle at 72% 54%, rgba(236, 72, 153, 0.26), transparent 22%),
-    radial-gradient(circle at 24% 82%, rgba(14, 165, 233, 0.28), transparent 22%),
-    radial-gradient(circle at 50% 38%, rgba(99, 102, 241, 0.22), transparent 26%);
+    radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.34), transparent 20%),
+    radial-gradient(circle at 86% 18%, rgba(14, 165, 233, 0.22), transparent 22%),
+    radial-gradient(circle at 72% 54%, rgba(37, 99, 235, 0.18), transparent 24%),
+    radial-gradient(circle at 24% 82%, rgba(14, 165, 233, 0.22), transparent 24%),
+    radial-gradient(circle at 50% 38%, rgba(59, 130, 246, 0.16), transparent 28%);
   filter: blur(18px);
   opacity: 1;
 }
 
-/* texture + motif yang lebih kelihatan */
+/* texture + motif */
 .portfolio-noise {
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.16) 1px, transparent 1.5px),
-    radial-gradient(circle at 10% 28%, transparent 0 190px, rgba(255, 255, 255, 0.14) 191px, transparent 193px),
-    radial-gradient(circle at 88% 22%, transparent 0 280px, rgba(255, 255, 255, 0.12) 281px, transparent 283px),
-    radial-gradient(circle at 70% 78%, transparent 0 220px, rgba(255, 255, 255, 0.1) 221px, transparent 223px),
-    radial-gradient(circle at 26% 84%, transparent 0 165px, rgba(255, 255, 255, 0.09) 166px, transparent 168px);
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 10% 28%, transparent 0 190px, rgba(125, 211, 252, 0.1) 191px, transparent 193px),
+    radial-gradient(circle at 88% 22%, transparent 0 280px, rgba(56, 189, 248, 0.09) 281px, transparent 283px),
+    radial-gradient(circle at 70% 78%, transparent 0 220px, rgba(14, 165, 233, 0.08) 221px, transparent 223px),
+    radial-gradient(circle at 26% 84%, transparent 0 165px, rgba(125, 211, 252, 0.07) 166px, transparent 168px);
   background-size:
     70px 70px,
     70px 70px,
-    20px 20px,
     auto,
     auto,
     auto,
     auto;
-  opacity: 0.45;
+  opacity: 0.42;
   mask-image: radial-gradient(circle at center, black 0%, black 70%, transparent 100%);
 }
 
-/* tambahan motif wave/aurora biar tidak polos */
+/* motif wave/aurora biru */
 .portfolio-bg::before {
   content: "";
   position: fixed;
@@ -89,20 +87,20 @@ body {
       transparent 0%,
       rgba(56, 189, 248, 0.08) 24%,
       transparent 42%,
-      rgba(168, 85, 247, 0.08) 66%,
+      rgba(14, 165, 233, 0.07) 66%,
       transparent 100%
     ),
     repeating-linear-gradient(
       125deg,
-      rgba(255, 255, 255, 0.035) 0px,
-      rgba(255, 255, 255, 0.035) 1px,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px,
       transparent 42px
     );
   opacity: 0.5;
 }
 
-/* vignette biar tetap premium */
+/* vignette */
 .portfolio-bg::after {
   content: "";
   position: fixed;
@@ -110,8 +108,8 @@ body {
   z-index: 3;
   pointer-events: none;
   background:
-    radial-gradient(circle at center, transparent 0%, transparent 55%, rgba(3, 7, 18, 0.5) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 18%, transparent 80%, rgba(255, 255, 255, 0.03));
+    radial-gradient(circle at center, transparent 0%, transparent 58%, rgba(2, 6, 23, 0.45) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 18%, transparent 80%, rgba(255, 255, 255, 0.025));
 }
 
 section,
@@ -123,12 +121,6 @@ footer {
 .site-navbar {
   position: fixed !important;
   z-index: 99999 !important;
-}
-
-section,
-footer {
-  position: relative;
-  z-index: 10;
 }
 
 /* =========================
