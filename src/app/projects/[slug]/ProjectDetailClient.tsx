@@ -70,6 +70,8 @@ const projectDetails = {
       "/projects/proteksindo.png",
       "/projects/proteksindo-2.png",
       "/projects/proteksindo-3.png",
+      "/projects/proteksindo-4.png",
+      "/projects/proteksindo-5.png",
     ],
     role: "UI Designer",
     duration: "Design Project",
