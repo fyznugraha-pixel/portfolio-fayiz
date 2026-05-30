@@ -47,6 +47,15 @@ const projects = [
     tools: ["Figma", "UI Design", "Prototype"],
   },
   {
+    title: "Sistem Parkir",
+    slug: "sistem-parkir",
+    category: "Web App / Laravel Project",
+    image: "/projects/parkir.png",
+    description:
+      "Sistem Parkir adalah aplikasi web berbasis Laravel dan PHP untuk mengelola akses parkir kampus. Project ini memiliki fitur dashboard admin, scan QR code KTM/kartu pegawai, pengelolaan pengguna, kendaraan, akses parkir, serta log aktivitas parkir.",
+    tools: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
+  },
+  {
     title: "UpSelf",
     slug: "upself",
     category: "UI Design / Upskilling Platform",

@@ -1,6 +1,12 @@
 import ProjectDetailClient from "./ProjectDetailClient";
 
-const projectSlugs = ["campus-care", "literaplus", "proteksindo", "upself"];
+const projectSlugs = [
+  "campus-care",
+  "literaplus",
+  "proteksindo",
+  "upself",
+  "sistem-parkir",
+];
 
 type PageProps = {
   params: Promise<{

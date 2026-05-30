@@ -89,6 +89,38 @@ const projectDetails = {
       "Tampilan modern dan mudah dipahami",
     ],
   },
+    "sistem-parkir": {
+    title: "Sistem Parkir",
+    category: "Web App / Laravel Project",
+    images: [
+      "/projects/parkir.png",
+      "/projects/parkir-2.png",
+      "/projects/parkir-3.png",
+      "/projects/parkir-4.png",
+      "/projects/parkir-5.png",
+      "/projects/parkir-6.png",
+    ],
+    role: "Full-Stack Developer",
+    duration: "Academic Project",
+    type: "Laravel Web Application",
+    overview:
+      "Sistem Parkir adalah aplikasi web berbasis Laravel dan PHP yang dibuat untuk membantu pengelolaan akses parkir kampus. Sistem ini menyediakan fitur scan QR code KTM atau kartu pegawai, input manual kartu ID, dashboard admin, serta pengelolaan data pengguna, kendaraan, akses parkir, dan log aktivitas.",
+    problem:
+      "Proses parkir manual kurang efisien karena pencatatan kendaraan masuk dan keluar membutuhkan waktu, rawan kesalahan, dan sulit dipantau secara real-time. Admin juga membutuhkan sistem yang dapat mengelola data pengguna, kendaraan, serta riwayat akses parkir dalam satu dashboard.",
+    solution:
+      "Saya membangun sistem parkir berbasis Laravel dengan fitur scan QR code, input manual kartu ID, deteksi otomatis status masuk dan keluar parkir, serta dashboard admin untuk memantau dan mengelola seluruh aktivitas parkir secara lebih terstruktur.",
+    tools: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
+    features: [
+      "Dashboard admin parkir",
+      "Scan QR code KTM atau kartu pegawai",
+      "Deteksi otomatis status masuk dan keluar parkir",
+      "Input manual kartu ID",
+      "Manajemen pengguna",
+      "Manajemen kendaraan",
+      "Manajemen akses parkir",
+      "Log aktivitas parkir",
+    ],
+  },
   upself: {
     title: "UpSelf",
     category: "UI Design / Upskilling Platform",
