@@ -1,14 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Mail,
   Code2,
   Palette,
-  Sparkles,
   Smartphone,
   Globe,
   Layers,
@@ -17,6 +13,10 @@ import {
   Database,
 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import HeroDesktop from "@/components/HeroDesktop";
+import HeroMobile from "@/components/HeroMobile";
+import ProjectsDesktop from "@/components/ProjectsDesktop";
+import ProjectsMobile from "@/components/ProjectsMobile";
 
 const projects = [
   {
@@ -63,21 +63,6 @@ const projects = [
     description:
       "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah.",
     tools: ["Figma", "Mobile UI", "UX Flow", "Prototype"],
-  },
-];
-
-const profilePhotos = [
-  {
-    src: "/profile/fayiz-2.png",
-    alt: "Fayiz profile photo 1",
-  },
-  {
-    src: "/profile/fayiz-3.png",
-    alt: "Fayiz profile photo 3",
-  },
-  {
-    src: "/profile/fayiz-4.png",
-    alt: "Fayiz profile photo 4",
   },
 ];
 
@@ -147,174 +132,20 @@ const services = [
   },
 ];
 
-type Project = {
-  title: string;
-  slug: string;
-  category: string;
-  image: string;
-  description: string;
-  tools: string[];
-};
-
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.25 }}
-      className="liquid-card group overflow-hidden"
-    >
-      <div className="relative z-10 h-64 overflow-hidden border-b border-white/15 bg-white/[0.05]">
-        <Image
-          src={project.image}
-          alt={`${project.title} preview`}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050713]/75 via-transparent to-transparent" />
-
-        <Link
-          href={`/projects/${project.slug}`}
-          aria-label={`Open ${project.title}`}
-          className="project-arrow liquid-icon flex h-11 w-11 items-center justify-center rounded-full text-slate-950 transition duration-300 group-hover:scale-105"
-        >
-          <ArrowUpRight size={18} strokeWidth={2.4} />
-        </Link>
-      </div>
-
-      <div className="relative z-10 p-7">
-        <div className="mb-6">
-          <p className="text-sm text-sky-300">{project.category}</p>
-
-          <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
-        </div>
-
-        <p className="leading-7 text-slate-300/90">{project.description}</p>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tools.map((tool) => (
-            <span key={tool} className="liquid-chip px-3 py-1 text-xs">
-              {tool}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Home() {
   return (
     <main className="portfolio-bg min-h-screen overflow-hidden text-white">
       <div className="portfolio-decor" aria-hidden="true" />
       <div className="portfolio-noise" aria-hidden="true" />
 
-      <section
-        id="home"
-        className="relative z-10 mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 pt-32 text-center md:grid-cols-[1.05fr_0.95fr] md:text-left"
-      >
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="liquid-pill mb-5 inline-flex items-center gap-2 px-4 py-2 text-sm text-slate-200"
-          >
-            <Sparkles size={16} className="text-sky-300" />
-            Front-End Web Developer & UI Designer
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            className="text-5xl font-semibold tracking-tight md:text-7xl"
-          >
-            Designing clean interfaces and building{" "}
-            <span className="bg-gradient-to-r from-sky-200 via-cyan-100 to-violet-200 bg-clip-text text-transparent">
-              elegant digital experiences.
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="mt-6 max-w-2xl text-base leading-8 text-slate-300/90 md:text-lg"
-          >
-            Hi, I’m Fayiz Apriwansyah Nugraha. I create modern web interfaces,
-            mobile app designs, and responsive digital experiences with a clean,
-            elegant, and user-focused approach.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="mt-9 flex flex-col justify-center gap-4 sm:flex-row md:justify-start"
-          >
-            <a
-              href="#projects"
-              className="liquid-button group px-7 py-3 text-sm font-medium"
-            >
-              View My Work
-              <ArrowUpRight
-                size={16}
-                className="ml-2 inline transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-
-            <a
-              href="#contact"
-              className="liquid-button px-7 py-3 text-sm font-medium"
-            >
-              Contact Me
-            </a>
-          </motion.div>
+      <section id="home" className="relative z-10">
+        <div className="hidden md:block">
+          <HeroDesktop />
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.25 }}
-          className="relative mx-auto w-full max-w-[460px]"
-        >
-          <div className="absolute -left-8 top-12 h-36 w-36 rounded-full bg-sky-400/25 blur-3xl" />
-          <div className="absolute -right-8 bottom-16 h-44 w-44 rounded-full bg-violet-500/25 blur-3xl" />
-
-          <div className="liquid-card relative overflow-hidden rounded-[2.5rem] p-3">
-            <div className="relative z-10 h-[500px] overflow-hidden rounded-[2rem] bg-white/[0.06]">
-              <Image
-                src="/profile/fayiz.png"
-                alt="Fayiz Apriwansyah Nugraha"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 460px"
-                className="object-cover object-[center_62%]"
-              />
-            </div>
-          </div>
-
-          <div className="mt-4 grid grid-cols-3 gap-3">
-            {profilePhotos.map((photo) => (
-              <div
-                key={photo.src}
-                className="liquid-card overflow-hidden rounded-[1.5rem] p-2"
-              >
-                <div className="relative z-10 h-32 overflow-hidden rounded-[1rem] bg-white/[0.06] sm:h-40">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(max-width: 768px) 30vw, 140px"
-                    className="object-cover object-[center_62%]"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="block md:hidden">
+          <HeroMobile />
+        </div>
       </section>
 
       <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
@@ -447,10 +278,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+        <div className="hidden md:block">
+          <ProjectsDesktop projects={projects} />
+        </div>
+
+        <div className="block md:hidden">
+          <ProjectsMobile projects={projects} />
         </div>
       </section>
 
