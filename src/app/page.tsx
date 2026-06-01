@@ -260,12 +260,12 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5 pr-6 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {skillGroups.map((group) => (
             <motion.div
               key={group.title}
               whileTap={{ scale: 0.98 }}
-              className="liquid-card min-w-[84%] snap-start p-6"
+              className="liquid-card min-w-[82%] snap-start p-6"
             >
               <div className="relative z-10">
                 <div className="liquid-icon mb-5 flex h-11 w-11 items-center justify-center rounded-2xl text-sky-200">
