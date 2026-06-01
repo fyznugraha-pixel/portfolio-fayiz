@@ -15,19 +15,19 @@ type Project = {
 
 export default function ProjectsMobile({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid gap-5">
+    <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {projects.map((project) => (
         <Link
           key={project.title}
           href={`/projects/${project.slug}`}
-          className="liquid-card group block overflow-hidden"
+          className="liquid-card group block min-w-[86%] snap-start overflow-hidden"
         >
           <div className="relative z-10 h-44 overflow-hidden border-b border-white/15 bg-white/[0.05]">
             <Image
               src={project.image}
               alt={`${project.title} preview`}
               fill
-              sizes="100vw"
+              sizes="86vw"
               className="object-cover transition duration-500 group-hover:scale-105"
             />
 

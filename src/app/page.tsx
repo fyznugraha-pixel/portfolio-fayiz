@@ -229,7 +229,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="hidden gap-6 md:grid md:grid-cols-3">
           {skillGroups.map((group) => (
             <motion.div
               key={group.title}
@@ -251,6 +251,39 @@ export default function Home() {
                 <div className="mt-6 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <span key={skill} className="liquid-chip px-3 py-2 text-xs">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {skillGroups.map((group) => (
+            <motion.div
+              key={group.title}
+              whileTap={{ scale: 0.98 }}
+              className="liquid-card min-w-[84%] snap-start p-6"
+            >
+              <div className="relative z-10">
+                <div className="liquid-icon mb-5 flex h-11 w-11 items-center justify-center rounded-2xl text-sky-200">
+                  {group.icon}
+                </div>
+
+                <h3 className="text-lg font-semibold">{group.title}</h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-300/90">
+                  {group.description}
+                </p>
+
+                <div className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="liquid-chip shrink-0 px-3 py-1.5 text-[11px]"
+                    >
                       {skill}
                     </span>
                   ))}
