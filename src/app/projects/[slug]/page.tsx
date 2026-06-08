@@ -1,6 +1,7 @@
 import ProjectDetailClient from "./ProjectDetailClient";
 
 const projectSlugs = [
+  "asia-afrika-festival",
   "campus-care",
   "literaplus",
   "proteksindo",

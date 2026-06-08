@@ -19,6 +19,15 @@ import ProjectsDesktop from "@/components/ProjectsDesktop";
 import ProjectsMobile from "@/components/ProjectsMobile";
 
 const projects = [
+    {
+    title: "Asia Afrika Festival",
+    slug: "asia-afrika-festival",
+    category: "Web App / Event Registration",
+    image: "/projects/aaf.png",
+    description:
+      "Asia Africa Festival 2026 Website adalah platform event berbasis Next.js dan Supabase untuk menampilkan informasi festival, program acara, registrasi visitor, serta dashboard admin untuk mengelola data pendaftar.",
+    tools: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+  },
   {
     title: "Campus Care",
     slug: "campus-care",

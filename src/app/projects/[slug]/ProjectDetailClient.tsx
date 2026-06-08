@@ -11,32 +11,67 @@ import {
 } from "lucide-react";
 
 const projectDetails = {
+  "asia-afrika-festival": {
+    title: "Asia Afrika Festival",
+    category: "Web App / Event Registration",
+    images: [
+      "/projects/aaf.png",
+      "/projects/aaf-2.png",
+      "/projects/aaf-3.png",
+      "/projects/aaf-4.png",
+      "/projects/aaf-5.png",
+      "/projects/aaf-admin.png",
+    ],
+    role: "Full-Stack Web Developer",
+    duration: "Work Project",
+    type: "Event Website",
+    overview:
+      "Asia Africa Festival 2026 Website adalah platform digital yang dibuat untuk memperkenalkan informasi event, menampilkan rangkaian program festival, serta memudahkan pengunjung melakukan registrasi secara online. Website ini dirancang dengan visual yang mengikuti identitas Asia Africa Festival, mulai dari penggunaan key visual, warna festival, section informatif, hingga pengalaman pengguna yang responsif di desktop maupun mobile.",
+    problem:
+      "Informasi event dan proses registrasi visitor perlu dibuat lebih terpusat dalam satu platform digital yang rapi. Tanpa sistem yang jelas, calon pengunjung bisa kesulitan mendapatkan informasi penting seperti jadwal, lokasi, program, dan cara mendaftar. Selain itu, data visitor juga perlu dikelola dengan lebih praktis oleh admin agar proses monitoring, pengecekan detail peserta, dan rekap data bisa dilakukan dengan efisien.",
+    solution:
+      "Saya membangun website event berbasis Next.js dan Supabase yang menyediakan landing page informatif, form registrasi visitor, serta dashboard admin private untuk memantau data pendaftar. Website ini membantu proses publikasi event dan pengelolaan data visitor menjadi lebih rapi, responsif, dan mudah digunakan.",
+    tools: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+    features: [
+      "Responsive landing page",
+      "Visitor registration form",
+      "Country code input for WhatsApp number",
+      "Supabase database integration",
+      "Private admin dashboard",
+      "Visitor data monitoring",
+      "Excel export with styled format",
+      "Scroll reveal animation",
+    ],
+  },
+
   "campus-care": {
     title: "Campus Care",
     category: "Web App & Flutter Mobile App",
     images: [
-        "/projects/campus-care.png",
-        "/projects/campus-care-2.png",
-        "/projects/campus-care-3.png",
+      "/projects/campus-care.png",
+      "/projects/campus-care-2.png",
+      "/projects/campus-care-3.png",
+      "/projects/campus-care-4.png",
     ],
     role: "Front-End Developer & UI Designer",
     duration: "Academic Project",
     type: "Web & Mobile Application",
     overview:
-        "Campus Care adalah sistem berbasis web dan mobile yang membantu layanan kampus menjadi lebih terstruktur. Pada versi web, Campus Care menyediakan fitur Lost & Found serta pengelolaan laporan fasilitas. Sementara pada aplikasi mobile, fitur utamanya berfokus pada pelaporan fasilitas kampus agar mahasiswa dapat membuat laporan dan memantau statusnya dengan lebih mudah.",
+      "Campus Care adalah sistem berbasis web dan mobile yang membantu layanan kampus menjadi lebih terstruktur. Pada versi web, Campus Care menyediakan fitur Lost & Found serta pengelolaan laporan fasilitas. Sementara pada aplikasi mobile, fitur utamanya berfokus pada pelaporan fasilitas kampus agar mahasiswa dapat membuat laporan dan memantau statusnya dengan lebih mudah.",
     problem:
-        "Layanan kampus seperti pencarian barang hilang dan pelaporan fasilitas rusak sering kali belum terdokumentasi secara rapi. Informasi barang hilang dapat tersebar secara manual, sedangkan laporan fasilitas rusak sulit dipantau statusnya oleh mahasiswa maupun pihak pengelola.",
+      "Layanan kampus seperti pencarian barang hilang dan pelaporan fasilitas rusak sering kali belum terdokumentasi secara rapi. Informasi barang hilang dapat tersebar secara manual, sedangkan laporan fasilitas rusak sulit dipantau statusnya oleh mahasiswa maupun pihak pengelola.",
     solution:
-        "Saya merancang Campus Care dengan dua pendekatan. Versi web digunakan untuk mengelola layanan Lost & Found dan laporan fasilitas, sedangkan aplikasi mobile difokuskan untuk mahasiswa dalam membuat laporan fasilitas kampus dan melihat perkembangan status laporan secara lebih praktis.",
+      "Saya merancang Campus Care dengan dua pendekatan. Versi web digunakan untuk mengelola layanan Lost & Found dan laporan fasilitas, sedangkan aplikasi mobile difokuskan untuk mahasiswa dalam membuat laporan fasilitas kampus dan melihat perkembangan status laporan secara lebih praktis.",
     tools: ["Flutter", "Laravel", "REST API", "MySQL", "UI Design"],
     features: [
-        "Lost & Found pada versi web",
-        "Pengelolaan data barang hilang dan barang ditemukan",
-        "Pelaporan fasilitas rusak melalui aplikasi mobile",
-        "Riwayat laporan fasilitas yang dapat dipantau mahasiswa",
-        "Dashboard web untuk membantu pengelolaan layanan kampus",
+      "Lost & Found pada versi web",
+      "Pengelolaan data barang hilang dan barang ditemukan",
+      "Pelaporan fasilitas rusak melalui aplikasi mobile",
+      "Riwayat laporan fasilitas yang dapat dipantau mahasiswa",
+      "Dashboard web untuk membantu pengelolaan layanan kampus",
     ],
-    },
+  },
+
   literaplus: {
     title: "LiteraPlus",
     category: "Web App / Microservice",
@@ -63,6 +98,7 @@ const projectDetails = {
       "Integrasi dari web utama ke microservice",
     ],
   },
+
   proteksindo: {
     title: "PT Proteksindo",
     category: "UI Design / Figma",
@@ -91,7 +127,8 @@ const projectDetails = {
       "Tampilan modern dan mudah dipahami",
     ],
   },
-    "sistem-parkir": {
+
+  "sistem-parkir": {
     title: "Sistem Parkir",
     category: "Web App / Laravel Project",
     images: [
@@ -123,6 +160,7 @@ const projectDetails = {
       "Log aktivitas parkir",
     ],
   },
+
   upself: {
     title: "UpSelf",
     category: "UI Design / Upskilling Platform",
