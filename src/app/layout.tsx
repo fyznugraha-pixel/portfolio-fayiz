@@ -33,6 +33,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
