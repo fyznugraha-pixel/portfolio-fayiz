@@ -23,7 +23,7 @@ const projects = [
     title: "Asia Afrika Festival",
     slug: "asia-afrika-festival",
     category: "Web App / Event Registration",
-    image: "/projects/aaf.png",
+    image: "/projects/aaf/aaf.png",
     description:
       "Asia Africa Festival 2026 Website adalah platform event berbasis Next.js dan Supabase untuk menampilkan informasi festival, program acara, registrasi visitor, serta dashboard admin untuk mengelola data pendaftar.",
     tools: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
@@ -32,7 +32,7 @@ const projects = [
     title: "Campus Care",
     slug: "campus-care",
     category: "Web App & Flutter Mobile App",
-    image: "/projects/campus-care.png",
+    image: "/projects/campus-care/campus-care.png",
     description:
       "Campus Care adalah sistem berbasis web dan mobile untuk mendukung layanan kampus. Pada versi web, sistem menyediakan fitur Lost & Found serta pengelolaan laporan fasilitas. Sementara pada aplikasi mobile, fitur utamanya berfokus pada pelaporan fasilitas kampus agar mahasiswa dapat membuat dan memantau laporan dengan lebih mudah.",
     tools: ["Flutter", "Laravel", "REST API", "MySQL", "UI Design"],
@@ -41,7 +41,7 @@ const projects = [
     title: "LiteraPlus",
     slug: "literaplus",
     category: "Web App / Microservice",
-    image: "/projects/literaplus.png",
+    image: "/projects/literaplus/literaplus.png",
     description:
       "Platform microservice untuk mendukung sistem toko buku melalui fitur donasi buku, barter buku, reward point, dan transaksi layanan. LiteraPlus dirancang sebagai layanan terpisah yang tetap terintegrasi dengan sistem utama.",
     tools: ["NodeJS", "JavaScript", "MySQL", "Microservice"],
@@ -50,7 +50,7 @@ const projects = [
     title: "PT Proteksindo",
     slug: "proteksindo",
     category: "UI Design / Figma",
-    image: "/projects/proteksindo.png",
+    image: "/projects/proteksindo/proteksindo.png",
     description:
       "Desain antarmuka berbasis Figma untuk kebutuhan digital PT Proteksindo. Project ini berfokus pada tampilan company profile yang profesional, rapi, modern, dan mudah dipahami untuk memperkuat identitas visual perusahaan.",
     tools: ["Figma", "UI Design", "Prototype"],
@@ -59,7 +59,7 @@ const projects = [
     title: "Sistem Parkir",
     slug: "sistem-parkir",
     category: "Web App / Laravel Project",
-    image: "/projects/parkir.png",
+    image: "/projects/parkir/parkir.png",
     description:
       "Sistem Parkir adalah aplikasi web berbasis Laravel dan PHP untuk mengelola akses parkir kampus. Project ini memiliki fitur dashboard admin, scan QR code KTM/kartu pegawai, pengelolaan pengguna, kendaraan, akses parkir, serta log aktivitas parkir.",
     tools: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
@@ -68,7 +68,7 @@ const projects = [
     title: "UpSelf",
     slug: "upself",
     category: "UI Design / Upskilling Platform",
-    image: "/projects/upself.png",
+    image: "/projects/upself/upself.png",
     description:
       "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah.",
     tools: ["Figma", "Mobile UI", "UX Flow", "Prototype"],
