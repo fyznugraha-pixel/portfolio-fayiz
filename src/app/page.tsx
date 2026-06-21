@@ -13,13 +13,25 @@ import {
   Database,
 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+import BorderGlow from "@/components/BorderGlow";
 import HeroDesktop from "@/components/HeroDesktop";
 import HeroMobile from "@/components/HeroMobile";
 import ProjectsDesktop from "@/components/ProjectsDesktop";
 import ProjectsMobile from "@/components/ProjectsMobile";
 
 const projects = [
-    {
+  {
+    title: "Festival Cisadane 2026",
+    slug: "cisadane",
+    category: "Web App / Event Website",
+    image: "/projects/cisadane/cisadane1.png",
+    description:
+      "Festival Cisadane 2026 adalah website event yang dirancang untuk menghadirkan pengalaman digital yang merepresentasikan semangat, budaya, dan energi Festival Cisadane secara modern dan interaktif.",
+    tools: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+  },
+  {
     title: "Asia Afrika Festival",
     slug: "asia-afrika-festival",
     category: "Web App / Event Registration",
@@ -78,7 +90,7 @@ const projects = [
 const skillGroups = [
   {
     title: "Front-End",
-    icon: <Code2 size={22} />,
+    icon: <Code2 size={24} />,
     description: "Teknologi yang saya gunakan untuk membangun tampilan web.",
     skills: [
       "HTML",
@@ -93,7 +105,7 @@ const skillGroups = [
   },
   {
     title: "Back-End & Programming",
-    icon: <Braces size={22} />,
+    icon: <Braces size={24} />,
     description: "Bahasa dan framework yang mendukung pengembangan sistem.",
     skills: [
       "PHP",
@@ -101,13 +113,13 @@ const skillGroups = [
       "Laravel Blade",
       "NodeJS",
       "C#",
-      "REST API Integration",
+      "REST API",
       "MySQL",
     ],
   },
   {
     title: "UI Design",
-    icon: <PenTool size={22} />,
+    icon: <PenTool size={24} />,
     description: "Tools dan pendekatan desain untuk membuat interface modern.",
     skills: [
       "Figma",
@@ -122,19 +134,19 @@ const skillGroups = [
 
 const services = [
   {
-    icon: <Globe size={22} />,
+    icon: <Globe size={24} />,
     title: "Front-End Web",
     description:
       "Membangun tampilan website yang responsif, rapi, dan nyaman digunakan.",
   },
   {
-    icon: <Smartphone size={22} />,
+    icon: <Smartphone size={24} />,
     title: "Mobile UI Design",
     description:
       "Merancang tampilan aplikasi mobile dengan alur yang sederhana dan visual modern.",
   },
   {
-    icon: <Layers size={22} />,
+    icon: <Layers size={24} />,
     title: "UI System",
     description:
       "Membuat layout, komponen, dan style visual yang konsisten untuk produk digital.",
@@ -143,11 +155,8 @@ const services = [
 
 export default function Home() {
   return (
-    <main className="portfolio-bg min-h-screen overflow-hidden text-white">
-      <div className="portfolio-decor" aria-hidden="true" />
-      <div className="portfolio-noise" aria-hidden="true" />
-
-      <section id="home" className="relative z-10">
+    <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
+      <section id="home" className="relative z-10 border-b brutalist-border-subtle">
         <div className="hidden md:block">
           <HeroDesktop />
         </div>
@@ -157,166 +166,123 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+      <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="liquid-card p-7 md:col-span-2">
+          <BorderGlow className="p-8 md:p-12 md:col-span-2 glass-card">
             <div className="relative z-10">
-              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sky-300">
-                About Me
+              <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
+                [ About Me ]
               </p>
 
-              <h2 className="text-3xl font-semibold md:text-4xl">
-                I blend design taste with front-end implementation.
+              <h2 className="font-display-xl text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8">
+                Blending Design Taste<br/>With Front-End Implementation.
               </h2>
 
-              <p className="mt-5 leading-8 text-slate-300/90">
-                Saya adalah mahasiswa Sistem Informasi yang memiliki
-                ketertarikan pada front-end development dan UI design. Saya
-                terbiasa merancang tampilan digital menggunakan Figma, lalu
-                mengubahnya menjadi interface yang responsif, rapi, dan mudah
-                digunakan.
+              <p className="mt-5 font-body leading-8 text-secondary max-w-2xl">
+                Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada front-end development dan UI design. Saya terbiasa merancang tampilan digital menggunakan Figma, lalu mengubahnya menjadi interface yang responsif, rapi, dan mudah digunakan.
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="liquid-card p-7">
+          <BorderGlow className="p-8 md:p-12 glass-card">
             <div className="relative z-10">
-              <div className="liquid-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl text-sky-200">
-                <Palette />
+              <div className="mb-8 text-white">
+                <Palette size={48} strokeWidth={1} />
               </div>
 
-              <h3 className="text-xl font-semibold">Design Focus</h3>
+              <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">Design Focus</h3>
 
-              <p className="mt-3 leading-7 text-slate-300/90">
-                Clean layout, modern visual, responsive design, dan pengalaman
-                pengguna yang sederhana.
+              <p className="font-body leading-7 text-secondary">
+                Clean layout, modern visual, responsive design, dan pengalaman pengguna yang sederhana.
               </p>
             </div>
-          </div>
+          </BorderGlow>
         </div>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div key={service.title} className="liquid-card p-7">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {services.map((service, index) => (
+            <BorderGlow key={service.title} className="p-8 md:p-10 glass-card">
               <div className="relative z-10">
-                <div className="liquid-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl text-sky-200">
+                <div className="mb-6 text-white">
                   {service.icon}
                 </div>
 
-                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <h3 className="font-headline-lg text-xl font-bold uppercase mb-4">{service.title}</h3>
 
-                <p className="mt-3 leading-7 text-slate-300/90">
+                <p className="font-body leading-7 text-secondary">
                   {service.description}
                 </p>
               </div>
-            </div>
+            </BorderGlow>
           ))}
         </div>
       </section>
 
-      <section id="skills" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-10 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+      <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
+        <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
           <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sky-300">
-              Skills
+            <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
+              [ Skills & Tools ]
             </p>
 
-            <h2 className="text-3xl font-semibold md:text-4xl">
-              Tools & technologies I use.
+            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter">
+              TECHNOLOGIES<br/>I USE.
             </h2>
 
-            <p className="mt-4 max-w-2xl leading-7 text-slate-300/90">
-              Skill yang saya gunakan untuk merancang UI, membangun tampilan
-              web, dan menghubungkan interface dengan kebutuhan sistem.
+            <p className="mt-8 max-w-2xl font-body leading-7 text-secondary">
+              Skill yang saya gunakan untuk merancang UI, membangun tampilan web, dan menghubungkan interface dengan kebutuhan sistem.
             </p>
           </div>
 
           <div className="hidden justify-end md:flex">
-            <div className="liquid-icon flex h-24 w-24 items-center justify-center rounded-[2rem] text-sky-200">
-              <Database size={34} />
+            <div className="flex h-32 w-32 items-center justify-center border brutalist-border-subtle text-white glass-card rounded-3xl">
+              <Database size={48} strokeWidth={1} />
             </div>
           </div>
         </div>
 
-        <div className="hidden gap-6 md:grid md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {skillGroups.map((group) => (
-            <motion.div
+            <BorderGlow
               key={group.title}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.25 }}
-              className="liquid-card p-7"
+              className="p-8 glass-card hover:bg-white/10 transition-colors duration-300"
             >
               <div className="relative z-10">
-                <div className="liquid-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl text-sky-200">
+                <div className="mb-6 text-white border brutalist-border-subtle w-14 h-14 flex items-center justify-center rounded-2xl">
                   {group.icon}
                 </div>
 
-                <h3 className="text-xl font-semibold">{group.title}</h3>
+                <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">{group.title}</h3>
 
-                <p className="mt-3 min-h-[56px] leading-7 text-slate-300/90">
+                <p className="font-body min-h-[64px] leading-7 text-secondary mb-8">
                   {group.description}
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {group.skills.map((skill) => (
-                    <span key={skill} className="liquid-chip px-3 py-2 text-xs">
+                    <span key={skill} className="font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white hover:bg-crimson hover:border-crimson hover:text-white transition-colors cursor-default rounded-full">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5 pr-6 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {skillGroups.map((group) => (
-            <motion.div
-              key={group.title}
-              whileTap={{ scale: 0.98 }}
-              className="liquid-card min-w-[82%] snap-start p-6"
-            >
-              <div className="relative z-10">
-                <div className="liquid-icon mb-5 flex h-11 w-11 items-center justify-center rounded-2xl text-sky-200">
-                  {group.icon}
-                </div>
-
-                <h3 className="text-lg font-semibold">{group.title}</h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-300/90">
-                  {group.description}
-                </p>
-
-                <div className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="liquid-chip shrink-0 px-3 py-1.5 text-[11px]"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            </BorderGlow>
           ))}
         </div>
       </section>
 
-      <section id="projects" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-10">
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sky-300">
-            Projects
+      <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
+        <div className="mb-16">
+          <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
+            [ Projects ]
           </p>
 
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Selected works.
+          <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8">
+            SELECTED<br/>WORKS.
           </h2>
 
-          <p className="mt-4 max-w-2xl leading-7 text-slate-300/90">
-            Beberapa project yang menunjukkan kombinasi kemampuan saya dalam
-            membangun tampilan web, aplikasi mobile, dan desain UI berbasis
-            Figma.
+          <p className="max-w-2xl font-body leading-7 text-secondary">
+            Beberapa project yang menunjukkan kombinasi kemampuan saya dalam membangun tampilan web, aplikasi mobile, dan desain UI berbasis Figma.
           </p>
         </div>
 
@@ -329,30 +295,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <div className="liquid-card p-8 text-center md:p-14">
+      <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24">
+        <BorderGlow className="glass-card p-8 md:p-20 text-center relative overflow-hidden group">
           <div className="relative z-10">
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sky-300">
-              Contact
+            <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
+              [ Contact ]
             </p>
 
-            <h2 className="text-3xl font-semibold md:text-5xl">
-              Let’s build something clean and meaningful.
+            <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto">
+              LET’S BUILD SOMETHING CLEAN AND MEANINGFUL.
             </h2>
 
-            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-300/90">
-              Tertarik bekerja sama, berdiskusi project, atau melihat karya saya
-              lebih lanjut? Silakan hubungi saya melalui platform berikut.
+            <p className="mx-auto mb-12 max-w-2xl font-body leading-8 text-secondary">
+              Tertarik bekerja sama, berdiskusi project, atau melihat karya saya lebih lanjut? Silakan hubungi saya melalui platform berikut.
             </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="liquid-button px-5 py-3 text-sm"
+                className="brutalist-button px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
               >
-                <Mail size={16} className="mr-2 inline" />
+                <Mail size={18} />
                 fyznugraha@gmail.com
               </a>
 
@@ -360,38 +325,41 @@ export default function Home() {
                 href="https://github.com/fyznugraha-pixel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="liquid-button px-5 py-3 text-sm"
+                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
               >
-                <FaGithub size={16} className="mr-2 inline" />
-                GitHub
+                <FaGithub size={18} />
+                GITHUB
               </a>
 
               <a
                 href="https://www.linkedin.com/in/fayiznugraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="liquid-button px-5 py-3 text-sm"
+                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
               >
-                <FaLinkedin size={16} className="mr-2 inline" />
-                LinkedIn
+                <FaLinkedin size={18} />
+                LINKEDIN
               </a>
 
               <a
                 href="https://instagram.com/faizngraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="liquid-button px-5 py-3 text-sm"
+                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
               >
-                <FaInstagram size={16} className="mr-2 inline" />
-                Instagram
+                <FaInstagram size={18} />
+                INSTAGRAM
               </a>
             </div>
           </div>
-        </div>
+          
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 border border-[#333] rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+          <div className="absolute -top-24 -left-24 w-64 h-64 border border-[#333] rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+        </BorderGlow>
       </section>
 
-      <footer className="relative z-10 border-t border-white/10 px-6 py-8 text-center text-sm text-slate-400">
-        BISMILLAH DAPET KERJAAN
+      <footer className="relative z-10 border-t brutalist-border-subtle px-6 py-10 text-center font-label-mono text-sm text-secondary uppercase tracking-widest bg-pure-black">
+        BISMILLAH DAPET KERJAAN © {new Date().getFullYear()}
       </footer>
     </main>
   );

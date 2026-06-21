@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, Space_Mono, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ShapeGrid from "@/components/ShapeGrid";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -28,9 +38,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", inter.variable, spaceGrotesk.variable, spaceMono.variable, "font-mono", jetbrainsMono.variable)}
     >
-      <body className="min-h-full">
+      <body className="min-h-full flex flex-col font-body bg-pure-black text-on-surface">
+        <div className="fixed inset-0 -z-50 opacity-60">
+          <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
+        </div>
         <Navbar />
         {children}
         <Analytics />

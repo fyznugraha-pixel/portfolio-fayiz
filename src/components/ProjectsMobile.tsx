@@ -1,8 +1,10 @@
 "use client";
+import { useRef } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import BorderGlow from "./BorderGlow";
 
 type Project = {
   title: string;
@@ -14,52 +16,60 @@ type Project = {
 };
 
 export default function ProjectsMobile({ projects }: { projects: Project[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5 pr-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      {projects.map((project) => (
-        <Link
-          key={project.title}
-          href={`/projects/${project.slug}`}
-          className="liquid-card group block min-w-[82%] snap-start overflow-hidden"
-        >
-          <div className="relative z-10 h-44 overflow-hidden border-b border-white/15 bg-white/[0.05]">
+    <div className="w-full relative">
+      <div 
+        ref={containerRef}
+        className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory gallery-slider hide-scrollbar px-6"
+      >
+        {projects.map((project) => (
+          <BorderGlow
+            key={project.title}
+            className="group block min-w-[90%] snap-start flex-col h-full glass-card hover:bg-crimson transition-colors duration-300 p-4"
+          >
+          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video brutalist-border mb-6 overflow-hidden glass-card rounded-2xl">
             <Image
               src={project.image}
               alt={`${project.title} preview`}
               fill
-              sizes="82vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
+              sizes="90vw"
+              className="object-cover transition-all duration-500"
             />
+          </Link>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050713]/80 via-transparent to-transparent" />
-
-            <div className="absolute right-4 top-4 z-20 liquid-icon flex h-10 w-10 items-center justify-center rounded-full text-slate-950">
-              <ArrowUpRight size={17} strokeWidth={2.4} />
-            </div>
-          </div>
-
-          <div className="relative z-10 p-5">
-            <p className="text-xs text-sky-300">{project.category}</p>
-
-            <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
-
-            <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-300/90">
-              {project.description}
-            </p>
-
-            <div className="mt-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {project.tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="liquid-chip shrink-0 px-3 py-1 text-[11px]"
+          <div className="flex flex-col gap-4">
+            <div className="w-full">
+              <div className="flex justify-between items-start gap-2 mb-3">
+                <h3 className="font-headline-lg text-2xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="font-label-mono text-crimson flex items-center gap-1 uppercase group-hover:text-white transition-colors shrink-0"
                 >
-                  {tool}
-                </span>
-              ))}
+                  <ArrowRight size={20} />
+                </Link>
+              </div>
+              
+              <p className="font-body text-sm text-secondary group-hover:text-white transition-colors mb-5 line-clamp-3">{project.description}</p>
+              
+              <div className="flex flex-wrap gap-2">
+                {project.tools.slice(0, 3).map((tool) => (
+                  <span key={tool} className="font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
+                    {tool}
+                  </span>
+                ))}
+                {project.tools.length > 3 && (
+                  <span className="font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
+                    +{project.tools.length - 3}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-        </Link>
+        </BorderGlow>
       ))}
+      </div>
     </div>
   );
 }

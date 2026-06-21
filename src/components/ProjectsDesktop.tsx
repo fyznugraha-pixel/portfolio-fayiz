@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 type Project = {
   title: string;
@@ -14,58 +13,59 @@ type Project = {
   tools: string[];
 };
 
+import BorderGlow from "./BorderGlow";
+
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.25 }}
-      className="liquid-card group overflow-hidden"
-    >
-      <div className="relative z-10 h-64 overflow-hidden border-b border-white/15 bg-white/[0.05]">
+    <BorderGlow className="group cursor-pointer flex flex-col h-full glass-card hover:bg-crimson transition-colors duration-300 p-6">
+      <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video brutalist-border mb-6 overflow-hidden glass-card rounded-2xl">
         <Image
           src={project.image}
           alt={`${project.title} preview`}
           fill
-          sizes="50vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover transition-all duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-4 pointer-events-none rounded-xl"></div>
+      </Link>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050713]/75 via-transparent to-transparent" />
-
-        <Link
-          href={`/projects/${project.slug}`}
-          aria-label={`Open ${project.title}`}
-          className="project-arrow liquid-icon flex h-11 w-11 items-center justify-center rounded-full text-slate-950 transition duration-300 group-hover:scale-105"
-        >
-          <ArrowUpRight size={18} strokeWidth={2.4} />
-        </Link>
+      <div className="flex flex-col flex-grow w-full">
+          <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start gap-2 mb-4 w-full">
+            <h3 className="font-headline-lg text-3xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
+            <Link
+              href={`/projects/${project.slug}`}
+              className="font-label-mono text-crimson flex items-center gap-2 uppercase group-hover:text-white transition-colors shrink-0"
+            >
+              KNOW MORE <ArrowRight size={16} />
+            </Link>
+          </div>
+          
+          <p className="font-body text-secondary group-hover:text-white transition-colors mb-6 line-clamp-3">{project.description}</p>
+          
+          <div className="flex flex-wrap gap-2 mt-auto pt-2">
+            {project.tools.slice(0, 4).map((tool) => (
+              <span key={tool} className="font-label-mono text-xs border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
+                {tool}
+              </span>
+            ))}
+            {project.tools.length > 4 && (
+              <span className="font-label-mono text-xs border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
+                +{project.tools.length - 4} MORE
+              </span>
+            )}
+          </div>
       </div>
-
-      <div className="relative z-10 p-7">
-        <div className="mb-6">
-          <p className="text-sm text-sky-300">{project.category}</p>
-          <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
-        </div>
-
-        <p className="leading-7 text-slate-300/90">{project.description}</p>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tools.map((tool) => (
-            <span key={tool} className="liquid-chip px-3 py-1 text-xs">
-              {tool}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+    </BorderGlow>
   );
 }
 
 export default function ProjectsDesktop({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      {projects.map((project) => (
-        <ProjectCard key={project.title} project={project} />
+    <div className="grid gap-16 md:grid-cols-2">
+      {projects.map((project, index) => (
+        <div key={project.title} className="h-full">
+          <ProjectCard project={project} />
+        </div>
       ))}
     </div>
   );

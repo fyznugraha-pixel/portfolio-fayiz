@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/#home", id: "home" },
@@ -26,19 +28,13 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
       const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
 
-      /*
-        Biar navbar nggak kedip-kedip karena scroll kecil banget.
-        Navbar baru bereaksi kalau scroll beda minimal 8px.
-      */
       if (scrollDifference < 8) return;
 
       if (currentScrollY <= 20) {
         setIsNavbarVisible(true);
       } else if (currentScrollY > lastScrollY.current) {
-        // Scroll ke bawah: navbar hilang/tenggelam
         setIsNavbarVisible(false);
       } else {
-        // Scroll sedikit ke atas: navbar muncul lagi
         setIsNavbarVisible(true);
       }
 
@@ -87,18 +83,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`site-navbar liquid-nav left-1/2 top-5 w-[92%] max-w-6xl -translate-x-1/2 px-5 py-3 transition-all duration-500 ease-out ${
-        isNavbarVisible
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-28 opacity-0"
+      className={`fixed top-0 left-0 w-full z-50 bg-pure-black border-b brutalist-border-subtle transition-transform duration-300 ${
+        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="relative z-10 flex items-center justify-between">
-        <a href="/#home" className="text-sm font-semibold tracking-wide">
-          Porto Fayiz<span className="text-sky-300">.</span>
-        </a>
+      <div className="flex justify-between items-center w-full px-6 py-6 max-w-[1440px] mx-auto">
+        <Link
+          href="/#home"
+          className="font-headline-lg text-2xl font-black text-on-surface uppercase tracking-tight"
+        >
+          FAYIZ.DEV
+        </Link>
 
-        <div className="hidden items-center gap-2 text-sm text-slate-300 md:flex">
+        <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
 
@@ -106,10 +103,10 @@ export default function Navbar() {
               <a
                 key={item.id}
                 href={item.href}
-                className={`rounded-full px-4 py-2 transition ${
+                className={`font-label-mono text-sm uppercase transition-colors duration-200 ${
                   isActive
-                    ? "liquid-active text-white"
-                    : "text-slate-300 hover:bg-white/10 hover:text-white"
+                    ? "text-crimson border-b-2 border-crimson pb-1"
+                    : "text-secondary hover:text-white pb-1 border-b-2 border-transparent"
                 }`}
               >
                 {item.label}
@@ -118,9 +115,16 @@ export default function Navbar() {
           })}
         </div>
 
-        <a href="/#contact" className="liquid-button px-4 py-2 text-sm">
+        <a
+          href="/#contact"
+          className="brutalist-button px-8 py-3 text-sm hidden md:block"
+        >
           Let’s Talk
         </a>
+
+        <button className="md:hidden text-white">
+          <Menu size={28} />
+        </button>
       </div>
     </nav>
   );
