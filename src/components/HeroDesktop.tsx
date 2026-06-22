@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import BlurText from "./BlurText";
 import TextPressure from "./TextPressure";
+import { useLanguage } from "@/context/LanguageContext";
 
 const profilePhotos = [
   {
@@ -21,16 +22,18 @@ const profilePhotos = [
 ];
 
 export default function HeroDesktop() {
+  const { t } = useLanguage();
+
   return (
     <div className="w-full px-6 max-w-[1440px] mx-auto pt-[160px] relative min-h-screen">
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12 md:col-span-11 md:col-start-2">
           <div className="mb-12 flex flex-col gap-2">
             <div className="relative w-full h-[80px] md:h-[130px]">
-              <TextPressure text="FRONTEND" flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
+              <TextPressure text={t.hero.frontend} flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
             </div>
             <div className="relative w-full h-[80px] md:h-[130px]">
-              <TextPressure text="DEVELOPER" flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
+              <TextPressure text={t.hero.developer} flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
             </div>
           </div>
         </div>
@@ -38,7 +41,7 @@ export default function HeroDesktop() {
         <div className="col-span-12 md:col-span-5 md:col-start-8 mt-8 flex flex-col items-start md:items-end text-left md:text-right z-10">
           <div className="font-body text-lg text-secondary mb-8 max-w-md">
             <BlurText
-              text="Hi, I’m Fayiz Apriwansyah Nugraha. Architecting digital monoliths. Brutalist aesthetics meeting high-performance web engineering."
+              text={t.hero.description}
               delay={50}
               animateBy="words"
               direction="bottom"
@@ -55,7 +58,7 @@ export default function HeroDesktop() {
               href="#projects"
               className="brutalist-button border border-white px-10 py-5 font-label-mono text-lg text-center w-full md:w-auto hover:scale-105 transition-transform duration-300"
             >
-              VIEW MY WORK
+              {t.hero.viewWork}
             </a>
           </motion.div>
 

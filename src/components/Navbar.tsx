@@ -4,17 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const navItems = [
-  { label: "Home", href: "/#home", id: "home" },
-  { label: "About", href: "/#about", id: "about" },
-  { label: "Skills", href: "/#skills", id: "skills" },
-  { label: "Projects", href: "/#projects", id: "projects" },
-  { label: "Contact", href: "/#contact", id: "contact" },
-];
+const navItemIds = ["home", "about", "skills", "projects", "contact"];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { t, language, setLanguage } = useLanguage();
+
+  const navItems = [
+    { label: t.navbar.home, href: "/#home", id: "home" },
+    { label: t.navbar.about, href: "/#about", id: "about" },
+    { label: t.navbar.skills, href: "/#skills", id: "skills" },
+    { label: t.navbar.projects, href: "/#projects", id: "projects" },
+    { label: t.navbar.contact, href: "/#contact", id: "contact" },
+  ];
 
   const [activeSection, setActiveSection] = useState(
     pathname.startsWith("/projects") ? "projects" : "home"
@@ -57,14 +61,14 @@ export default function Navbar() {
     }
 
     const handleActiveSection = () => {
-      for (const item of navItems) {
-        const section = document.getElementById(item.id);
+      for (const id of navItemIds) {
+        const section = document.getElementById(id);
 
         if (section) {
           const rect = section.getBoundingClientRect();
 
           if (rect.top <= 180 && rect.bottom >= 180) {
-            setActiveSection(item.id);
+            setActiveSection(id);
             break;
           }
         }
@@ -115,16 +119,37 @@ export default function Navbar() {
           })}
         </div>
 
-        <a
-          href="/#contact"
-          className="brutalist-button px-8 py-3 text-sm hidden md:block"
-        >
-          Let’s Talk
-        </a>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center font-label-mono text-sm tracking-widest text-secondary border border-[#333] rounded-full p-1 bg-pure-black">
+            <button
+              onClick={() => setLanguage("en")}
+              className={`px-3 py-1.5 rounded-full transition-colors ${
+                language === "en" ? "bg-white text-black" : "hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage("id")}
+              className={`px-3 py-1.5 rounded-full transition-colors ${
+                language === "id" ? "bg-white text-black" : "hover:text-white"
+              }`}
+            >
+              ID
+            </button>
+          </div>
 
-        <button className="md:hidden text-white">
-          <Menu size={28} />
-        </button>
+          <a
+            href="/#contact"
+            className="brutalist-button px-8 py-3 text-sm hidden md:block"
+          >
+            {t.navbar.letsTalk}
+          </a>
+
+          <button className="md:hidden text-white">
+            <Menu size={28} />
+          </button>
+        </div>
       </div>
     </nav>
   );

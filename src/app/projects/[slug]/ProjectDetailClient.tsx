@@ -9,6 +9,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import BorderGlow from "@/components/BorderGlow";
+import { useLanguage } from "@/context/LanguageContext";
 
 const projectDetails = {
   cisadane: {
@@ -227,7 +228,28 @@ type ProjectDetailClientProps = {
 };
 
 export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
-  const project = projectDetails[slug as ProjectSlug];
+  const { t } = useLanguage();
+
+  const projectSlugToKey: Record<string, keyof typeof t.projectDetail.items> = {
+    "cisadane": "cisadane",
+    "asia-afrika-festival": "aaf",
+    "campus-care": "campusCare",
+    "literaplus": "literaplus",
+    "proteksindo": "proteksindo",
+    "sistem-parkir": "parkir",
+    "upself": "upself",
+  };
+
+  const projectKey = projectSlugToKey[slug];
+  const projectLocal = t.projectDetail.items[projectKey];
+  const projectBase = projectDetails[slug as ProjectSlug];
+  
+  const project = projectBase && projectLocal ? {
+    ...projectBase,
+    ...projectLocal,
+    category: t.projects.items[projectKey as keyof typeof t.projects.items]?.category || projectBase.category,
+  } : null;
+
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const galleryRef = useRef<HTMLDivElement | null>(null);
 
@@ -235,13 +257,13 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     return (
       <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
         <section className="relative z-10 mx-auto max-w-[1440px] px-6 py-32 text-center">
-          <h1 className="font-display-xl text-5xl font-bold uppercase mb-8">PROJECT NOT FOUND.</h1>
+          <h1 className="font-display-xl text-5xl font-bold uppercase mb-8">{t.projectDetail.notFound}</h1>
           <p className="font-body text-secondary mb-12">
-            Project yang kamu cari belum tersedia atau URL-nya tidak sesuai.
+            {t.projectDetail.notFoundDesc}
           </p>
           <Link href="/#projects" className="brutalist-button-outline px-8 py-4 inline-flex items-center">
             <ArrowLeft size={16} className="mr-2" />
-            BACK TO PROJECTS
+            {t.projectDetail.backToProjects}
           </Link>
         </section>
       </main>
@@ -291,7 +313,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         <div className="mb-12 border-b brutalist-border-subtle pb-8">
           <Link href="/#projects" className="font-label-mono text-sm uppercase flex items-center text-secondary hover:text-white transition-colors mb-12">
             <ArrowLeft size={16} className="mr-2" />
-            Back to Projects
+            {t.projectDetail.backToProjects}
           </Link>
 
           <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
@@ -319,9 +341,9 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
           <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b brutalist-border-subtle pb-4">
             <div>
               <p className="font-label-mono text-sm uppercase tracking-widest text-crimson mb-2">
-                [ Preview ]
+                {t.projectDetail.preview}
               </p>
-              <h2 className="font-headline-lg text-3xl font-bold uppercase">Project Gallery</h2>
+              <h2 className="font-headline-lg text-3xl font-bold uppercase">{t.projectDetail.projectGallery}</h2>
             </div>
 
             <div className="flex items-center gap-4">
@@ -394,31 +416,31 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
 
         <div className="mt-20 grid gap-6 md:grid-cols-3">
           <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ Role ]</p>
+            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.role} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.role}</h3>
           </BorderGlow>
 
           <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ Duration ]</p>
+            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.duration} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.duration}</h3>
           </BorderGlow>
 
           <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ Project Type ]</p>
+            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.projectType} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.type}</h3>
           </BorderGlow>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <BorderGlow className="p-8 md:p-12 glass-card">
-            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">PROBLEM</h2>
+            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">{t.projectDetail.problem}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.problem}
             </p>
           </BorderGlow>
 
           <BorderGlow className="p-8 md:p-12 glass-card">
-            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">SOLUTION</h2>
+            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">{t.projectDetail.solution}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.solution}
             </p>
@@ -426,7 +448,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         </div>
 
         <BorderGlow className="mt-12 glass-card p-8 md:p-12">
-          <h2 className="font-headline-lg text-3xl font-bold uppercase mb-8">KEY FEATURES</h2>
+          <h2 className="font-headline-lg text-3xl font-bold uppercase mb-8">{t.projectDetail.keyFeatures}</h2>
 
           <div className="grid gap-4 md:grid-cols-2">
             {project.features.map((feature) => (
@@ -444,11 +466,11 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         <div className="mt-20 flex flex-wrap gap-4 border-t brutalist-border-subtle pt-12">
           <Link href="/#projects" className="brutalist-button-outline px-8 py-4 flex items-center">
             <ArrowLeft size={18} className="mr-3" />
-            BACK TO PROJECTS
+            {t.projectDetail.backToProjects}
           </Link>
 
           <Link href="/#contact" className="brutalist-button px-8 py-4 flex items-center bg-crimson hover:bg-white hover:text-black transition-colors">
-            CONTACT ME
+            {t.hero.contactMe}
             <ExternalLink size={18} className="ml-3" />
           </Link>
         </div>

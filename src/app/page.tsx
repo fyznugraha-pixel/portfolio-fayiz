@@ -20,6 +20,7 @@ import HeroDesktop from "@/components/HeroDesktop";
 import HeroMobile from "@/components/HeroMobile";
 import ProjectsDesktop from "@/components/ProjectsDesktop";
 import ProjectsMobile from "@/components/ProjectsMobile";
+import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
   {
@@ -154,6 +155,37 @@ const services = [
 ];
 
 export default function Home() {
+  const { t } = useLanguage();
+
+  const projectSlugToKey: Record<string, keyof typeof t.projects.items> = {
+    "cisadane": "cisadane",
+    "asia-afrika-festival": "aaf",
+    "campus-care": "campusCare",
+    "literaplus": "literaplus",
+    "proteksindo": "proteksindo",
+    "sistem-parkir": "parkir",
+    "upself": "upself",
+  };
+
+  const translatedProjects = projects.map(proj => ({
+    ...proj,
+    title: t.projects.items[projectSlugToKey[proj.slug]].title,
+    category: t.projects.items[projectSlugToKey[proj.slug]].category,
+    description: t.projects.items[projectSlugToKey[proj.slug]].description,
+  }));
+
+  const translatedSkillGroups = [
+    { ...skillGroups[0], title: t.skills.groups.frontendTitle, description: t.skills.groups.frontendDesc },
+    { ...skillGroups[1], title: t.skills.groups.backendTitle, description: t.skills.groups.backendDesc },
+    { ...skillGroups[2], title: t.skills.groups.uiTitle, description: t.skills.groups.uiDesc },
+  ];
+
+  const translatedServices = [
+    { ...services[0], title: t.about.services.frontendTitle, description: t.about.services.frontendDesc },
+    { ...services[1], title: t.about.services.mobileTitle, description: t.about.services.mobileDesc },
+    { ...services[2], title: t.about.services.uiTitle, description: t.about.services.uiDesc },
+  ];
+
   return (
     <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
       <section id="home" className="relative z-10 border-b brutalist-border-subtle">
@@ -171,15 +203,15 @@ export default function Home() {
           <BorderGlow className="p-8 md:p-12 md:col-span-2 glass-card">
             <div className="relative z-10">
               <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
-                [ About Me ]
+                {t.about.tag}
               </p>
 
-              <h2 className="font-display-xl text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8">
-                Blending Design Taste<br/>With Front-End Implementation.
+              <h2 className="font-display-xl text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8 whitespace-pre-line">
+                {t.about.title}
               </h2>
 
               <p className="mt-5 font-body leading-8 text-secondary max-w-2xl">
-                Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada front-end development dan UI design. Saya terbiasa merancang tampilan digital menggunakan Figma, lalu mengubahnya menjadi interface yang responsif, rapi, dan mudah digunakan.
+                {t.about.description}
               </p>
             </div>
           </BorderGlow>
@@ -190,17 +222,17 @@ export default function Home() {
                 <Palette size={48} strokeWidth={1} />
               </div>
 
-              <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">Design Focus</h3>
+              <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">{t.about.focusTitle}</h3>
 
               <p className="font-body leading-7 text-secondary">
-                Clean layout, modern visual, responsive design, dan pengalaman pengguna yang sederhana.
+                {t.about.focusDescription}
               </p>
             </div>
           </BorderGlow>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {services.map((service, index) => (
+          {translatedServices.map((service, index) => (
             <BorderGlow key={service.title} className="p-8 md:p-10 glass-card">
               <div className="relative z-10">
                 <div className="mb-6 text-white">
@@ -222,15 +254,15 @@ export default function Home() {
         <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
           <div>
             <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
-              [ Skills & Tools ]
+              {t.skills.tag}
             </p>
 
-            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter">
-              TECHNOLOGIES<br/>I USE.
+            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line">
+              {t.skills.title}
             </h2>
 
             <p className="mt-8 max-w-2xl font-body leading-7 text-secondary">
-              Skill yang saya gunakan untuk merancang UI, membangun tampilan web, dan menghubungkan interface dengan kebutuhan sistem.
+              {t.skills.description}
             </p>
           </div>
 
@@ -242,7 +274,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          {skillGroups.map((group) => (
+          {translatedSkillGroups.map((group) => (
             <BorderGlow
               key={group.title}
               className="p-8 glass-card hover:bg-white/10 transition-colors duration-300"
@@ -274,24 +306,24 @@ export default function Home() {
       <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
         <div className="mb-16">
           <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
-            [ Projects ]
+            {t.projects.tag}
           </p>
 
-          <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8">
-            SELECTED<br/>WORKS.
+          <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8 whitespace-pre-line">
+            {t.projects.title}
           </h2>
 
           <p className="max-w-2xl font-body leading-7 text-secondary">
-            Beberapa project yang menunjukkan kombinasi kemampuan saya dalam membangun tampilan web, aplikasi mobile, dan desain UI berbasis Figma.
+            {t.projects.description}
           </p>
         </div>
 
         <div className="hidden md:block">
-          <ProjectsDesktop projects={projects} />
+          <ProjectsDesktop projects={translatedProjects} />
         </div>
 
         <div className="block md:hidden">
-          <ProjectsMobile projects={projects} />
+          <ProjectsMobile projects={translatedProjects} />
         </div>
       </section>
 
@@ -299,15 +331,15 @@ export default function Home() {
         <BorderGlow className="glass-card p-8 md:p-20 text-center relative overflow-hidden group">
           <div className="relative z-10">
             <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
-              [ Contact ]
+              {t.contact.tag}
             </p>
 
             <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto">
-              LET’S BUILD SOMETHING CLEAN AND MEANINGFUL.
+              {t.contact.title}
             </h2>
 
             <p className="mx-auto mb-12 max-w-2xl font-body leading-8 text-secondary">
-              Tertarik bekerja sama, berdiskusi project, atau melihat karya saya lebih lanjut? Silakan hubungi saya melalui platform berikut.
+              {t.contact.description}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -359,7 +391,7 @@ export default function Home() {
       </section>
 
       <footer className="relative z-10 border-t brutalist-border-subtle px-6 py-10 text-center font-label-mono text-sm text-secondary uppercase tracking-widest bg-pure-black">
-        BISMILLAH DAPET KERJAAN © {new Date().getFullYear()}
+        {t.contact.footer} {new Date().getFullYear()}
       </footer>
     </main>
   );

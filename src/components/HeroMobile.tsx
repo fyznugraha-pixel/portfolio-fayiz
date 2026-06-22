@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import BlurText from "./BlurText";
 import TextPressure from "./TextPressure";
+import { useLanguage } from "@/context/LanguageContext";
 
 const profilePhotos = [
   {
@@ -21,20 +22,22 @@ const profilePhotos = [
 ];
 
 export default function HeroMobile() {
+  const { t } = useLanguage();
+
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 pb-16 pt-[120px] text-center relative">
       <div className="mb-8 flex flex-col gap-2">
         <div className="relative w-full h-[60px]">
-          <TextPressure text="FRONTEND" flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
+          <TextPressure text={t.hero.frontend} flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
         </div>
         <div className="relative w-full h-[60px]">
-          <TextPressure text="DEVELOPER" flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
+          <TextPressure text={t.hero.developer} flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
         </div>
       </div>
 
       <div className="font-body text-base text-secondary mb-8 text-left">
         <BlurText
-          text="Hi, I’m Fayiz Apriwansyah Nugraha. Architecting digital monoliths. Brutalist aesthetics meeting high-performance web engineering."
+          text={t.hero.description}
           delay={50}
           animateBy="words"
           direction="bottom"
@@ -69,14 +72,14 @@ export default function HeroMobile() {
           href="#projects"
           className="brutalist-button border border-white px-8 py-4 font-label-mono text-base hover:scale-105 transition-transform duration-300"
         >
-          VIEW MY WORK
+          {t.hero.viewWork}
         </a>
 
         <a
           href="#contact"
           className="brutalist-button-outline w-full px-7 py-4 text-sm font-label-mono tracking-widest text-center"
         >
-          CONTACT ME
+          {t.hero.contactMe}
         </a>
       </motion.div>
       

@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ShapeGrid from "@/components/ShapeGrid";
 import { cn } from "@/lib/utils";
+import Providers from "@/components/Providers";
 
 const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
@@ -41,12 +42,14 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", inter.variable, spaceGrotesk.variable, spaceMono.variable, "font-mono", jetbrainsMono.variable)}
     >
       <body className="min-h-full flex flex-col font-body bg-pure-black text-on-surface">
-        <div className="fixed inset-0 -z-50 opacity-60">
-          <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
-        </div>
-        <Navbar />
-        {children}
-        <Analytics />
+        <Providers>
+          <div className="fixed inset-0 -z-50 opacity-60">
+            <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
+          </div>
+          <Navbar />
+          {children}
+          <Analytics />
+        </Providers>
       </body>
     </html>
   );
