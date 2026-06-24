@@ -198,25 +198,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
-        <div className="grid gap-6 md:grid-cols-3">
-          <BorderGlow className="p-8 md:p-12 md:col-span-2 glass-card">
+      <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
+          <BorderGlow className="p-6 md:p-12 md:col-span-2 glass-card min-w-0">
             <div className="relative z-10">
               <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
                 {t.about.tag}
               </p>
 
-              <h2 className="font-display-xl text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8 whitespace-pre-line">
+              <h2 className="font-display-xl text-3xl sm:text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8 whitespace-pre-line break-words">
                 {t.about.title}
               </h2>
 
-              <p className="mt-5 font-body leading-8 text-secondary max-w-2xl">
+              <p className="mt-5 font-body leading-8 text-secondary max-w-2xl break-words">
                 {t.about.description}
               </p>
             </div>
           </BorderGlow>
 
-          <BorderGlow className="p-8 md:p-12 glass-card">
+          <BorderGlow className="p-8 md:p-12 glass-card min-w-0">
             <div className="relative z-10">
               <div className="mb-8 text-white">
                 <Palette size={48} strokeWidth={1} />
@@ -231,9 +231,9 @@ export default function Home() {
           </BorderGlow>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
           {translatedServices.map((service, index) => (
-            <BorderGlow key={service.title} className="p-8 md:p-10 glass-card">
+            <BorderGlow key={service.title} className="p-8 md:p-10 glass-card min-w-0">
               <div className="relative z-10">
                 <div className="mb-6 text-white">
                   {service.icon}
@@ -250,18 +250,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
-        <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+      <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+        <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end w-full">
           <div>
             <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
               {t.skills.tag}
             </p>
 
-            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line">
+            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line break-words">
               {t.skills.title}
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body leading-7 text-secondary">
+            <p className="mt-8 max-w-2xl font-body leading-7 text-secondary break-words">
               {t.skills.description}
             </p>
           </div>
@@ -273,11 +273,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 w-full">
           {translatedSkillGroups.map((group) => (
             <BorderGlow
               key={group.title}
-              className="p-8 glass-card hover:bg-white/10 transition-colors duration-300"
+              className="p-8 glass-card hover:bg-white/10 transition-colors duration-300 min-w-0"
             >
               <div className="relative z-10">
                 <div className="mb-6 text-white border brutalist-border-subtle w-14 h-14 flex items-center justify-center rounded-2xl">
@@ -303,17 +303,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle">
-        <div className="mb-16">
+      <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+        <div className="mb-16 w-full">
           <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
             {t.projects.tag}
           </p>
 
-          <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8 whitespace-pre-line">
+          <h2 className="font-display-xl text-4xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8 whitespace-pre-line break-words">
             {t.projects.title}
           </h2>
 
-          <p className="max-w-2xl font-body leading-7 text-secondary">
+          <p className="max-w-2xl font-body leading-7 text-secondary break-words">
             {t.projects.description}
           </p>
         </div>
@@ -327,18 +327,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24">
-        <BorderGlow className="glass-card p-8 md:p-20 text-center relative overflow-hidden group">
-          <div className="relative z-10">
+      <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 w-full overflow-hidden">
+        <BorderGlow className="glass-card p-8 md:p-20 text-center relative overflow-hidden group min-w-0">
+          <div className="relative z-10 w-full">
             <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
               {t.contact.tag}
             </p>
 
-            <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto">
+            <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto break-words">
               {t.contact.title}
             </h2>
 
-            <p className="mx-auto mb-12 max-w-2xl font-body leading-8 text-secondary">
+            <p className="mx-auto mb-12 max-w-2xl font-body leading-8 text-secondary break-words">
               {t.contact.description}
             </p>
 
