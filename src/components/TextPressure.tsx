@@ -18,6 +18,7 @@ interface TextPressureProps {
   strokeWidth?: number;
   className?: string;
   minFontSize?: number;
+  dynamicSize?: boolean;
 }
 
 const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
@@ -56,7 +57,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
   strokeColor = '#FF0000',
   strokeWidth = 2,
   className = '',
-  minFontSize = 24
+  minFontSize = 24,
+  dynamicSize = true,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -100,6 +102,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
   }, []);
 
   const setSize = useCallback(() => {
+    if (!dynamicSize) return;
     if (!containerRef.current || !titleRef.current) return;
 
     const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
@@ -120,14 +123,15 @@ const TextPressure: React.FC<TextPressureProps> = ({
         setScaleY(yRatio);
       }
     });
-  }, [chars.length, minFontSize, scale]);
+  }, [chars.length, minFontSize, scale, dynamicSize]);
 
   useEffect(() => {
+    if (!dynamicSize) return;
     const debouncedSetSize = debounce(setSize, 100);
     debouncedSetSize();
     window.addEventListener('resize', debouncedSetSize);
     return () => window.removeEventListener('resize', debouncedSetSize);
-  }, [setSize]);
+  }, [setSize, dynamicSize]);
 
   useEffect(() => {
     let rafId: number;
@@ -205,9 +209,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
         } ${stroke ? 'stroke' : ''} uppercase`}
         style={{
           fontFamily,
-          fontSize: fontSize,
+          fontSize: dynamicSize ? fontSize : undefined,
           lineHeight,
-          transform: `scale(1, ${scaleY})`,
+          transform: dynamicSize ? `scale(1, ${scaleY})` : undefined,
           transformOrigin: 'center top',
           margin: 0,
           paddingTop: '0.1em',
