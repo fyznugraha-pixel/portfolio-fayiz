@@ -27,7 +27,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <BorderGlow
             key={project.title}
-            className="group block min-w-[90%] snap-start flex-col h-full glass-card hover:bg-crimson transition-colors duration-300 p-4"
+            className="group block min-w-[90%] snap-center flex-col h-full glass-card hover:bg-crimson transition-colors duration-300 p-4"
           >
           <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video brutalist-border mb-6 overflow-hidden glass-card rounded-2xl">
             <Image
