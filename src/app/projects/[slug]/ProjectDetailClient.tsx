@@ -42,6 +42,7 @@ const projectDetails = {
       "Dukungan multi-bahasa (ID & EN)",
       "Responsive design (Desktop & Mobile)",
     ],
+    link: "https://www.tactlink.com/festivalcisadane/id",
   },
   "asia-afrika-festival": {
     title: "Asia Afrika Festival",
@@ -74,6 +75,7 @@ const projectDetails = {
       "Excel export with styled format",
       "Scroll reveal animation",
     ],
+    link: "https://asiaafricafestival.co.id/",
   },
 
   "campus-care": {
@@ -468,6 +470,18 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
             <ArrowLeft size={18} className="mr-3" />
             {t.projectDetail.backToProjects}
           </Link>
+
+          {(project as any).link && (
+            <a 
+              href={(project as any).link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="brutalist-button-outline px-8 py-4 flex items-center hover:bg-white hover:text-black transition-colors"
+            >
+              {t.projectDetail.visitWebsite || "VISIT WEBSITE"}
+              <ExternalLink size={18} className="ml-3" />
+            </a>
+          )}
 
           <Link href="/#contact" className="brutalist-button px-8 py-4 flex items-center bg-crimson hover:bg-white hover:text-black transition-colors">
             {t.hero.contactMe}

@@ -102,6 +102,7 @@ export const en = {
     problem: "PROBLEM",
     solution: "SOLUTION",
     keyFeatures: "KEY FEATURES",
+    visitWebsite: "VISIT WEBSITE",
     items: {
       cisadane: {
         role: "UI/UX Design & Frontend Development",

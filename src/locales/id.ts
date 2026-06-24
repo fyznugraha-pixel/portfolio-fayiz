@@ -1,22 +1,22 @@
 export const id = {
   navbar: {
-    home: "Home",
-    about: "About",
-    skills: "Skills",
-    projects: "Projects",
-    contact: "Contact",
-    letsTalk: "Let's Talk",
+    home: "Beranda",
+    about: "Tentang",
+    skills: "Keahlian",
+    projects: "Proyek",
+    contact: "Kontak",
+    letsTalk: "Mari Berbincang",
   },
   hero: {
     frontend: "FRONTEND",
     developer: "DEVELOPER",
-    description: "Hi, I’m Fayiz Apriwansyah Nugraha. Architecting digital monoliths. Brutalist aesthetics meeting high-performance web engineering.",
-    viewWork: "VIEW MY WORK",
-    contactMe: "CONTACT ME",
+    description: "Halo, saya Fayiz Apriwansyah Nugraha. Merancang fondasi digital yang solid. Memadukan estetika brutalisme dengan performa web tingkat tinggi.",
+    viewWork: "LIHAT KARYA SAYA",
+    contactMe: "HUBUNGI SAYA",
   },
   about: {
-    tag: "[ About Me ]",
-    title: "Blending Design Taste\nWith Front-End Implementation.",
+    tag: "[ Tentang Saya ]",
+    title: "Memadukan Selera Desain\nDengan Implementasi Front-End.",
     description: "Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada front-end development dan UI design. Saya terbiasa merancang tampilan digital menggunakan Figma, lalu mengubahnya menjadi interface yang responsif, rapi, dan mudah digunakan.",
     focusTitle: "Design Focus",
     focusDescription: "Clean layout, modern visual, responsive design, dan pengalaman pengguna yang sederhana.",
@@ -30,8 +30,8 @@ export const id = {
     }
   },
   skills: {
-    tag: "[ Skills & Tools ]",
-    title: "TECHNOLOGIES\nI USE.",
+    tag: "[ Keahlian & Alat ]",
+    title: "TEKNOLOGI\nYANG SAYA GUNAKAN.",
     description: "Skill yang saya gunakan untuk merancang UI, membangun tampilan web, dan menghubungkan interface dengan kebutuhan sistem.",
     groups: {
       frontendTitle: "Front-End",
@@ -43,8 +43,8 @@ export const id = {
     }
   },
   projects: {
-    tag: "[ Projects ]",
-    title: "SELECTED\nWORKS.",
+    tag: "[ Proyek ]",
+    title: "KARYA\nPILIHAN.",
     description: "Beberapa project yang menunjukkan kombinasi kemampuan saya dalam membangun tampilan web, aplikasi mobile, dan desain UI berbasis Figma.",
     items: {
       cisadane: {
@@ -85,23 +85,24 @@ export const id = {
     }
   },
   contact: {
-    tag: "[ Contact ]",
-    title: "LET’S BUILD SOMETHING CLEAN AND MEANINGFUL.",
+    tag: "[ Kontak ]",
+    title: "MARI BANGUN SESUATU YANG BERSIH DAN BERMAKNA.",
     description: "Tertarik bekerja sama, berdiskusi project, atau melihat karya saya lebih lanjut? Silakan hubungi saya melalui platform berikut.",
     footer: "BISMILLAH DAPET KERJAAN ©"
   },
   projectDetail: {
-    notFound: "PROJECT NOT FOUND.",
+    notFound: "PROYEK TIDAK DITEMUKAN.",
     notFoundDesc: "Project yang kamu cari belum tersedia atau URL-nya tidak sesuai.",
-    backToProjects: "BACK TO PROJECTS",
-    preview: "[ Preview ]",
-    projectGallery: "Project Gallery",
-    role: "Role",
-    duration: "Duration",
-    projectType: "Project Type",
-    problem: "PROBLEM",
-    solution: "SOLUTION",
-    keyFeatures: "KEY FEATURES",
+    backToProjects: "KEMBALI KE PROYEK",
+    preview: "[ Pratinjau ]",
+    projectGallery: "Galeri Proyek",
+    role: "Peran",
+    duration: "Durasi",
+    projectType: "Tipe Proyek",
+    problem: "MASALAH",
+    solution: "SOLUSI",
+    keyFeatures: "FITUR UTAMA",
+    visitWebsite: "KUNJUNGI WEBSITE",
     items: {
       cisadane: {
         role: "UI/UX Design & Frontend Development",

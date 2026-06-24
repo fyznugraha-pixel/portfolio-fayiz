@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const navItemIds = ["home", "about", "skills", "projects", "contact"];
@@ -25,10 +25,13 @@ export default function Navbar() {
   );
 
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleNavbarVisibility = () => {
+      if (isMobileMenuOpen) return;
+      
       const currentScrollY = window.scrollY;
       const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
 
@@ -52,7 +55,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleNavbarVisibility);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     if (pathname.startsWith("/projects")) {
@@ -146,9 +149,48 @@ export default function Navbar() {
             {t.navbar.letsTalk}
           </a>
 
-          <button className="md:hidden text-white">
-            <Menu size={28} />
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-pure-black transition-all duration-300 overflow-hidden flex flex-col items-center ${
+          isMobileMenuOpen ? "max-h-[400px] py-6 border-b brutalist-border-subtle" : "max-h-0 py-0 border-transparent"
+        }`}
+      >
+        <div className="flex flex-col gap-6 items-center w-full px-6">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`font-label-mono text-sm uppercase transition-colors duration-200 ${
+                  isActive
+                    ? "text-crimson border-b-2 border-crimson pb-1"
+                    : "text-secondary hover:text-white pb-1 border-b-2 border-transparent"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+          
+          <a
+            href="/#contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="brutalist-button px-8 py-3 text-sm mt-2 w-full text-center"
+          >
+            {t.navbar.letsTalk}
+          </a>
         </div>
       </div>
     </nav>
