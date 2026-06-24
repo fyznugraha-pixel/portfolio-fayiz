@@ -111,7 +111,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
     setScaleY(1);
     setLineHeight(1);
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       if (!titleRef.current) return;
       const textRect = titleRef.current.getBoundingClientRect();
 
@@ -120,7 +120,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
         setScaleY(yRatio);
         // setLineHeight(yRatio); // Removed to prevent double-scaling
       }
-    });
+    }, 0);
   }, [chars.length, minFontSize, scale]);
 
   useEffect(() => {
