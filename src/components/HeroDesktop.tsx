@@ -33,7 +33,7 @@ export default function HeroDesktop() {
               <TextPressure 
                 text={t.hero.frontend} 
                 flex={false} 
-                className="font-display-xl text-6xl md:text-8xl lg:text-[130px] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left" 
+                className="font-display-xl text-[14vw] sm:text-[12vw] md:text-[11vw] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left" 
                 width={true} 
                 weight={true} 
                 italic={false} 
@@ -46,7 +46,7 @@ export default function HeroDesktop() {
               <TextPressure 
                 text={t.hero.developer} 
                 flex={false} 
-                className="font-display-xl text-6xl md:text-8xl lg:text-[130px] font-bold leading-[0.9] tracking-tighter uppercase text-left" 
+                className="font-display-xl text-[14vw] sm:text-[12vw] md:text-[11vw] font-bold leading-[0.9] tracking-tighter uppercase text-left" 
                 stroke={true} 
                 strokeColor="#dc143c" 
                 textColor="transparent" 

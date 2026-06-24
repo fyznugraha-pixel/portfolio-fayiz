@@ -31,7 +31,7 @@ export default function HeroMobile() {
           <TextPressure 
             text={t.hero.frontend} 
             flex={false} 
-            className="font-display-xl text-[50px] sm:text-[60px] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left break-words" 
+            className="font-display-xl text-[14vw] sm:text-[12vw] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left break-words" 
             width={true} 
             weight={true} 
             italic={false} 
@@ -44,7 +44,7 @@ export default function HeroMobile() {
           <TextPressure 
             text={t.hero.developer} 
             flex={false} 
-            className="font-display-xl text-[50px] sm:text-[60px] font-bold leading-[0.9] tracking-tighter uppercase text-left break-words" 
+            className="font-display-xl text-[14vw] sm:text-[12vw] font-bold leading-[0.9] tracking-tighter uppercase text-left break-words" 
             stroke={true} 
             strokeColor="#dc143c" 
             textColor="transparent" 
