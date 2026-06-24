@@ -12,7 +12,7 @@ import {
   PenTool,
   Database,
 } from "lucide-react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import BorderGlow from "@/components/BorderGlow";
@@ -354,13 +354,13 @@ export default function Home() {
               </a>
 
               <a
-                href="https://github.com/fyznugraha-pixel"
+                href="https://wa.me/6287794693241"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
               >
-                <FaGithub size={18} />
-                GITHUB
+                <FaWhatsapp size={18} />
+                WHATSAPP
               </a>
 
               <a
