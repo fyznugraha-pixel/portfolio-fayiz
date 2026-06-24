@@ -111,29 +111,21 @@ const TextPressure: React.FC<TextPressureProps> = ({
     setScaleY(1);
     setLineHeight(1);
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       if (!titleRef.current) return;
-      const textRect = titleRef.current.getBoundingClientRect();
+      const textHeight = titleRef.current.offsetHeight;
 
-      if (scale && textRect.height > 0) {
-        const yRatio = containerH / textRect.height;
+      if (scale && textHeight > 0) {
+        const yRatio = containerH / textHeight;
         setScaleY(yRatio);
-        // setLineHeight(yRatio); // Removed to prevent double-scaling
       }
-    }, 0);
+    });
   }, [chars.length, minFontSize, scale]);
 
   useEffect(() => {
-    setSize();
     const debouncedSetSize = debounce(setSize, 100);
+    debouncedSetSize();
     window.addEventListener('resize', debouncedSetSize);
-    
-    if (typeof document !== 'undefined' && document.fonts) {
-      document.fonts.ready.then(() => {
-        setSize();
-      });
-    }
-
     return () => window.removeEventListener('resize', debouncedSetSize);
   }, [setSize]);
 
