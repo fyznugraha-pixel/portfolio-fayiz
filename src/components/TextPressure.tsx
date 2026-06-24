@@ -124,9 +124,16 @@ const TextPressure: React.FC<TextPressureProps> = ({
   }, [chars.length, minFontSize, scale]);
 
   useEffect(() => {
+    setSize();
     const debouncedSetSize = debounce(setSize, 100);
-    debouncedSetSize();
     window.addEventListener('resize', debouncedSetSize);
+    
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(() => {
+        setSize();
+      });
+    }
+
     return () => window.removeEventListener('resize', debouncedSetSize);
   }, [setSize]);
 
