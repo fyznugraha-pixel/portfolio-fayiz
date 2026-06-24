@@ -26,13 +26,19 @@ export default function HeroMobile() {
 
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 pb-16 pt-[120px] text-center relative">
-      <div className="mb-8 flex flex-col gap-2">
-        <div className="relative w-full h-[60px]">
-          <TextPressure text={t.hero.frontend} flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
-        </div>
-        <div className="relative w-full h-[60px]">
-          <TextPressure text={t.hero.developer} flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
-        </div>
+      <div className="mb-8 flex flex-col">
+        <h1 className="font-display-xl text-[50px] sm:text-[60px] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left break-words">
+          {t.hero.frontend}
+        </h1>
+        <h1 
+          className="font-display-xl text-[50px] sm:text-[60px] font-bold leading-[0.9] tracking-tighter uppercase text-left break-words"
+          style={{
+            WebkitTextStroke: "2px #dc143c",
+            color: "transparent"
+          }}
+        >
+          {t.hero.developer}
+        </h1>
       </div>
 
       <div className="font-body text-base text-secondary mb-8 text-left">

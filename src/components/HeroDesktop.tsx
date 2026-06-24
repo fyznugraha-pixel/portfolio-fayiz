@@ -28,13 +28,19 @@ export default function HeroDesktop() {
     <div className="w-full px-6 max-w-[1440px] mx-auto pt-[160px] relative min-h-screen">
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12 md:col-span-11 md:col-start-2">
-          <div className="mb-12 flex flex-col gap-2">
-            <div className="relative w-full h-[80px] md:h-[130px]">
-              <TextPressure text={t.hero.frontend} flex={false} className="text-left" width={true} weight={true} italic={false} textColor="#ffffff" scale={true} />
-            </div>
-            <div className="relative w-full h-[80px] md:h-[130px]">
-              <TextPressure text={t.hero.developer} flex={false} className="text-left" stroke={true} strokeColor="#dc143c" textColor="transparent" width={true} weight={true} italic={false} scale={true} />
-            </div>
+          <div className="mb-12 flex flex-col">
+            <h1 className="font-display-xl text-6xl md:text-8xl lg:text-[130px] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left">
+              {t.hero.frontend}
+            </h1>
+            <h1 
+              className="font-display-xl text-6xl md:text-8xl lg:text-[130px] font-bold leading-[0.9] tracking-tighter uppercase text-left"
+              style={{
+                WebkitTextStroke: "2px #dc143c",
+                color: "transparent"
+              }}
+            >
+              {t.hero.developer}
+            </h1>
           </div>
         </div>
 
