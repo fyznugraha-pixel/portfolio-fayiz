@@ -26,7 +26,7 @@ export default function HeroMobile() {
 
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 pb-16 pt-[120px] text-center relative">
-      <div className="mb-8 flex flex-col gap-0">
+      <div className="mb-8 flex flex-col -space-y-2 sm:-space-y-4">
         <div className="w-full">
           <TextPressure 
             text={t.hero.frontend} 

@@ -210,11 +210,11 @@ const TextPressure: React.FC<TextPressureProps> = ({
         style={{
           fontFamily,
           fontSize: dynamicSize ? fontSize : undefined,
-          lineHeight,
+          lineHeight: dynamicSize ? lineHeight : undefined,
           transform: dynamicSize ? `scale(1, ${scaleY})` : undefined,
           transformOrigin: 'center top',
           margin: 0,
-          paddingTop: '0.1em',
+          paddingTop: dynamicSize ? '0.1em' : undefined,
           fontWeight: 100,
           color: stroke ? undefined : textColor
         }}

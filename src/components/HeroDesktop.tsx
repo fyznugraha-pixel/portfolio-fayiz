@@ -28,7 +28,7 @@ export default function HeroDesktop() {
     <div className="w-full px-6 max-w-[1440px] mx-auto pt-[160px] relative min-h-screen">
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12 md:col-span-11 md:col-start-2">
-          <div className="mb-12 flex flex-col gap-0 md:gap-2">
+          <div className="mb-12 flex flex-col -space-y-4 md:-space-y-6 lg:-space-y-10">
             <div className="w-full">
               <TextPressure 
                 text={t.hero.frontend} 
