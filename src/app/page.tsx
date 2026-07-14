@@ -11,16 +11,19 @@ import {
   Braces,
   PenTool,
   Database,
+  ArrowRight,
 } from "lucide-react";
 import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import BorderGlow from "@/components/BorderGlow";
-import HeroDesktop from "@/components/HeroDesktop";
-import HeroMobile from "@/components/HeroMobile";
+import SpotlightCard from "@/components/SpotlightCard";
+import ShinyText from "@/components/ShinyText";
+import LogoLoop from "@/components/LogoLoop";
+import Hero from "@/components/Hero";
 import LogoWall from "@/components/LogoWall";
-import ProjectsDesktop from "@/components/ProjectsDesktop";
-import ProjectsMobile from "@/components/ProjectsMobile";
+import Projects from "@/components/Projects";
+import MagnetButton from "@/components/MagnetButton";
 import { getSkillLogo } from "@/lib/getSkillLogo";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -200,27 +203,23 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
-      <section id="home" className="relative z-10 border-b brutalist-border-subtle flex flex-col">
+      <section id="home" className="relative z-10 border-b border-white/10 flex flex-col">
         <div className="w-full relative z-10 bg-pure-black pt-[80px] md:pt-[80px]">
           <LogoWall speed={50} />
         </div>
 
-        <div className="hidden md:block flex-grow">
-          <HeroDesktop />
-        </div>
-
-        <div className="block md:hidden flex-grow">
-          <HeroMobile />
+        <div className="flex-grow w-full">
+          <Hero />
         </div>
       </section>
 
       <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
-          <BorderGlow className="p-6 md:p-12 md:col-span-2 glass-panel min-w-0">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-6 md:p-12 md:col-span-2 glass-panel min-w-0 h-full flex flex-col justify-center">
             <div className="relative z-10">
-              <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
-                {t.about.tag}
-              </p>
+              <div className="mb-4 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
+                <ShinyText text={t.about.tag} disabled={false} speed={3} className="text-[#E9333A]" />
+              </div>
 
               <h2 className="font-display-xl text-4xl md:text-6xl font-bold uppercase leading-tight tracking-tighter whitespace-pre-line break-words text-white">
                 {t.about.title}
@@ -230,38 +229,38 @@ export default function Home() {
                 {t.about.description}
               </p>
             </div>
-          </BorderGlow>
+          </SpotlightCard>
 
-          <BorderGlow className="p-8 md:p-12 glass-panel min-w-0">
+          <SpotlightCard spotlightColor="rgba(233, 51, 58, 0.15)" className="p-8 md:p-12 glass-panel min-w-0 h-full">
             <div className="relative z-10">
-              <div className="mb-8 text-white">
+              <div className="mb-8 text-[#E9333A]">
                 <Palette size={48} strokeWidth={1} />
               </div>
 
-              <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">{t.about.focusTitle}</h3>
+              <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4 text-white">{t.about.focusTitle}</h3>
 
               <p className="font-body leading-7 text-secondary">
                 {t.about.focusDescription}
               </p>
             </div>
-          </BorderGlow>
+          </SpotlightCard>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
           {translatedServices.map((service, index) => (
-            <BorderGlow key={service.title} className="p-8 md:p-10 glass-panel glass-panel-hover min-w-0 rounded-3xl">
+            <SpotlightCard key={service.title} spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-10 glass-panel min-w-0 rounded-3xl h-full">
               <div className="relative z-10">
-                <div className="mb-6 text-white">
+                <div className="mb-6 text-[#E9333A]">
                   {service.icon}
                 </div>
 
-                <h3 className="font-headline-lg text-xl font-bold uppercase mb-4">{service.title}</h3>
+                <h3 className="font-headline-lg text-xl font-bold uppercase mb-4 text-white">{service.title}</h3>
 
                 <p className="font-body leading-7 text-secondary">
                   {service.description}
                 </p>
               </div>
-            </BorderGlow>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -269,11 +268,11 @@ export default function Home() {
       <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
         <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end w-full">
           <div>
-            <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
-              {t.skills.tag}
-            </p>
+            <div className="mb-4 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
+              <ShinyText text={t.skills.tag} disabled={false} speed={3} className="text-[#E9333A]" />
+            </div>
 
-            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line break-words">
+            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line break-words text-white">
               {t.skills.title}
             </h2>
 
@@ -283,24 +282,25 @@ export default function Home() {
           </div>
 
           <div className="hidden justify-end md:flex">
-            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(99,102,241,0.2)]">
-              <Database size={48} strokeWidth={1.5} className="text-indigo-400" />
+            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(233,51,58,0.15)] border-white/10">
+              <Database size={48} strokeWidth={1.5} className="text-[#E9333A]" />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 w-full">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 w-full mb-20">
           {translatedSkillGroups.map((group) => (
-            <BorderGlow
+            <SpotlightCard
               key={group.title}
-              className="p-8 glass-panel glass-panel-hover min-w-0 rounded-3xl"
+              spotlightColor="rgba(255, 255, 255, 0.1)"
+              className="p-8 glass-panel min-w-0 rounded-3xl h-full flex flex-col"
             >
-              <div className="relative z-10">
-                <div className="mb-6 text-indigo-400 border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
+              <div className="relative z-10 flex-grow">
+                <div className="mb-6 text-[#E9333A] border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
                   {group.icon}
                 </div>
 
-                <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4">{group.title}</h3>
+                <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4 text-white">{group.title}</h3>
 
                 <p className="font-body min-h-[64px] leading-7 text-secondary mb-8">
                   {group.description}
@@ -318,43 +318,87 @@ export default function Home() {
                   })}
                 </div>
               </div>
-            </BorderGlow>
+            </SpotlightCard>
           ))}
+        </div>
+
+        <div className="w-full flex flex-col gap-6">
+          <LogoLoop
+            logos={skillGroups.flatMap(group => group.skills).slice(0, Math.ceil(skillGroups.flatMap(group => group.skills).length / 2)).map(skill => {
+              const logo = getSkillLogo(skill);
+              return {
+                node: (
+                  <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
+                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {skill}
+                  </span>
+                )
+              };
+            })}
+            direction="left"
+            speed={40}
+            pauseOnHover={true}
+            logoHeight={48}
+            gap={24}
+            fadeOut={true}
+            fadeOutColor="#09090b"
+          />
+          <LogoLoop
+            logos={skillGroups.flatMap(group => group.skills).slice(Math.ceil(skillGroups.flatMap(group => group.skills).length / 2)).map(skill => {
+              const logo = getSkillLogo(skill);
+              return {
+                node: (
+                  <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
+                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {skill}
+                  </span>
+                )
+              };
+            })}
+            direction="right"
+            speed={40}
+            pauseOnHover={true}
+            logoHeight={48}
+            gap={24}
+            fadeOut={true}
+            fadeOutColor="#09090b"
+          />
         </div>
       </section>
 
       <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
-        <div className="mb-16 w-full">
-          <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
-            {t.projects.tag}
-          </p>
+        <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8 w-full">
+          <div className="max-w-2xl">
+            <div className="mb-4 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
+              <ShinyText text={t.projects.tag} disabled={false} speed={3} className="text-[#E9333A]" />
+            </div>
 
-          <h2 className="font-display-xl text-4xl font-bold md:text-7xl uppercase leading-none tracking-tighter mb-8 whitespace-pre-line break-words">
-            {t.projects.title}
-          </h2>
+            <h2 className="font-display-xl text-5xl font-bold md:text-7xl uppercase leading-none tracking-tighter whitespace-pre-line break-words text-white">
+              {t.projects.title}
+            </h2>
+          </div>
 
-          <p className="max-w-2xl font-body leading-7 text-secondary break-words">
-            {t.projects.description}
-          </p>
+          <Link href="/projects" className="group flex w-max items-center gap-4 border border-white/10 glass-panel px-6 py-4 font-label-mono text-sm uppercase tracking-wider text-white hover:bg-white/10 transition-colors rounded-full">
+            {t.projects.viewAll}
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E9333A] text-white transition-transform group-hover:scale-110">
+              <ArrowRight size={16} />
+            </div>
+          </Link>
         </div>
 
-        <div className="hidden md:block">
-          <ProjectsDesktop projects={translatedProjects} />
-        </div>
-
-        <div className="block md:hidden">
-          <ProjectsMobile projects={translatedProjects} />
+        <div className="flex-grow w-full">
+          <Projects projects={translatedProjects} />
         </div>
       </section>
 
       <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 w-full overflow-hidden">
-        <BorderGlow className="glass-panel glass-panel-hover p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
+        <BorderGlow className="glass-panel p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
           <div className="relative z-10 w-full">
-            <p className="mb-6 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
-              {t.contact.tag}
-            </p>
+            <div className="mb-6 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
+              <ShinyText text={t.contact.tag} disabled={false} speed={3} className="text-[#E9333A]" />
+            </div>
 
-            <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto break-words">
+            <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto break-words text-white">
               {t.contact.title}
             </h2>
 
@@ -363,45 +407,45 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <a
+              <MagnetButton
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutalist-button px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                className="brutalist-button px-8 py-4 text-sm font-bold w-full md:w-auto bg-[#E9333A] hover:bg-[#FF4D55]"
               >
                 <Mail size={18} />
                 fyznugraha@gmail.com
-              </a>
+              </MagnetButton>
 
-              <a
+              <MagnetButton
                 href="https://wa.me/6287794693241"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaWhatsapp size={18} />
                 WHATSAPP
-              </a>
+              </MagnetButton>
 
-              <a
+              <MagnetButton
                 href="https://www.linkedin.com/in/fayiznugraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaLinkedin size={18} />
                 LINKEDIN
-              </a>
+              </MagnetButton>
 
-              <a
+              <MagnetButton
                 href="https://instagram.com/faizngraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutalist-button-outline px-8 py-4 text-sm font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaInstagram size={18} />
                 INSTAGRAM
-              </a>
+              </MagnetButton>
             </div>
           </div>
           

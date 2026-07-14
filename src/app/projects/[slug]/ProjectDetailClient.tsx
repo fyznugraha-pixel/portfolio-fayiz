@@ -3,7 +3,10 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import BorderGlow from "@/components/BorderGlow";
+import SpotlightCard from "@/components/SpotlightCard";
+import ShinyText from "@/components/ShinyText";
+import MagnetButton from "@/components/MagnetButton";
+import SplitText from "@/components/SplitText";
 import { getSkillLogo } from "@/lib/getSkillLogo";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
@@ -288,14 +291,14 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     return (
       <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
         <section className="relative z-10 mx-auto max-w-[1440px] px-6 py-32 text-center">
-          <h1 className="font-display-xl text-5xl font-bold uppercase mb-8">{t.projectDetail.notFound}</h1>
+          <h1 className="font-display-xl text-5xl font-bold uppercase mb-8 text-white">{t.projectDetail.notFound}</h1>
           <p className="font-body text-secondary mb-12">
             {t.projectDetail.notFoundDesc}
           </p>
-          <Link href="/#projects" className="brutalist-button-outline px-8 py-4 inline-flex items-center">
+          <MagnetButton href="/#projects" className="glass-panel border border-white/10 px-8 py-4 inline-flex items-center rounded-full hover:bg-white/10 text-white font-label-mono text-sm tracking-wider">
             <ArrowLeft size={16} className="mr-2" />
             {t.projectDetail.backToProjects}
-          </Link>
+          </MagnetButton>
         </section>
       </main>
     );
@@ -339,20 +342,29 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
   };
 
   return (
-    <main className="min-h-screen bg-transparent text-white selection:bg-crimson selection:text-white pb-32">
+    <main className="min-h-screen bg-transparent text-white selection:bg-[#E9333A] selection:text-white pb-32">
       <section className="relative z-10 mx-auto max-w-[1440px] px-6 pt-32">
-        <div className="mb-12 border-b brutalist-border-subtle pb-8">
-          <Link href="/#projects" className="font-label-mono text-sm uppercase flex items-center text-secondary hover:text-white transition-colors mb-12">
+        <div className="mb-12 border-b border-white/10 pb-8">
+          <Link href="/#projects" className="font-label-mono text-sm uppercase flex items-center text-secondary hover:text-white transition-colors mb-12 w-max">
             <ArrowLeft size={16} className="mr-2" />
             {t.projectDetail.backToProjects}
           </Link>
 
-          <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
-            [ {project.category} ]
-          </p>
+          <div className="mb-4 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
+            <ShinyText text={`[ ${project.category} ]`} disabled={false} speed={3} className="text-[#E9333A]" />
+          </div>
 
-          <h1 className="font-display-xl text-5xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-5xl">
-            {project.title}
+          <h1 className="font-display-xl text-5xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-5xl text-white">
+            <SplitText
+              text={project.title}
+              className="inline-block"
+              delay={30}
+              animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+              animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+              easing="easeOutCubic"
+              threshold={0.2}
+              rootMargin="-50px"
+            />
           </h1>
 
           <p className="mt-6 max-w-4xl font-body text-lg leading-8 text-secondary">
@@ -363,7 +375,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
             {project.tools.map((tool) => {
               const logo = getSkillLogo(tool);
               return (
-                <span key={tool} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white glass-card rounded-full">
+                <span key={tool} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 bg-white/5 px-4 py-2 uppercase text-white rounded-full">
                   {logo && <img src={`/portofolio${logo}`} alt={tool} width={16} height={16} className="object-contain" />}
                   {tool}
                 </span>
@@ -373,19 +385,19 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         </div>
 
         <div className="mt-16">
-          <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b brutalist-border-subtle pb-4">
+          <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b border-white/10 pb-4">
             <div>
-              <p className="font-label-mono text-sm uppercase tracking-widest text-crimson mb-2">
+              <p className="font-label-mono text-sm uppercase tracking-widest text-[#E9333A] mb-2">
                 {t.projectDetail.preview}
               </p>
-              <h2 className="font-headline-lg text-3xl font-bold uppercase">{t.projectDetail.projectGallery}</h2>
+              <h2 className="font-headline-lg text-3xl font-bold uppercase text-white">{t.projectDetail.projectGallery}</h2>
             </div>
 
             <div className="flex items-center gap-4">
               <button
                 type="button"
                 onClick={handlePreviousImage}
-                className="brutalist-button-outline h-12 w-12 flex items-center justify-center glass-card hover:!text-crimson hover:!border-crimson transition-colors"
+                className="h-12 w-12 flex items-center justify-center glass-panel rounded-full border border-white/10 hover:bg-white/10 hover:text-[#E9333A] transition-colors"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={20} />
@@ -398,7 +410,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
               <button
                 type="button"
                 onClick={handleNextImage}
-                className="brutalist-button-outline h-12 w-12 flex items-center justify-center glass-card hover:!text-crimson hover:!border-crimson transition-colors"
+                className="h-12 w-12 flex items-center justify-center glass-panel rounded-full border border-white/10 hover:bg-white/10 hover:text-[#E9333A] transition-colors"
                 aria-label="Next image"
               >
                 <ChevronRight size={20} />
@@ -406,7 +418,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
             </div>
           </div>
 
-          <BorderGlow className="glass-card p-4 group">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="glass-panel p-4 group rounded-3xl">
             <div
               ref={galleryRef}
               onScroll={handleGalleryScroll}
@@ -414,7 +426,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                 scrollbarWidth: "none",
                 msOverflowStyle: "none",
               }}
-              className="gallery-slider relative z-10 flex snap-x snap-mandatory overflow-x-scroll bg-pure-black border border-[#222] rounded-xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="gallery-slider relative z-10 flex snap-x snap-mandatory overflow-x-scroll bg-[#050505] border border-white/5 rounded-2xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {images.map((image, index) => (
                 <div
@@ -432,7 +444,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                 </div>
               ))}
             </div>
-          </BorderGlow>
+          </SpotlightCard>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {images.map((image, index) => (
@@ -440,10 +452,10 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                 key={image}
                 type="button"
                 onClick={() => scrollToImage(index)}
-                className={`h-3 transition-all border rounded-full ${
+                className={`h-2 transition-all rounded-full ${
                   activeImageIndex === index
-                    ? "w-12 bg-crimson border-crimson"
-                    : "w-3 bg-charcoal border-[#555] hover:border-white"
+                    ? "w-10 bg-[#E9333A]"
+                    : "w-2 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Show image ${index + 1}`}
               />
@@ -452,76 +464,76 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         </div>
 
         <div className="mt-20 grid gap-6 md:grid-cols-3">
-          <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.role} ]</p>
-            <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.role}</h3>
-          </BorderGlow>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+            <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.role} ]</p>
+            <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.role}</h3>
+          </SpotlightCard>
 
-          <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.duration} ]</p>
-            <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.duration}</h3>
-          </BorderGlow>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+            <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.duration} ]</p>
+            <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.duration}</h3>
+          </SpotlightCard>
 
-          <BorderGlow className="p-8 glass-card">
-            <p className="font-label-mono text-sm uppercase text-crimson mb-2">[ {t.projectDetail.projectType} ]</p>
-            <h3 className="font-headline-lg text-2xl font-bold uppercase">{project.type}</h3>
-          </BorderGlow>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+            <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.projectType} ]</p>
+            <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.type}</h3>
+          </SpotlightCard>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <BorderGlow className="p-8 md:p-12 glass-card">
-            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">{t.projectDetail.problem}</h2>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-3xl">
+            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-[#E9333A]">{t.projectDetail.problem}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.problem}
             </p>
-          </BorderGlow>
+          </SpotlightCard>
 
-          <BorderGlow className="p-8 md:p-12 glass-card">
-            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-crimson">{t.projectDetail.solution}</h2>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-3xl">
+            <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-[#E9333A]">{t.projectDetail.solution}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.solution}
             </p>
-          </BorderGlow>
+          </SpotlightCard>
         </div>
 
-        <BorderGlow className="mt-12 glass-card p-8 md:p-12">
-          <h2 className="font-headline-lg text-3xl font-bold uppercase mb-8">{t.projectDetail.keyFeatures}</h2>
+        <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="mt-12 glass-panel p-8 md:p-12 rounded-3xl">
+          <h2 className="font-headline-lg text-3xl font-bold uppercase mb-8 text-white">{t.projectDetail.keyFeatures}</h2>
 
           <div className="grid gap-4 md:grid-cols-2">
             {project.features.map((feature) => (
               <div
                 key={feature}
-                className="flex items-start gap-4 border border-[#333] bg-pure-black px-5 py-4 rounded-xl"
+                className="flex items-start gap-4 border border-white/10 bg-white/5 px-5 py-4 rounded-xl"
               >
-                <div className="font-label-mono text-crimson shrink-0 mt-0.5">[+]</div>
+                <div className="font-label-mono text-[#E9333A] shrink-0 mt-0.5">[+]</div>
                 <span className="font-body text-secondary">{feature}</span>
               </div>
             ))}
           </div>
-        </BorderGlow>
+        </SpotlightCard>
 
-        <div className="mt-20 flex flex-wrap gap-4 border-t brutalist-border-subtle pt-12">
-          <Link href="/#projects" className="brutalist-button-outline px-8 py-4 flex items-center">
+        <div className="mt-20 flex flex-wrap gap-4 border-t border-white/10 pt-12">
+          <MagnetButton href="/#projects" className="glass-panel border border-white/10 px-8 py-4 flex items-center hover:bg-white/10 transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
             <ArrowLeft size={18} className="mr-3" />
             {t.projectDetail.backToProjects}
-          </Link>
+          </MagnetButton>
 
           {(project as any).link && (
-            <a 
+            <MagnetButton 
               href={(project as any).link} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="brutalist-button-outline px-8 py-4 flex items-center hover:bg-white hover:text-black transition-colors"
+              className="glass-panel border border-white/10 px-8 py-4 flex items-center hover:bg-white/10 transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white"
             >
               {t.projectDetail.visitWebsite || "VISIT WEBSITE"}
               <ExternalLink size={18} className="ml-3" />
-            </a>
+            </MagnetButton>
           )}
 
-          <Link href="/#contact" className="brutalist-button px-8 py-4 flex items-center bg-crimson hover:bg-white hover:text-black transition-colors">
+          <MagnetButton href="/#contact" className="px-8 py-4 flex items-center bg-[#E9333A] hover:bg-[#FF4D55] transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
             {t.hero.contactMe}
             <ExternalLink size={18} className="ml-3" />
-          </Link>
+          </MagnetButton>
         </div>
       </section>
     </main>

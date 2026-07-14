@@ -46,7 +46,8 @@ export const en = {
   projects: {
     tag: "[ Projects ]",
     title: "SELECTED\nWORKS.",
-    description: "A selection of projects demonstrating my combined skills in building web interfaces, mobile apps, and Figma-based UI designs.",
+    description: "Some of the projects that showcase my combined skills in building web interfaces, mobile apps, and Figma-based UI design.",
+    viewAll: "View All Projects",
     items: {
       cisadane: {
         title: "Festival Cisadane 2026",

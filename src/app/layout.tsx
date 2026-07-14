@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import ShapeGrid from "@/components/ShapeGrid";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/Providers";
+import LenisProvider from "@/components/LenisProvider";
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
@@ -42,12 +43,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans bg-[#09090b] text-zinc-100 overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
         <Providers>
-          <div className="fixed inset-0 -z-50 opacity-60">
-            <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
-          </div>
-          <Navbar />
-          {children}
-          <Analytics />
+          <div className="noise-overlay"></div>
+          <LenisProvider>
+            <div className="fixed inset-0 -z-50 opacity-60">
+              <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
+            </div>
+            <Navbar />
+            {children}
+            <Analytics />
+          </LenisProvider>
         </Providers>
       </body>
     </html>

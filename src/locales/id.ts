@@ -47,6 +47,7 @@ export const id = {
     tag: "[ Proyek ]",
     title: "KARYA\nPILIHAN.",
     description: "Beberapa project yang menunjukkan kombinasi kemampuan saya dalam membangun tampilan web, aplikasi mobile, dan desain UI berbasis Figma.",
+    viewAll: "Lihat Semua Proyek",
     items: {
       cisadane: {
         title: "Festival Cisadane 2026",

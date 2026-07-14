@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import MagnetButton from "./MagnetButton";
 
 const navItemIds = ["home", "about", "skills", "projects", "contact"];
 
@@ -90,16 +91,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 glass-panel rounded-full transition-all duration-500 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 bg-[#09090b]/85 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] rounded-full transition-all duration-500 ${
         isNavbarVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"
       }`}
     >
       <div className="flex justify-between items-center w-full px-4 md:px-6 py-3">
         <Link
           href="/#home"
-          className="font-display-lg text-xl font-bold text-white uppercase tracking-tight"
+          className="font-display-lg text-xl font-bold text-white uppercase tracking-tight flex items-center gap-1"
         >
-          FAYIZ<span className="text-indigo-500">.DEV</span>
+          FAYIZ<span className="text-[#E9333A]">.DEV</span>
         </Link>
 
         <div className="hidden md:flex gap-6 items-center">
@@ -112,13 +113,13 @@ export default function Navbar() {
                 href={item.href}
                 className={`font-body text-sm font-medium transition-all duration-300 relative ${
                   isActive
-                    ? "text-indigo-400"
+                    ? "text-[#E9333A]"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
+                  <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#E9333A] rounded-full shadow-[0_0_8px_rgba(233,51,58,0.8)]" />
                 )}
               </a>
             );
@@ -130,7 +131,7 @@ export default function Navbar() {
             <button
               onClick={() => setLanguage("en")}
               className={`px-3 py-1.5 rounded-full transition-all ${
-                language === "en" ? "bg-indigo-500/20 text-indigo-300 shadow-[inset_0_0_12px_rgba(99,102,241,0.2)]" : "hover:text-white"
+                language === "en" ? "bg-[#E9333A]/20 text-[#E9333A] shadow-[inset_0_0_12px_rgba(233,51,58,0.2)]" : "hover:text-white"
               }`}
             >
               EN
@@ -138,19 +139,19 @@ export default function Navbar() {
             <button
               onClick={() => setLanguage("id")}
               className={`px-3 py-1.5 rounded-full transition-all ${
-                language === "id" ? "bg-indigo-500/20 text-indigo-300 shadow-[inset_0_0_12px_rgba(99,102,241,0.2)]" : "hover:text-white"
+                language === "id" ? "bg-[#E9333A]/20 text-[#E9333A] shadow-[inset_0_0_12px_rgba(233,51,58,0.2)]" : "hover:text-white"
               }`}
             >
               ID
             </button>
           </div>
 
-          <a
+          <MagnetButton
             href="/#contact"
-            className="brutalist-button px-8 py-3 text-sm hidden md:block"
+            className="hidden md:flex bg-[#E9333A] hover:bg-[#FF4D55] text-white font-label-mono text-sm tracking-wider px-8 py-3 rounded-full transition-colors"
           >
             {t.navbar.letsTalk}
-          </a>
+          </MagnetButton>
 
           <button 
             className="md:hidden text-white"
@@ -187,13 +188,13 @@ export default function Navbar() {
             );
           })}
           
-          <a
-            href="/#contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="brutalist-button px-8 py-3 text-sm mt-2 w-full text-center"
-          >
-            {t.navbar.letsTalk}
-          </a>
+            <MagnetButton
+              href="/#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="bg-[#E9333A] text-white px-8 py-4 font-label-mono text-sm mt-4 w-full rounded-full flex justify-center items-center"
+            >
+              {t.navbar.letsTalk}
+            </MagnetButton>
         </div>
       </div>
     </nav>
