@@ -66,7 +66,11 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
   return (
     <div 
       className="relative w-full overflow-hidden flex items-center py-6 select-none border-t border-b brutalist-border-subtle bg-pure-black/30 backdrop-blur-sm z-20 group mask-gradient"
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => {
+        if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
+          setIsHovered(true);
+        }
+      }}
       onMouseLeave={() => setIsHovered(false)}
     >
       <style>{`
