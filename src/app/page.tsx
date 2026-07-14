@@ -13,7 +13,7 @@ import {
   Database,
   ArrowRight,
 } from "lucide-react";
-import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import BorderGlow from "@/components/BorderGlow";
@@ -415,7 +415,7 @@ export default function Home() {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <MagnetButton
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20tentang%20project%20atau%20kolaborasi.%0A%0ATerima%20kasih."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold w-full md:w-auto bg-[#E9333A] hover:bg-[#FF4D55] text-white transition-all shadow-[0_0_20px_rgba(233,51,58,0.3)] hover:shadow-[0_0_30px_rgba(233,51,58,0.5)] border border-white/10 hover:-translate-y-0.5"
@@ -425,7 +425,7 @@ export default function Home() {
                 </MagnetButton>
                 
                 <MagnetButton
-                  href="https://wa.me/6281234567890" 
+                  href="https://wa.me/6287794693241" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold w-full md:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] border border-white/10 hover:-translate-y-0.5"
@@ -437,7 +437,7 @@ export default function Home() {
 
               <div className="mt-12 flex justify-center gap-6">
                 <MagnetButton
-                  href="https://linkedin.com/in/fayiz" 
+                  href="https://linkedin.com/in/fayiz-apriwansyah-nugraha" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold tracking-wider"
@@ -447,13 +447,23 @@ export default function Home() {
                 </MagnetButton>
                 
                 <MagnetButton
-                  href="https://instagram.com/fayiz" 
+                  href="https://instagram.com/faizngraha" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold tracking-wider"
                 >
                   <FaInstagram size={18} />
                   INSTAGRAM
+                </MagnetButton>
+                
+                <MagnetButton
+                  href="https://github.com/fyznugraha-pixel" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold tracking-wider"
+                >
+                  <FaGithub size={18} />
+                  GITHUB
                 </MagnetButton>
               </div>
             </div>
