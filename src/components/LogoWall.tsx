@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 const logos = [
   { src: "/logo/HTML.webp", alt: "HTML" },
@@ -46,12 +45,10 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
       >
         {duplicatedLogos.map((logo, index) => (
           <div key={index} className="flex items-center justify-center transition-all duration-300 w-12 md:w-16 h-12 md:h-16 relative hover:scale-125 cursor-pointer">
-            <Image
-              src={logo.src}
+            <img
+              src={`/portofolio${logo.src}`}
               alt={logo.alt}
-              fill
-              unoptimized
-              className={`object-contain ${logo.className || ""}`}
+              className={`absolute inset-0 w-full h-full object-contain ${logo.className || ""}`}
             />
           </div>
         ))}
