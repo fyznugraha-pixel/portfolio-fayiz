@@ -25,7 +25,13 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="relative w-full overflow-hidden flex items-center py-6 pointer-events-none select-none border-t border-b brutalist-border-subtle bg-pure-black/30 backdrop-blur-sm z-20">
+    <div 
+      className="relative w-full overflow-hidden flex items-center py-6 pointer-events-none select-none border-t border-b brutalist-border-subtle bg-pure-black/30 backdrop-blur-sm z-20"
+      style={{
+        maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)"
+      }}
+    >
       <motion.div
         className="flex shrink-0 gap-8 md:gap-12 min-w-max pr-8 md:pr-12"
         animate={{ x: ["0%", "-33.333333%"] }}
