@@ -18,6 +18,7 @@ import Link from "next/link";
 import BorderGlow from "@/components/BorderGlow";
 import HeroDesktop from "@/components/HeroDesktop";
 import HeroMobile from "@/components/HeroMobile";
+import LogoWall from "@/components/LogoWall";
 import ProjectsDesktop from "@/components/ProjectsDesktop";
 import ProjectsMobile from "@/components/ProjectsMobile";
 import { getSkillLogo } from "@/lib/getSkillLogo";
@@ -196,6 +197,10 @@ export default function Home() {
 
         <div className="block md:hidden">
           <HeroMobile />
+        </div>
+        
+        <div className="w-full relative z-10 bg-pure-black mt-[-40px] md:mt-0 pb-12">
+          <LogoWall speed={50} />
         </div>
       </section>
 
