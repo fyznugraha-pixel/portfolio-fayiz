@@ -190,17 +190,17 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
-      <section id="home" className="relative z-10 border-b brutalist-border-subtle">
-        <div className="hidden md:block">
+      <section id="home" className="relative z-10 border-b brutalist-border-subtle flex flex-col">
+        <div className="w-full relative z-10 bg-pure-black pt-[100px] md:pt-[140px]">
+          <LogoWall speed={50} />
+        </div>
+
+        <div className="hidden md:block flex-grow">
           <HeroDesktop />
         </div>
 
-        <div className="block md:hidden">
+        <div className="block md:hidden flex-grow">
           <HeroMobile />
-        </div>
-        
-        <div className="w-full relative z-10 bg-pure-black mt-[-40px] md:mt-0">
-          <LogoWall speed={50} />
         </div>
       </section>
 

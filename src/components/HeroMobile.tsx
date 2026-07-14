@@ -25,7 +25,7 @@ export default function HeroMobile() {
   const { t } = useLanguage();
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 pb-16 pt-[120px] text-center relative">
+    <div className="mx-auto flex flex-col justify-center px-6 pb-16 pt-8 text-center relative">
       <div className="mb-8 flex flex-col -space-y-2 sm:-space-y-4">
         <div className="w-full">
           <TextPressure 
