@@ -46,9 +46,9 @@ export default function Hero() {
                   text={t.hero.fullstack}
                   className="inline-block"
                   delay={50}
-                  animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                  animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                  easing="easeOutCubic"
+                  from={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                  to={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                  ease="easeOutCubic"
                   threshold={0.2}
                   rootMargin="-50px"
                 />
@@ -58,9 +58,9 @@ export default function Hero() {
                   text={t.hero.developer}
                   className="inline-block"
                   delay={50}
-                  animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                  animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                  easing="easeOutCubic"
+                  from={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                  to={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                  ease="easeOutCubic"
                   threshold={0.2}
                   rootMargin="-50px"
                 />

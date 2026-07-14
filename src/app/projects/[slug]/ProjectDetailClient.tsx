@@ -359,9 +359,9 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
               text={project.title}
               className="inline-block"
               delay={30}
-              animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-              animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-              easing="easeOutCubic"
+              from={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+              to={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+              ease="easeOutCubic"
               threshold={0.2}
               rootMargin="-50px"
             />

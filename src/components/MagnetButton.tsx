@@ -10,9 +10,10 @@ interface MagnetButtonProps {
   target?: string;
   rel?: string;
   as?: any;
+  onClick?: () => void;
 }
 
-export default function MagnetButton({ children, className, href, target, rel, as = "a" }: MagnetButtonProps) {
+export default function MagnetButton({ children, className, href, target, rel, as = "a", onClick }: MagnetButtonProps) {
   const ref = useRef<any>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -37,6 +38,7 @@ export default function MagnetButton({ children, className, href, target, rel, a
       href={href}
       target={target}
       rel={rel}
+      onClick={onClick}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       className={className}
