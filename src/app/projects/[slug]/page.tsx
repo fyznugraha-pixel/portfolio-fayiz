@@ -1,14 +1,12 @@
 import ProjectDetailClient from "./ProjectDetailClient";
 
 const projectSlugs = [
-  "cisadane",
   "asia-afrika-festival",
   "campus-care",
   "literaplus",
   "proteksindo",
   "upself",
   "sistem-parkir",
-  "tactlinkinfo",
 ];
 
 type PageProps = {

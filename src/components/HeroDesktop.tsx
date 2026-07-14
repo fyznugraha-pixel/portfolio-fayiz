@@ -48,7 +48,7 @@ export default function HeroDesktop() {
                 flex={false} 
                 className="font-display-xl text-[14vw] sm:text-[12vw] md:text-[11vw] font-bold leading-[0.9] tracking-tighter uppercase text-left" 
                 stroke={true} 
-                strokeColor="#dc143c" 
+                strokeColor="#4f46e5" 
                 textColor="transparent" 
                 width={true} 
                 weight={true} 
@@ -78,7 +78,7 @@ export default function HeroDesktop() {
           >
             <a
               href="#projects"
-              className="brutalist-button border border-white px-10 py-5 font-label-mono text-lg text-center w-full md:w-auto hover:scale-105 transition-transform duration-300"
+              className="brutalist-button px-10 py-5 font-label-mono text-lg text-center w-full md:w-auto"
             >
               {t.hero.viewWork}
             </a>
@@ -100,7 +100,7 @@ export default function HeroDesktop() {
                   alt={photo.alt}
                   fill
                   sizes="150px"
-                  className="object-cover object-top grayscale opacity-100 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  className="object-cover object-top opacity-80 hover:opacity-100 transition-all duration-500 group-hover:scale-110"
                 />
               </div>
             ))}
@@ -112,7 +112,7 @@ export default function HeroDesktop() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.4 }}
-        className="absolute top-[45%] left-[5%] w-72 h-[450px] border-[4px] border-[#333] hover:border-crimson transition-colors duration-300 bg-transparent z-10 group overflow-hidden"
+        className="absolute top-[45%] left-[5%] w-72 h-[450px] glass-panel border border-white/10 hover:border-indigo-500/50 transition-colors duration-500 z-10 group overflow-hidden rounded-xl"
       >
         <Image
           src="/profile/fayiz.png"

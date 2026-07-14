@@ -46,7 +46,7 @@ export default function HeroMobile() {
             flex={false} 
             className="font-display-xl text-[14vw] sm:text-[12vw] font-bold leading-[0.9] tracking-tighter uppercase text-left break-words" 
             stroke={true} 
-            strokeColor="#dc143c" 
+            strokeColor="#4f46e5" 
             textColor="transparent" 
             width={true} 
             weight={true} 
@@ -70,7 +70,7 @@ export default function HeroMobile() {
         initial={{ opacity: 0, scale: 0.96, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative mx-auto w-full mb-8 border-[4px] border-[#333] hover:border-crimson transition-colors duration-300 bg-transparent group overflow-hidden"
+        className="relative mx-auto w-full mb-8 glass-panel border border-white/10 hover:border-indigo-500/50 transition-colors duration-500 z-10 group overflow-hidden rounded-xl"
       >
         <div className="relative z-10 h-[360px] w-full">
           <Image
@@ -79,7 +79,7 @@ export default function HeroMobile() {
             fill
             priority
             sizes="320px"
-            className="object-cover object-top grayscale opacity-100"
+            className="object-cover object-top opacity-80"
           />
         </div>
       </motion.div>
@@ -92,14 +92,14 @@ export default function HeroMobile() {
       >
         <a
           href="#projects"
-          className="brutalist-button border border-white px-8 py-4 font-label-mono text-base hover:scale-105 transition-transform duration-300"
+          className="brutalist-button px-8 py-4 font-label-mono text-base text-center"
         >
           {t.hero.viewWork}
         </a>
 
         <a
           href="#contact"
-          className="brutalist-button-outline w-full px-7 py-4 text-sm font-label-mono tracking-widest text-center"
+          className="glass-panel px-7 py-4 text-sm font-label-mono tracking-widest text-center hover:bg-white/10 transition-colors duration-300 rounded-full text-white"
         >
           {t.hero.contactMe}
         </a>

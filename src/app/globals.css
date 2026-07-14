@@ -57,11 +57,11 @@
   --color-pure-black: #000000;
   --color-charcoal: #121212;
 
-  --font-display-xl: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  --font-display-lg: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  --font-headline-lg: var(--font-space-grotesk), "Space Grotesk", sans-serif;
-  --font-label-mono: var(--font-space-mono), "Space Mono", monospace;
-  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-display-xl: var(--font-outfit), "Outfit", sans-serif;
+  --font-display-lg: var(--font-outfit), "Outfit", sans-serif;
+  --font-headline-lg: var(--font-outfit), "Outfit", sans-serif;
+  --font-label-mono: var(--font-mono), "JetBrains Mono", monospace;
+  --font-body: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
 
   --spacing-gutter: 24px;
   --spacing-margin-mobile: 20px;
@@ -79,39 +79,70 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-pure-black);
-  color: #FFFFFF;
+  background-color: #09090b;
+  color: #f4f4f5;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: var(--color-primary-container);
+  background: rgba(99, 102, 241, 0.3);
   color: white;
 }
 
-/* Brutalist Custom Utility Classes */
+/* Premium Liquid Glass Utilities */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .brutalist-border {
-  border: 1px solid #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .brutalist-border-subtle {
-  border: 1px solid #333333;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .brutalist-button {
-  background-color: var(--color-crimson);
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
   color: #FFFFFF;
   text-transform: uppercase;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
   font-family: var(--font-label-mono);
   border-radius: 9999px;
 }
 
 .brutalist-button:hover {
-  background-color: var(--color-inverse-primary);
-  color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
+  transform: translateY(-2px);
 }
 
 .brutalist-button-outline {

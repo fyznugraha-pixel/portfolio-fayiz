@@ -92,7 +92,7 @@ const projects = [
     title: "Tactlink Info",
     slug: "tactlinkinfo",
     category: "Web App / Information Portal",
-    image: "/tactlink/tactlink1.png",
+    image: "/projects/tactlinkinfo/tactlink-1.png",
     description:
       "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
@@ -214,15 +214,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+      <section id="about" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
-          <BorderGlow className="p-6 md:p-12 md:col-span-2 glass-card min-w-0">
+          <BorderGlow className="p-6 md:p-12 md:col-span-2 glass-panel min-w-0">
             <div className="relative z-10">
-              <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
+              <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
                 {t.about.tag}
               </p>
 
-              <h2 className="font-display-xl text-3xl sm:text-4xl font-bold md:text-5xl uppercase leading-none tracking-tight mb-8 whitespace-pre-line break-words">
+              <h2 className="font-display-xl text-4xl md:text-6xl font-bold uppercase leading-tight tracking-tighter whitespace-pre-line break-words text-white">
                 {t.about.title}
               </h2>
 
@@ -232,7 +232,7 @@ export default function Home() {
             </div>
           </BorderGlow>
 
-          <BorderGlow className="p-8 md:p-12 glass-card min-w-0">
+          <BorderGlow className="p-8 md:p-12 glass-panel min-w-0">
             <div className="relative z-10">
               <div className="mb-8 text-white">
                 <Palette size={48} strokeWidth={1} />
@@ -249,7 +249,7 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
           {translatedServices.map((service, index) => (
-            <BorderGlow key={service.title} className="p-8 md:p-10 glass-card min-w-0">
+            <BorderGlow key={service.title} className="p-8 md:p-10 glass-panel glass-panel-hover min-w-0 rounded-3xl">
               <div className="relative z-10">
                 <div className="mb-6 text-white">
                   {service.icon}
@@ -266,10 +266,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+      <section id="skills" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
         <div className="mb-16 grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end w-full">
           <div>
-            <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
+            <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
               {t.skills.tag}
             </p>
 
@@ -283,8 +283,8 @@ export default function Home() {
           </div>
 
           <div className="hidden justify-end md:flex">
-            <div className="flex h-32 w-32 items-center justify-center border brutalist-border-subtle text-white glass-card rounded-3xl">
-              <Database size={48} strokeWidth={1} />
+            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+              <Database size={48} strokeWidth={1.5} className="text-indigo-400" />
             </div>
           </div>
         </div>
@@ -293,10 +293,10 @@ export default function Home() {
           {translatedSkillGroups.map((group) => (
             <BorderGlow
               key={group.title}
-              className="p-8 glass-card hover:bg-white/10 transition-colors duration-300 min-w-0"
+              className="p-8 glass-panel glass-panel-hover min-w-0 rounded-3xl"
             >
               <div className="relative z-10">
-                <div className="mb-6 text-white border brutalist-border-subtle w-14 h-14 flex items-center justify-center rounded-2xl">
+                <div className="mb-6 text-indigo-400 border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
                   {group.icon}
                 </div>
 
@@ -310,7 +310,7 @@ export default function Home() {
                   {group.skills.map((skill) => {
                     const logo = getSkillLogo(skill);
                     return (
-                      <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white hover:bg-crimson hover:border-crimson hover:text-white transition-colors cursor-default rounded-full">
+                      <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 px-4 py-2 uppercase text-white hover:bg-white/10 hover:border-white/20 transition-colors cursor-default rounded-full">
                         {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
                         {skill}
                       </span>
@@ -323,9 +323,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b brutalist-border-subtle w-full overflow-hidden">
+      <section id="projects" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 border-b border-white/10 w-full overflow-hidden">
         <div className="mb-16 w-full">
-          <p className="mb-4 font-label-mono text-sm uppercase tracking-widest text-crimson">
+          <p className="mb-4 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
             {t.projects.tag}
           </p>
 
@@ -348,9 +348,9 @@ export default function Home() {
       </section>
 
       <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 w-full overflow-hidden">
-        <BorderGlow className="glass-card p-8 md:p-20 text-center relative overflow-hidden group min-w-0">
+        <BorderGlow className="glass-panel glass-panel-hover p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
           <div className="relative z-10 w-full">
-            <p className="mb-6 font-label-mono text-sm uppercase tracking-widest text-crimson">
+            <p className="mb-6 font-body font-bold text-sm uppercase tracking-widest text-indigo-400">
               {t.contact.tag}
             </p>
 
@@ -405,12 +405,12 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 border border-[#333] rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
-          <div className="absolute -top-24 -left-24 w-64 h-64 border border-[#333] rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 border border-white/10 rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+          <div className="absolute -top-24 -left-24 w-64 h-64 border border-white/10 rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
         </BorderGlow>
       </section>
 
-      <footer className="relative z-10 border-t brutalist-border-subtle px-6 py-10 text-center font-label-mono text-sm text-secondary uppercase tracking-widest bg-pure-black">
+      <footer className="relative z-10 border-t border-white/10 px-6 py-10 text-center font-label-mono text-sm text-secondary uppercase tracking-widest bg-pure-black">
         {t.contact.footer} {new Date().getFullYear()}
       </footer>
     </main>

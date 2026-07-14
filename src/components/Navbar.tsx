@@ -90,19 +90,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-pure-black border-b brutalist-border-subtle transition-transform duration-300 ${
-        isNavbarVisible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 glass-panel rounded-full transition-all duration-500 ${
+        isNavbarVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"
       }`}
     >
-      <div className="flex justify-between items-center w-full px-6 py-6 max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center w-full px-4 md:px-6 py-3">
         <Link
           href="/#home"
-          className="font-headline-lg text-2xl font-black text-on-surface uppercase tracking-tight"
+          className="font-display-lg text-xl font-bold text-white uppercase tracking-tight"
         >
-          FAYIZ.DEV
+          FAYIZ<span className="text-indigo-500">.DEV</span>
         </Link>
 
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex gap-6 items-center">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
 
@@ -110,32 +110,35 @@ export default function Navbar() {
               <a
                 key={item.id}
                 href={item.href}
-                className={`font-label-mono text-sm uppercase transition-colors duration-200 ${
+                className={`font-body text-sm font-medium transition-all duration-300 relative ${
                   isActive
-                    ? "text-crimson border-b-2 border-crimson pb-1"
-                    : "text-secondary hover:text-white pb-1 border-b-2 border-transparent"
+                    ? "text-indigo-400"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 {item.label}
+                {isActive && (
+                  <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]" />
+                )}
               </a>
             );
           })}
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex items-center font-label-mono text-sm tracking-widest text-secondary border border-[#333] rounded-full p-1 bg-pure-black">
+          <div className="flex items-center font-body font-medium text-xs text-zinc-400 bg-white/5 border border-white/10 rounded-full p-1 backdrop-blur-md">
             <button
               onClick={() => setLanguage("en")}
-              className={`px-3 py-1.5 rounded-full transition-colors ${
-                language === "en" ? "bg-white text-black" : "hover:text-white"
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                language === "en" ? "bg-indigo-500/20 text-indigo-300 shadow-[inset_0_0_12px_rgba(99,102,241,0.2)]" : "hover:text-white"
               }`}
             >
               EN
             </button>
             <button
               onClick={() => setLanguage("id")}
-              className={`px-3 py-1.5 rounded-full transition-colors ${
-                language === "id" ? "bg-white text-black" : "hover:text-white"
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                language === "id" ? "bg-indigo-500/20 text-indigo-300 shadow-[inset_0_0_12px_rgba(99,102,241,0.2)]" : "hover:text-white"
               }`}
             >
               ID

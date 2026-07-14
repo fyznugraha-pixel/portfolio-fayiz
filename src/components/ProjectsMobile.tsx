@@ -28,9 +28,9 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <BorderGlow
             key={project.title}
-            className="group block min-w-[90%] snap-center flex-col h-full glass-card hover:bg-crimson transition-colors duration-300 p-4"
+            className="group block min-w-[90%] snap-center flex-col h-full glass-panel transition-colors duration-300 p-4 rounded-3xl"
           >
-          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video brutalist-border mb-6 overflow-hidden glass-card rounded-2xl">
+          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
             <Image
               src={project.image}
               alt={`${project.title} preview`}
@@ -46,7 +46,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
                 <h3 className="font-headline-lg text-2xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="font-label-mono text-crimson flex items-center gap-1 uppercase group-hover:text-white transition-colors shrink-0"
+                  className="font-label-mono text-indigo-400 flex items-center gap-1 uppercase group-hover:text-white transition-colors shrink-0"
                 >
                   <ArrowRight size={20} />
                 </Link>
@@ -58,15 +58,15 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
                 {project.tools.slice(0, 3).map((tool) => {
                   const logo = getSkillLogo(tool);
                   return (
-                    <span key={tool} className="flex items-center gap-1 font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-2 py-1 uppercase text-secondary rounded-full">
-                      {logo && <img src={`/portofolio${logo}`} alt={tool} width={12} height={12} className="object-contain" />}
+                    <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full">
+                      {logo && <img src={`/portofolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
                       {tool}
                     </span>
                   );
                 })}
                 {project.tools.length > 3 && (
-                  <span className="font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
-                    +{project.tools.length - 3}
+                  <span className="font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full">
+                    +{project.tools.length - 3} MORE
                   </span>
                 )}
               </div>
