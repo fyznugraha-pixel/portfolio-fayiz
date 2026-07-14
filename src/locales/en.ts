@@ -8,21 +8,22 @@ export const en = {
     letsTalk: "Let's Talk",
   },
   hero: {
-    frontend: "FRONTEND",
+    fullstack: "FULLSTACK",
     developer: "DEVELOPER",
+    uiux: "UI/UX DESIGNER",
     description: "Hi, I’m Fayiz Apriwansyah Nugraha. Architecting digital monoliths. Brutalist aesthetics meeting high-performance web engineering.",
     viewWork: "VIEW MY WORK",
     contactMe: "CONTACT ME",
   },
   about: {
     tag: "[ About Me ]",
-    title: "Blending Design Taste\nWith Front-End Implementation.",
-    description: "I am an Information Systems student with a strong passion for front-end development and UI design. I specialize in designing digital interfaces using Figma, and translating them into responsive, clean, and user-friendly web experiences.",
+    title: "Blending Design Taste\nWith Fullstack Implementation.",
+    description: "I am an Information Systems student with a strong passion for fullstack web development and UI design. I specialize in designing digital interfaces using Figma, and building them into robust, responsive, clean, and user-friendly end-to-end web applications.",
     focusTitle: "Design Focus",
     focusDescription: "Clean layouts, modern visuals, responsive design, and straightforward user experiences.",
     services: {
-      frontendTitle: "Front-End Web",
-      frontendDesc: "Building responsive, clean, and highly usable website interfaces.",
+      frontendTitle: "Fullstack Web",
+      frontendDesc: "Building responsive, reliable, and highly usable end-to-end web applications from client to server.",
       mobileTitle: "Mobile UI Design",
       mobileDesc: "Designing mobile application interfaces with simple flows and modern visuals.",
       uiTitle: "UI System",
@@ -221,21 +222,6 @@ export const en = {
           "Seminar and competition information",
           "Mobile UI design",
           "UX flow and prototyping"
-        ]
-      },
-      tactlinkinfo: {
-        role: "Frontend Developer",
-        duration: "Client Project",
-        type: "Web Application",
-        overview: "An integrated digital information portal for enterprise needs. Tactlink Info delivers fast data access and a modern interface to support business operations.",
-        problem: "The company needed a centralized platform to display information, statistical data, and service profiles dynamically with fast performance.",
-        solution: "Developed an information portal using modern frameworks (React & Next.js) with performance optimization and a responsive interface.",
-        features: [
-          "Centralized information portal",
-          "Dynamic statistical display",
-          "Responsive interface design",
-          "SEO and performance optimization",
-          "Internal API integration"
         ]
       }
     }

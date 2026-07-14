@@ -29,7 +29,7 @@ export default function HeroMobile() {
       <div className="mb-8 flex flex-col -space-y-2 sm:-space-y-4">
         <div className="w-full">
           <TextPressure 
-            text={t.hero.frontend} 
+            text={t.hero.fullstack} 
             flex={false} 
             className="font-display-xl text-[14vw] sm:text-[12vw] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left break-words" 
             width={true} 

@@ -8,21 +8,22 @@ export const id = {
     letsTalk: "Mari Berbincang",
   },
   hero: {
-    frontend: "FRONTEND",
+    fullstack: "FULLSTACK",
     developer: "DEVELOPER",
+    uiux: "UI/UX DESIGNER",
     description: "Halo, saya Fayiz Apriwansyah Nugraha. Merancang fondasi digital yang solid. Memadukan estetika brutalisme dengan performa web tingkat tinggi.",
     viewWork: "LIHAT KARYA SAYA",
     contactMe: "HUBUNGI SAYA",
   },
   about: {
-    tag: "[ Tentang Saya ]",
-    title: "Memadukan Selera Desain\nDengan Implementasi Front-End.",
-    description: "Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada front-end development dan UI design. Saya terbiasa merancang tampilan digital menggunakan Figma, lalu mengubahnya menjadi interface yang responsif, rapi, dan mudah digunakan.",
+    tag: "[ Profil Saya ]",
+    title: "Memadukan Selera Desain\nDengan Implementasi Fullstack.",
+    description: "Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada fullstack web development dan UI design. Saya terbiasa merancang tampilan digital menggunakan Figma, lalu membangunnya menjadi aplikasi web end-to-end yang tangguh, responsif, rapi, dan mudah digunakan.",
     focusTitle: "Design Focus",
     focusDescription: "Clean layout, modern visual, responsive design, dan pengalaman pengguna yang sederhana.",
     services: {
-      frontendTitle: "Front-End Web",
-      frontendDesc: "Membangun tampilan website yang responsif, rapi, dan nyaman digunakan.",
+      frontendTitle: "Fullstack Web",
+      frontendDesc: "Membangun sistem dan tampilan aplikasi web dari sisi klien hingga server yang responsif, andal, dan nyaman digunakan.",
       mobileTitle: "Mobile UI Design",
       mobileDesc: "Merancang tampilan aplikasi mobile dengan alur yang sederhana dan visual modern.",
       uiTitle: "UI System",
@@ -221,21 +222,6 @@ export const id = {
           "Informasi seminar dan lomba",
           "Mobile UI design",
           "UX flow dan prototype"
-        ]
-      },
-      tactlinkinfo: {
-        role: "Frontend Developer",
-        duration: "Client Project",
-        type: "Web Application",
-        overview: "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
-        problem: "Perusahaan membutuhkan platform terpusat untuk menampilkan informasi, data statistik, dan profil layanan secara dinamis dengan performa yang cepat.",
-        solution: "Mengembangkan portal informasi menggunakan framework modern (React & Next.js) dengan optimasi performa dan antarmuka responsif.",
-        features: [
-          "Portal informasi terpusat",
-          "Tampilan statistik dinamis",
-          "Desain antarmuka responsif",
-          "Optimasi SEO dan performa",
-          "Integrasi API internal"
         ]
       }
     }

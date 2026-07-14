@@ -63,6 +63,7 @@ const projectDetails = {
       "Saya membangun website event berbasis Next.js dan Supabase yang menyediakan landing page informatif, form registrasi visitor, serta dashboard admin private untuk memantau data pendaftar. Website ini membantu proses publikasi event dan pengelolaan data visitor menjadi lebih rapi, responsif, dan mudah digunakan.",
     tools: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
     features: [
+      "Ticket management system for registration",
       "Responsive landing page",
       "Visitor registration form",
       "Country code input for WhatsApp number",
@@ -223,13 +224,13 @@ const projectDetails = {
     title: "Tactlink Info",
     category: "Web App / Information Portal",
     images: [
-      "/tactlink/tactlink1.png",
-      "/tactlink/tactlink2.png",
-      "/tactlink/tactlink3.png",
-      "/tactlink/tactlink4.png",
-      "/tactlink/tactlink5.png",
-      "/tactlink/tactlink6.png",
-      "/tactlink/tactlink7.png",
+      "/projects/tactlinkinfo/tactlink-1.png",
+      "/projects/tactlinkinfo/tactlink-2.png",
+      "/projects/tactlinkinfo/tactlink-3.png",
+      "/projects/tactlinkinfo/tactlink-4.png",
+      "/projects/tactlinkinfo/tactlink-5.png",
+      "/projects/tactlinkinfo/tactlink-6.png",
+      "/projects/tactlinkinfo/tactlink-7.png",
     ],
     role: "Frontend Developer",
     duration: "Client Project",
@@ -268,7 +269,6 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     "proteksindo": "proteksindo",
     "sistem-parkir": "parkir",
     "upself": "upself",
-    "tactlinkinfo": "tactlinkinfo",
   };
 
   const projectKey = projectSlugToKey[slug];

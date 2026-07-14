@@ -31,7 +31,7 @@ export default function HeroDesktop() {
           <div className="mb-12 flex flex-col -space-y-4 md:-space-y-6 lg:-space-y-10">
             <div className="w-full">
               <TextPressure 
-                text={t.hero.frontend} 
+                text={t.hero.fullstack} 
                 flex={false} 
                 className="font-display-xl text-[14vw] sm:text-[12vw] md:text-[11vw] font-bold leading-[0.9] text-white tracking-tighter uppercase text-left" 
                 width={true} 
