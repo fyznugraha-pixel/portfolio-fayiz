@@ -290,8 +290,8 @@ export default function Home() {
             </div>
           </ParallaxSection>
 
-          <ParallaxSection speed={0.6} className="hidden justify-end md:flex">
-            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(233,51,58,0.15)] border-white/10">
+          <ParallaxSection speed={0.6} className="hidden md:flex justify-end items-end">
+            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(233,51,58,0.15)] border-white/10 ml-auto">
               <Database size={48} strokeWidth={1.5} className="text-[#E9333A]" />
             </div>
           </ParallaxSection>
