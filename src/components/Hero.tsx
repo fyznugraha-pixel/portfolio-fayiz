@@ -111,7 +111,7 @@ export default function Hero() {
                   className={`relative h-40 overflow-hidden group ${index !== 2 ? 'border-r brutalist-border-subtle' : ''}`}
                 >
                   <Image
-                    src={photo.src}
+                    src={photo.src.startsWith('/portofolio') ? photo.src : `/portofolio${photo.src}`}
                     alt={photo.alt}
                     fill
                     sizes="150px"
@@ -130,7 +130,7 @@ export default function Hero() {
           className="relative md:absolute md:top-[45%] md:left-[5%] w-full max-w-sm mx-auto md:w-72 h-[360px] md:h-[450px] glass-panel border border-white/10 hover:border-[#E9333A]/50 transition-colors duration-500 z-10 group overflow-hidden rounded-xl"
         >
           <Image
-            src="/profile/fayiz.png"
+            src="/portofolio/profile/fayiz.png"
             alt="Fayiz Apriwansyah Nugraha"
             fill
             priority

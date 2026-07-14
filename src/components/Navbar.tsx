@@ -13,12 +13,14 @@ export default function Navbar() {
   const pathname = usePathname();
   const { t, language, setLanguage } = useLanguage();
 
+  const isHome = pathname === "/";
+
   const navItems = [
-    { label: t.navbar.home, href: "/#home", id: "home" },
-    { label: t.navbar.about, href: "/#about", id: "about" },
-    { label: t.navbar.skills, href: "/#skills", id: "skills" },
-    { label: t.navbar.projects, href: "/#projects", id: "projects" },
-    { label: t.navbar.contact, href: "/#contact", id: "contact" },
+    { label: t.navbar.home, href: isHome ? "#home" : "/#home", id: "home" },
+    { label: t.navbar.about, href: isHome ? "#about" : "/#about", id: "about" },
+    { label: t.navbar.skills, href: isHome ? "#skills" : "/#skills", id: "skills" },
+    { label: t.navbar.projects, href: isHome ? "#projects" : "/#projects", id: "projects" },
+    { label: t.navbar.contact, href: isHome ? "#contact" : "/#contact", id: "contact" },
   ];
 
   const [activeSection, setActiveSection] = useState(
@@ -148,7 +150,7 @@ export default function Navbar() {
 
           <MagnetButton
             as={Link}
-            href="/#contact"
+            href={isHome ? "#contact" : "/#contact"}
             className="hidden md:flex bg-[#E9333A] hover:bg-[#FF4D55] text-white font-label-mono text-sm tracking-wider px-8 py-3 rounded-full transition-colors"
           >
             {t.navbar.letsTalk}
@@ -191,7 +193,7 @@ export default function Navbar() {
           
             <MagnetButton
               as={Link}
-              href="/#contact"
+              href={isHome ? "#contact" : "/#contact"}
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-[#E9333A] text-white px-8 py-4 font-label-mono text-sm mt-4 w-full rounded-full flex justify-center items-center"
             >

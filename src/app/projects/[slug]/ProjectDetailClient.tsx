@@ -45,7 +45,7 @@ const projectDetails = {
     link: "https://www.tactlink.com/festivalcisadane/id",
   },
   "asia-afrika-festival": {
-    title: "Asia Afrika Festival",
+    title: "Asia Africa Festival",
     category: "Web App / Event Registration",
     images: [
       "/projects/aaf/aaf.png",
@@ -227,13 +227,13 @@ const projectDetails = {
     title: "Tactlink Info",
     category: "Web App / Information Portal",
     images: [
-      "/projects/tactlinkinfo/tactlink-1.png",
-      "/projects/tactlinkinfo/tactlink-2.png",
-      "/projects/tactlinkinfo/tactlink-3.png",
-      "/projects/tactlinkinfo/tactlink-4.png",
-      "/projects/tactlinkinfo/tactlink-5.png",
-      "/projects/tactlinkinfo/tactlink-6.png",
-      "/projects/tactlinkinfo/tactlink-7.png",
+      "/projects/tactlinkinfo/tactlink1.png",
+      "/projects/tactlinkinfo/tactlink2.png",
+      "/projects/tactlinkinfo/tactlink3.png",
+      "/projects/tactlinkinfo/tactlink4.png",
+      "/projects/tactlinkinfo/tactlink5.png",
+      "/projects/tactlinkinfo/tactlink6.png",
+      "/projects/tactlinkinfo/tactlink7.png",
     ],
     role: "Frontend Developer",
     duration: "Client Project",
@@ -272,6 +272,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     "proteksindo": "proteksindo",
     "sistem-parkir": "parkir",
     "upself": "upself",
+    "tactlinkinfo": "tactlinkinfo",
   };
 
   const projectKey = projectSlugToKey[slug];
@@ -357,7 +358,8 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
           <h1 className="font-display-xl text-5xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-5xl text-white">
             <SplitText
               text={project.title}
-              className="inline-block"
+              className="block w-full break-words"
+              textAlign="left"
               delay={30}
               from={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
               to={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -426,15 +428,15 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                 scrollbarWidth: "none",
                 msOverflowStyle: "none",
               }}
-              className="gallery-slider relative z-10 flex snap-x snap-mandatory overflow-x-scroll bg-[#050505] border border-white/5 rounded-2xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="gallery-slider relative z-10 flex snap-x snap-mandatory overflow-x-scroll bg-[#050505] border border-white/5 rounded-2xl [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-full aspect-video"
             >
               {images.map((image, index) => (
                 <div
                   key={image}
-                  className="flex min-w-full snap-start items-center justify-center relative aspect-video"
+                  className="flex min-w-full w-full shrink-0 snap-start items-center justify-center relative h-full"
                 >
                   <Image
-                    src={image}
+                    src={image.startsWith('/portofolio') ? image : `/portofolio${image}`}
                     alt={`${project.title} preview ${index + 1}`}
                     fill
                     sizes="(max-width: 1440px) 100vw, 1440px"

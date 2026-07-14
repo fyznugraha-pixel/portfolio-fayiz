@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
-import SplashCursor from "./SplashCursor";
 
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -41,17 +40,6 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
   return (
     <>
-      {!isTouchDevice && (
-        <div className="fixed inset-0 z-[100] pointer-events-none">
-          <SplashCursor 
-            COLOR="#E9333A" 
-            SPLAT_RADIUS={0.1}
-            SPLAT_FORCE={4000}
-            DENSITY_DISSIPATION={4}
-            VELOCITY_DISSIPATION={2}
-          />
-        </div>
-      )}
       {children}
     </>
   );

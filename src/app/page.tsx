@@ -38,7 +38,7 @@ const projects = [
     tools: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
   },
   {
-    title: "Asia Afrika Festival",
+    title: "Asia Africa Festival",
     slug: "asia-afrika-festival",
     category: "Web App / Event Registration",
     image: "/projects/aaf/aaf.png",
@@ -95,7 +95,7 @@ const projects = [
     title: "Tactlink Info",
     slug: "tactlinkinfo",
     category: "Web App / Information Portal",
-    image: "/projects/tactlinkinfo/tactlink-1.png",
+    image: "/projects/tactlinkinfo/tactlink1.png",
     description:
       "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
@@ -378,12 +378,6 @@ export default function Home() {
             </h2>
           </div>
 
-          <Link href="/projects" className="group flex w-max items-center gap-4 border border-white/10 glass-panel px-6 py-4 font-label-mono text-sm uppercase tracking-wider text-white hover:bg-white/10 transition-colors rounded-full">
-            {t.projects.viewAll}
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E9333A] text-white transition-transform group-hover:scale-110">
-              <ArrowRight size={16} />
-            </div>
-          </Link>
         </div>
 
         <div className="flex-grow w-full">
@@ -411,17 +405,17 @@ export default function Home() {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.%0A%0AThank%20you."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutalist-button px-8 py-4 text-sm font-bold w-full md:w-auto bg-[#E9333A] hover:bg-[#FF4D55]"
+                className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold w-full md:w-auto bg-[#E9333A] hover:bg-[#FF4D55] text-white transition-all shadow-[0_0_20px_rgba(233,51,58,0.3)] hover:shadow-[0_0_30px_rgba(233,51,58,0.5)] border border-white/10 hover:-translate-y-0.5"
               >
                 <Mail size={18} />
-                fyznugraha@gmail.com
+                EMAIL
               </MagnetButton>
 
               <MagnetButton
                 href="https://wa.me/6287794693241"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
+                className="inline-flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 hover:bg-[#E9333A] hover:border-[#E9333A] hover:shadow-[0_0_20px_rgba(233,51,58,0.3)] transition-all px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaWhatsapp size={18} />
                 WHATSAPP
@@ -431,7 +425,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/fayiznugraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
+                className="inline-flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 hover:bg-[#E9333A] hover:border-[#E9333A] hover:shadow-[0_0_20px_rgba(233,51,58,0.3)] transition-all px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaLinkedin size={18} />
                 LINKEDIN
@@ -441,7 +435,7 @@ export default function Home() {
                 href="https://instagram.com/faizngraha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-panel border border-white/10 hover:bg-white/10 transition-colors px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
+                className="inline-flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 hover:bg-[#E9333A] hover:border-[#E9333A] hover:shadow-[0_0_20px_rgba(233,51,58,0.3)] transition-all px-8 py-4 text-sm font-bold w-full md:w-auto rounded-full text-white"
               >
                 <FaInstagram size={18} />
                 INSTAGRAM

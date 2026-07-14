@@ -3,7 +3,8 @@ import { Inter, Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/goog
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import ShapeGrid from "@/components/ShapeGrid";
+import CursorGrid from "@/components/CursorGrid";
+import GradualBlur from "@/components/GradualBlur";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/Providers";
 import LenisProvider from "@/components/LenisProvider";
@@ -45,10 +46,11 @@ export default function RootLayout({
         <Providers>
           <div className="noise-overlay"></div>
           <LenisProvider>
-            <div className="fixed inset-0 -z-50 opacity-60">
-              <ShapeGrid shape="square" hoverTrailAmount={2} squareSize={65} direction="down" speed={0.1} hoverFillColor="#c8102e" borderColor="#ffffff" />
+            <div className="fixed inset-0 -z-50 pointer-events-none opacity-60">
+              <CursorGrid color="#E9333A" />
             </div>
             <Navbar />
+            <GradualBlur preset="page-footer" zIndex={40} hoverIntensity={0} animated={true} height="7.5rem" strength={5} duration="0.15s" />
             {children}
             <Analytics />
           </LenisProvider>

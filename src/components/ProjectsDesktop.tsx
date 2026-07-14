@@ -22,7 +22,7 @@ function ProjectCard({ project }: { project: Project }) {
     <BorderGlow className="group cursor-pointer flex flex-col h-full glass-panel glass-panel-hover transition-colors duration-300 p-6 rounded-3xl">
       <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
         <Image
-          src={project.image}
+          src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
           alt={`${project.title} preview`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"

@@ -55,7 +55,7 @@ export const id = {
         description: "Festival Cisadane 2026 adalah website event yang dirancang untuk menghadirkan pengalaman digital yang merepresentasikan semangat, budaya, dan energi Festival Cisadane secara modern dan interaktif."
       },
       aaf: {
-        title: "Asia Afrika Festival",
+        title: "Asia Africa Festival",
         category: "Web App / Event Registration",
         description: "Asia Africa Festival 2026 Website adalah platform event berbasis Next.js dan Supabase untuk menampilkan informasi festival, program acara, registrasi visitor, serta dashboard admin untuk mengelola data pendaftar."
       },
@@ -223,6 +223,21 @@ export const id = {
           "Informasi seminar dan lomba",
           "Mobile UI design",
           "UX flow dan prototype"
+        ]
+      },
+      tactlinkinfo: {
+        role: "Frontend Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
+        problem: "Perusahaan membutuhkan platform terpusat untuk menampilkan informasi, data statistik, dan profil layanan secara dinamis dengan performa yang cepat.",
+        solution: "Mengembangkan portal informasi menggunakan framework modern (React & Next.js) dengan optimasi performa dan antarmuka responsif.",
+        features: [
+          "Portal informasi terpusat",
+          "Tampilan statistik dinamis",
+          "Desain antarmuka responsif",
+          "Optimasi SEO dan performa",
+          "Integrasi API internal"
         ]
       }
     }
