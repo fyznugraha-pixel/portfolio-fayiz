@@ -49,7 +49,7 @@ function ProjectCard({ project }: { project: Project }) {
               const logo = getSkillLogo(tool);
               return (
                 <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
-                  {logo && <Image src={logo} alt={tool} width={14} height={14} className="object-contain" />}
+                  {logo && <img src={`/portofolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
                   {tool}
                 </span>
               );

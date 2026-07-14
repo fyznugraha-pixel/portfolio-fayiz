@@ -332,7 +332,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
               const logo = getSkillLogo(tool);
               return (
                 <span key={tool} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white glass-card rounded-full">
-                  {logo && <Image src={logo} alt={tool} width={16} height={16} className="object-contain" />}
+                  {logo && <img src={`/portofolio${logo}`} alt={tool} width={16} height={16} className="object-contain" />}
                   {tool}
                 </span>
               );

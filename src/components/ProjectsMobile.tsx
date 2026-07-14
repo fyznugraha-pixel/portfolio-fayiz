@@ -59,7 +59,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
                   const logo = getSkillLogo(tool);
                   return (
                     <span key={tool} className="flex items-center gap-1 font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-2 py-1 uppercase text-secondary rounded-full">
-                      {logo && <Image src={logo} alt={tool} width={12} height={12} className="object-contain" />}
+                      {logo && <img src={`/portofolio${logo}`} alt={tool} width={12} height={12} className="object-contain" />}
                       {tool}
                     </span>
                   );

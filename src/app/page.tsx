@@ -301,7 +301,7 @@ export default function Home() {
                     const logo = getSkillLogo(skill);
                     return (
                       <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white hover:bg-crimson hover:border-crimson hover:text-white transition-colors cursor-default rounded-full">
-                        {logo && <Image src={logo} alt={skill} width={16} height={16} className="object-contain" />}
+                        {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
                         {skill}
                       </span>
                     );
