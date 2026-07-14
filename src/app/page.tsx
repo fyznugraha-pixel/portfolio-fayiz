@@ -199,7 +199,7 @@ export default function Home() {
           <HeroMobile />
         </div>
         
-        <div className="w-full relative z-10 bg-pure-black mt-[-40px] md:mt-0 pb-12">
+        <div className="w-full relative z-10 bg-pure-black mt-[-40px] md:mt-0">
           <LogoWall speed={50} />
         </div>
       </section>

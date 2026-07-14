@@ -9,7 +9,7 @@ const logos = [
   { src: "/logo/javascript.png", alt: "JavaScript" },
   { src: "/logo/Typescript.webp", alt: "TypeScript" },
   { src: "/logo/react.webp", alt: "React" },
-  { src: "/logo/next-js.png", alt: "Next.js" },
+  { src: "/logo/next-js.png", alt: "Next.js", className: "invert" },
   { src: "/logo/Tailwind.webp", alt: "Tailwind CSS" },
   { src: "/logo/php.webp", alt: "PHP" },
   { src: "/logo/laravel.webp", alt: "Laravel" },
@@ -41,7 +41,7 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
               src={logo.src}
               alt={logo.alt}
               fill
-              className="object-contain"
+              className={`object-contain ${logo.className || ""}`}
             />
           </div>
         ))}
