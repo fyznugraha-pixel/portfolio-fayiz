@@ -27,7 +27,7 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
   return (
     <div className="relative w-full overflow-hidden flex items-center py-6 pointer-events-none select-none border-t border-b brutalist-border-subtle bg-pure-black/30 backdrop-blur-sm z-20">
       <motion.div
-        className="flex shrink-0 gap-16 md:gap-24 min-w-max pr-16 md:pr-24"
+        className="flex shrink-0 gap-8 md:gap-12 min-w-max pr-8 md:pr-12"
         animate={{ x: ["0%", "-33.333333%"] }}
         transition={{
           repeat: Infinity,
@@ -36,7 +36,7 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
         }}
       >
         {duplicatedLogos.map((logo, index) => (
-          <div key={index} className="flex items-center justify-center grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300 w-12 md:w-16 h-12 md:h-16 relative">
+          <div key={index} className="flex items-center justify-center transition-all duration-300 w-12 md:w-16 h-12 md:h-16 relative">
             <Image
               src={logo.src}
               alt={logo.alt}
