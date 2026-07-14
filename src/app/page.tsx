@@ -191,7 +191,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-transparent text-white selection:bg-crimson selection:text-white">
       <section id="home" className="relative z-10 border-b brutalist-border-subtle flex flex-col">
-        <div className="w-full relative z-10 bg-pure-black pt-[100px] md:pt-[140px]">
+        <div className="w-full relative z-10 bg-pure-black pt-[80px] md:pt-[80px]">
           <LogoWall speed={50} />
         </div>
 
