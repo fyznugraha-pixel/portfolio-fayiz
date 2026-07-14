@@ -27,7 +27,12 @@ export default function HeroMobile() {
   return (
     <div className="mx-auto flex flex-col justify-center px-6 pb-16 pt-8 text-center relative">
       <div className="mb-8 flex flex-col -space-y-2 sm:-space-y-4">
-        <div className="w-full">
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        >
           <TextPressure 
             text={t.hero.fullstack} 
             flex={false} 
@@ -39,8 +44,13 @@ export default function HeroMobile() {
             scale={false}
             dynamicSize={false} 
           />
-        </div>
-        <div className="w-full">
+        </motion.div>
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
           <TextPressure 
             text={t.hero.developer} 
             flex={false} 
@@ -54,7 +64,7 @@ export default function HeroMobile() {
             scale={false}
             dynamicSize={false} 
           />
-        </div>
+        </motion.div>
       </div>
 
       <div className="font-body text-base text-secondary mb-8 text-left">

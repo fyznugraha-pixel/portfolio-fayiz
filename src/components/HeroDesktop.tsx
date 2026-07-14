@@ -29,7 +29,12 @@ export default function HeroDesktop() {
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12 md:col-span-11 md:col-start-2">
           <div className="mb-12 flex flex-col -space-y-4 md:-space-y-6 lg:-space-y-10">
-            <div className="w-full">
+            <motion.div 
+              className="w-full"
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
               <TextPressure 
                 text={t.hero.fullstack} 
                 flex={false} 
@@ -41,8 +46,13 @@ export default function HeroDesktop() {
                 scale={false}
                 dynamicSize={false} 
               />
-            </div>
-            <div className="w-full">
+            </motion.div>
+            <motion.div 
+              className="w-full"
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            >
               <TextPressure 
                 text={t.hero.developer} 
                 flex={false} 
@@ -56,7 +66,7 @@ export default function HeroDesktop() {
                 scale={false}
                 dynamicSize={false} 
               />
-            </div>
+            </motion.div>
           </div>
         </div>
 
