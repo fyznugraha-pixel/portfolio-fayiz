@@ -38,9 +38,12 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
         .animate-marquee {
           animation: marquee linear infinite;
         }
+        .group:hover .animate-marquee {
+          animation-play-state: paused;
+        }
       `}</style>
       <div
-        className="flex shrink-0 gap-8 md:gap-12 min-w-max pr-8 md:pr-12 animate-marquee group-hover:[animation-play-state:paused]"
+        className="flex shrink-0 gap-8 md:gap-12 min-w-max pr-8 md:pr-12 animate-marquee"
         style={{ animationDuration: `${speed}s` }}
       >
         {duplicatedLogos.map((logo, index) => (
