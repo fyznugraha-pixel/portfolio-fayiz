@@ -81,6 +81,11 @@ export const en = {
         title: "UpSelf",
         category: "UI Design / Upskilling Platform",
         description: "An application concept that aggregates information about internships, bootcamps, seminars, competitions, and other self-development opportunities. UpSelf is designed to help students and youth find upskilling opportunities more easily."
+      },
+      tactlinkinfo: {
+        title: "Tactlink Info",
+        category: "Web App / Information Portal",
+        description: "An integrated digital information portal for enterprise needs. Tactlink Info delivers fast data access and a modern interface to support business operations."
       }
     }
   },

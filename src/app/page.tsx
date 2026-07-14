@@ -88,6 +88,15 @@ const projects = [
       "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah.",
     tools: ["Figma", "Mobile UI", "UX Flow", "Prototype"],
   },
+  {
+    title: "Tactlink Info",
+    slug: "tactlinkinfo",
+    category: "Web App / Information Portal",
+    image: "/projects/tactlinkinfo/tactlink-1.png",
+    description:
+      "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+  },
 ];
 
 const skillGroups = [
@@ -167,6 +176,7 @@ export default function Home() {
     "proteksindo": "proteksindo",
     "sistem-parkir": "parkir",
     "upself": "upself",
+    "tactlinkinfo": "tactlinkinfo",
   };
 
   const translatedProjects = projects.map(proj => ({

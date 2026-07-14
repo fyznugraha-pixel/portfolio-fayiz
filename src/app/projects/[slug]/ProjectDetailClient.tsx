@@ -218,6 +218,37 @@ const projectDetails = {
       "UX flow dan prototype",
     ],
   },
+
+  tactlinkinfo: {
+    title: "Tactlink Info",
+    category: "Web App / Information Portal",
+    images: [
+      "/projects/tactlinkinfo/tactlink-1.png",
+      "/projects/tactlinkinfo/tactlink-2.png",
+      "/projects/tactlinkinfo/tactlink-3.png",
+      "/projects/tactlinkinfo/tactlink-4.png",
+      "/projects/tactlinkinfo/tactlink-5.png",
+      "/projects/tactlinkinfo/tactlink-6.png",
+      "/projects/tactlinkinfo/tactlink-7.png",
+    ],
+    role: "Frontend Developer",
+    duration: "Client Project",
+    type: "Web Application",
+    overview:
+      "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
+    problem:
+      "Perusahaan membutuhkan platform terpusat untuk menampilkan informasi, data statistik, dan profil layanan secara dinamis dengan performa yang cepat.",
+    solution:
+      "Mengembangkan portal informasi menggunakan framework modern (React & Next.js) dengan optimasi performa dan antarmuka responsif.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+    features: [
+      "Portal informasi terpusat",
+      "Tampilan statistik dinamis",
+      "Desain antarmuka responsif",
+      "Optimasi SEO dan performa",
+      "Integrasi API internal",
+    ],
+  },
 };
 
 type ProjectSlug = keyof typeof projectDetails;

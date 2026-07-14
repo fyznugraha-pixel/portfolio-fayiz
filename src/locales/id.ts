@@ -81,6 +81,11 @@ export const id = {
         title: "UpSelf",
         category: "UI Design / Upskilling Platform",
         description: "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah."
+      },
+      tactlinkinfo: {
+        title: "Tactlink Info",
+        category: "Web App / Information Portal",
+        description: "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis."
       }
     }
   },
