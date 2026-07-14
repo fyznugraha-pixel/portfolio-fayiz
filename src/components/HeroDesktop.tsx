@@ -31,8 +31,8 @@ export default function HeroDesktop() {
           <div className="mb-12 flex flex-col -space-y-4 md:-space-y-6 lg:-space-y-10">
             <motion.div 
               className="w-full"
-              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
               <TextPressure 
@@ -49,8 +49,8 @@ export default function HeroDesktop() {
             </motion.div>
             <motion.div 
               className="w-full"
-              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, x: 60, filter: "blur(10px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
               <TextPressure 
