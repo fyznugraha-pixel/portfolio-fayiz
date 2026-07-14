@@ -295,7 +295,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
           <p className="font-body text-secondary mb-12">
             {t.projectDetail.notFoundDesc}
           </p>
-          <MagnetButton href="/#projects" className="glass-panel border border-white/10 px-8 py-4 inline-flex items-center rounded-full hover:bg-white/10 text-white font-label-mono text-sm tracking-wider">
+          <MagnetButton as={Link} href="/#projects" className="glass-panel border border-white/10 px-8 py-4 inline-flex items-center rounded-full hover:bg-white/10 text-white font-label-mono text-sm tracking-wider">
             <ArrowLeft size={16} className="mr-2" />
             {t.projectDetail.backToProjects}
           </MagnetButton>
@@ -513,7 +513,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         </SpotlightCard>
 
         <div className="mt-20 flex flex-wrap gap-4 border-t border-white/10 pt-12">
-          <MagnetButton href="/#projects" className="glass-panel border border-white/10 px-8 py-4 flex items-center hover:bg-white/10 transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
+          <MagnetButton as={Link} href="/#projects" className="glass-panel border border-white/10 px-8 py-4 flex items-center hover:bg-white/10 transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
             <ArrowLeft size={18} className="mr-3" />
             {t.projectDetail.backToProjects}
           </MagnetButton>
@@ -530,7 +530,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
             </MagnetButton>
           )}
 
-          <MagnetButton href="/#contact" className="px-8 py-4 flex items-center bg-[#E9333A] hover:bg-[#FF4D55] transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
+          <MagnetButton as={Link} href="/#contact" className="px-8 py-4 flex items-center bg-[#E9333A] hover:bg-[#FF4D55] transition-colors rounded-full font-label-mono text-sm uppercase tracking-wider text-white">
             {t.hero.contactMe}
             <ExternalLink size={18} className="ml-3" />
           </MagnetButton>

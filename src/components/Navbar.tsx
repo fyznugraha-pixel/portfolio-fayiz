@@ -108,7 +108,7 @@ export default function Navbar() {
             const isActive = activeSection === item.id;
 
             return (
-              <a
+              <Link
                 key={item.id}
                 href={item.href}
                 className={`font-body text-sm font-medium transition-all duration-300 relative ${
@@ -121,7 +121,7 @@ export default function Navbar() {
                 {isActive && (
                   <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#E9333A] rounded-full shadow-[0_0_8px_rgba(233,51,58,0.8)]" />
                 )}
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -147,6 +147,7 @@ export default function Navbar() {
           </div>
 
           <MagnetButton
+            as={Link}
             href="/#contact"
             className="hidden md:flex bg-[#E9333A] hover:bg-[#FF4D55] text-white font-label-mono text-sm tracking-wider px-8 py-3 rounded-full transition-colors"
           >
@@ -173,7 +174,7 @@ export default function Navbar() {
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
-              <a
+              <Link
                 key={item.id}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -184,11 +185,12 @@ export default function Navbar() {
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
           
             <MagnetButton
+              as={Link}
               href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-[#E9333A] text-white px-8 py-4 font-label-mono text-sm mt-4 w-full rounded-full flex justify-center items-center"
