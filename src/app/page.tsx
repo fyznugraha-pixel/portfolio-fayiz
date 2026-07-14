@@ -20,6 +20,7 @@ import HeroDesktop from "@/components/HeroDesktop";
 import HeroMobile from "@/components/HeroMobile";
 import ProjectsDesktop from "@/components/ProjectsDesktop";
 import ProjectsMobile from "@/components/ProjectsMobile";
+import { getSkillLogo } from "@/lib/getSkillLogo";
 import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
@@ -291,11 +292,15 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  {group.skills.map((skill) => (
-                    <span key={skill} className="font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white hover:bg-crimson hover:border-crimson hover:text-white transition-colors cursor-default rounded-full">
-                      {skill}
-                    </span>
-                  ))}
+                  {group.skills.map((skill) => {
+                    const logo = getSkillLogo(skill);
+                    return (
+                      <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white hover:bg-crimson hover:border-crimson hover:text-white transition-colors cursor-default rounded-full">
+                        {logo && <Image src={logo} alt={skill} width={16} height={16} className="object-contain" />}
+                        {skill}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </BorderGlow>

@@ -2,13 +2,10 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ExternalLink,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import BorderGlow from "@/components/BorderGlow";
+import { getSkillLogo } from "@/lib/getSkillLogo";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 const projectDetails = {
@@ -331,11 +328,15 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
           </p>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            {project.tools.map((tool) => (
-              <span key={tool} className="font-label-mono text-xs border border-[#444] px-5 py-2 uppercase text-white glass-card rounded-full">
-                {tool}
-              </span>
-            ))}
+            {project.tools.map((tool) => {
+              const logo = getSkillLogo(tool);
+              return (
+                <span key={tool} className="flex items-center gap-2 font-label-mono text-xs border border-[#444] px-4 py-2 uppercase text-white glass-card rounded-full">
+                  {logo && <Image src={logo} alt={tool} width={16} height={16} className="object-contain" />}
+                  {tool}
+                </span>
+              );
+            })}
           </div>
         </div>
 

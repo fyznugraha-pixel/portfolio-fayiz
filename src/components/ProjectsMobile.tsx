@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BorderGlow from "./BorderGlow";
+import { getSkillLogo } from "@/lib/getSkillLogo";
 
 type Project = {
   title: string;
@@ -54,11 +55,15 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
               <p className="font-body text-sm text-secondary group-hover:text-white transition-colors mb-5 line-clamp-3">{project.description}</p>
               
               <div className="flex flex-wrap gap-2">
-                {project.tools.slice(0, 3).map((tool) => (
-                  <span key={tool} className="font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
-                    {tool}
-                  </span>
-                ))}
+                {project.tools.slice(0, 3).map((tool) => {
+                  const logo = getSkillLogo(tool);
+                  return (
+                    <span key={tool} className="flex items-center gap-1 font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-2 py-1 uppercase text-secondary rounded-full">
+                      {logo && <Image src={logo} alt={tool} width={12} height={12} className="object-contain" />}
+                      {tool}
+                    </span>
+                  );
+                })}
                 {project.tools.length > 3 && (
                   <span className="font-label-mono text-[10px] border border-[#333] group-hover:border-white group-hover:text-white transition-colors px-3 py-1 uppercase text-secondary rounded-full">
                     +{project.tools.length - 3}
