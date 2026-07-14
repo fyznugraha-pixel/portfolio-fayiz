@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SpotlightCard from "./SpotlightCard";
 import AnimatedContent from "./AnimatedContent";
+import ParallaxSection from "./ParallaxSection";
 import { getSkillLogo } from "@/lib/getSkillLogo";
 
 type Project = {
@@ -17,13 +18,16 @@ type Project = {
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const speed = index % 2 === 0 ? 0.2 : 0.4;
+  
   return (
-    <AnimatedContent
-      delay={index * 0.15}
-      distance={50}
-      direction="vertical"
-      className="h-full"
-    >
+    <ParallaxSection speed={speed} className="h-full">
+      <AnimatedContent
+        delay={0.1}
+        distance={50}
+        direction="vertical"
+        className="h-full"
+      >
       <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer flex flex-col h-full glass-panel transition-colors duration-300 p-6 rounded-3xl">
         <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
           <Image
@@ -67,7 +71,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
       </SpotlightCard>
-    </AnimatedContent>
+      </AnimatedContent>
+    </ParallaxSection>
   );
 }
 

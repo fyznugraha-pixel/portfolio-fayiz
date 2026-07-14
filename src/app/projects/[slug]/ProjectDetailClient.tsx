@@ -252,6 +252,7 @@ const projectDetails = {
       "Optimasi SEO dan performa",
       "Integrasi API internal",
     ],
+    link: "https://www.tactlink.com/links/en",
   },
 };
 

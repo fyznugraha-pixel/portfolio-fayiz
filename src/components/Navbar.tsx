@@ -102,7 +102,7 @@ export default function Navbar() {
           href="/#home"
           className="font-display-lg text-xl font-bold text-white uppercase tracking-tight flex items-center gap-1"
         >
-          FAYIZ<span className="text-[#E9333A]">.DEV</span>
+          PORTO<span className="text-[#E9333A]">FOLIO</span>
         </Link>
 
         <div className="hidden md:flex gap-6 items-center">

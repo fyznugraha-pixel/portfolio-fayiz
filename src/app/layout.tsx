@@ -8,6 +8,7 @@ import GradualBlur from "@/components/GradualBlur";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/Providers";
 import LenisProvider from "@/components/LenisProvider";
+import LanguageSuggestion from "@/components/LanguageSuggestion";
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
@@ -42,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", inter.variable, outfit.variable, plusJakartaSans.variable, jetbrainsMono.variable, "font-sans")}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#09090b] text-zinc-100 overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
+      <body className="min-h-full flex flex-col font-sans bg-black text-zinc-100 overflow-x-hidden selection:bg-[#E9333A]/30 selection:text-white">
         <Providers>
           <div className="noise-overlay"></div>
           <LenisProvider>
@@ -51,6 +52,7 @@ export default function RootLayout({
             </div>
             <Navbar />
             <GradualBlur preset="page-footer" zIndex={40} hoverIntensity={0} animated={true} height="7.5rem" strength={5} duration="0.15s" />
+            <LanguageSuggestion />
             {children}
             <Analytics />
           </LenisProvider>

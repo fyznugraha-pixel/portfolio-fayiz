@@ -88,12 +88,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #09090b;
+  background-color: #000000;
   color: #f4f4f5;
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.06) 0%, transparent 50%);
-  background-attachment: fixed;
 }
 
 ::selection {
