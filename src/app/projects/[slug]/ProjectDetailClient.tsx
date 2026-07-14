@@ -389,10 +389,12 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                   key={image}
                   className="flex min-w-full snap-start items-center justify-center relative aspect-video"
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`${project.title} preview ${index + 1}`}
-                    className="absolute inset-0 w-full h-full object-contain p-4 opacity-100 transition-all duration-500"
+                    fill
+                    sizes="(max-width: 1440px) 100vw, 1440px"
+                    className="object-contain p-4 opacity-100 transition-all duration-500"
                     draggable={false}
                   />
                 </div>
