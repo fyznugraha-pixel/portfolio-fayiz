@@ -268,6 +268,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     "proteksindo": "proteksindo",
     "sistem-parkir": "parkir",
     "upself": "upself",
+    "tactlinkinfo": "tactlinkinfo",
   };
 
   const projectKey = projectSlugToKey[slug];

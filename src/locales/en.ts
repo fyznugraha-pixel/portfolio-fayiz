@@ -222,6 +222,21 @@ export const en = {
           "Mobile UI design",
           "UX flow and prototyping"
         ]
+      },
+      tactlinkinfo: {
+        role: "Frontend Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "An integrated digital information portal for enterprise needs. Tactlink Info delivers fast data access and a modern interface to support business operations.",
+        problem: "The company needed a centralized platform to display information, statistical data, and service profiles dynamically with fast performance.",
+        solution: "Developed an information portal using modern frameworks (React & Next.js) with performance optimization and a responsive interface.",
+        features: [
+          "Centralized information portal",
+          "Dynamic statistical display",
+          "Responsive interface design",
+          "SEO and performance optimization",
+          "Internal API integration"
+        ]
       }
     }
   }
