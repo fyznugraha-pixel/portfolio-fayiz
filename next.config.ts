@@ -1,23 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* config options here */
   basePath: '/portofolio',
   async rewrites() {
     return {
       beforeFiles: [
         {
-          source: '/scanner',
+          source: '/scan',
           destination: 'https://scanner-eta-two.vercel.app/',
           basePath: false,
         },
         {
-          source: '/scanner/:path*',
+          source: '/scan/:path*',
           destination: 'https://scanner-eta-two.vercel.app/:path*',
           basePath: false,
         },
       ],
-      afterFiles: [],
-      fallback: [],
     };
   },
 };
