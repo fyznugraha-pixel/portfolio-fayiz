@@ -78,9 +78,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function Projects({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid gap-8 md:gap-12 md:grid-cols-2">
+    <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-12 md:grid-cols-2 md:overflow-visible pb-10 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
       {projects.map((project, index) => (
-        <ProjectCard key={project.title} project={project} index={index} />
+        <div key={project.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
+          <ProjectCard project={project} index={index} />
+        </div>
       ))}
     </div>
   );

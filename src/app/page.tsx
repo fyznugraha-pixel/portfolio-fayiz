@@ -251,9 +251,10 @@ export default function Home() {
           </ParallaxSection>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 w-full">
+        <div className="mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-6 md:grid-cols-3 md:overflow-visible pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full">
           {translatedServices.map((service, index) => (
-            <ParallaxSection key={service.title} speed={0.4 + (index * 0.1)} className="h-full">
+            <div key={service.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
+              <ParallaxSection speed={0.4 + (index * 0.1)} className="h-full">
               <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-10 glass-panel min-w-0 rounded-3xl h-full">
                 <div className="relative z-10">
                   <div className="mb-6 text-[#E9333A]">
@@ -267,7 +268,8 @@ export default function Home() {
                   </p>
                 </div>
               </SpotlightCard>
-            </ParallaxSection>
+              </ParallaxSection>
+            </div>
           ))}
         </div>
       </section>
@@ -297,38 +299,40 @@ export default function Home() {
           </ParallaxSection>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 w-full mb-20">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-8 md:grid-cols-3 md:overflow-visible pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full mb-20">
           {translatedSkillGroups.map((group, index) => (
-            <ParallaxSection speed={0.3 + (index * 0.1)} key={group.title} className="h-full">
-              <SpotlightCard
-                spotlightColor="rgba(255, 255, 255, 0.1)"
-                className="p-8 glass-panel min-w-0 rounded-3xl h-full flex flex-col"
-              >
-                <div className="relative z-10 flex-grow">
-                  <div className="mb-6 text-[#E9333A] border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
-                    {group.icon}
+            <div key={group.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
+              <ParallaxSection speed={0.3 + (index * 0.1)} className="h-full">
+                <SpotlightCard
+                  spotlightColor="rgba(255, 255, 255, 0.1)"
+                  className="p-8 glass-panel min-w-0 rounded-3xl h-full flex flex-col"
+                >
+                  <div className="relative z-10 flex-grow">
+                    <div className="mb-6 text-[#E9333A] border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
+                      {group.icon}
+                    </div>
+
+                    <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4 text-white">{group.title}</h3>
+
+                    <p className="font-body min-h-[64px] leading-7 text-secondary mb-8">
+                      {group.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3">
+                      {group.skills.map((skill) => {
+                        const logo = getSkillLogo(skill);
+                        return (
+                          <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 px-4 py-2 uppercase text-white hover:bg-white/10 hover:border-white/20 transition-colors cursor-default rounded-full">
+                            {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
+                            {skill}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
-
-                  <h3 className="font-headline-lg text-2xl font-bold uppercase mb-4 text-white">{group.title}</h3>
-
-                  <p className="font-body min-h-[64px] leading-7 text-secondary mb-8">
-                    {group.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-3">
-                    {group.skills.map((skill) => {
-                      const logo = getSkillLogo(skill);
-                      return (
-                        <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 px-4 py-2 uppercase text-white hover:bg-white/10 hover:border-white/20 transition-colors cursor-default rounded-full">
-                          {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
-                          {skill}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              </SpotlightCard>
-            </ParallaxSection>
+                </SpotlightCard>
+              </ParallaxSection>
+            </div>
           ))}
         </div>
 

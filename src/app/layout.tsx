@@ -51,7 +51,6 @@ export default function RootLayout({
               <CursorGrid color="#E9333A" />
             </div>
             <Navbar />
-            <GradualBlur preset="page-footer" zIndex={40} hoverIntensity={0} animated={true} height="7.5rem" strength={5} duration="0.15s" />
             <LanguageSuggestion />
             {children}
             <Analytics />
