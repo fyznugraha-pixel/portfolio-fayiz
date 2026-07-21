@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowRightLeft } from "lucide-react";
 import SpotlightCard from "./SpotlightCard";
 import AnimatedContent from "./AnimatedContent";
 import ParallaxSection from "./ParallaxSection";
@@ -78,12 +78,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function Projects({ projects }: { projects: Project[] }) {
   return (
-    <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-12 md:grid-cols-2 md:overflow-visible pb-10 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+    <>
+      <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-full px-2 mb-4">
+        <ArrowRightLeft size={12} /> Swipe
+      </div>
+      <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-12 md:grid-cols-2 md:overflow-visible pb-10 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
       {projects.map((project, index) => (
         <div key={project.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
           <ProjectCard project={project} index={index} />
         </div>
       ))}
     </div>
+    </>
   );
 }
