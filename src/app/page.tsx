@@ -252,10 +252,10 @@ export default function Home() {
           </ParallaxSection>
         </div>
 
-        <div className="mt-12 md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6">
+        <div className="mt-12 md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 relative z-10">
           <ArrowRightLeft size={12} /> Swipe
         </div>
-        <div className="mt-4 md:mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-6 md:grid-cols-3 md:overflow-visible pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full">
+        <div className="mt-4 md:mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-6 md:grid-cols-3 md:overflow-visible py-32 -my-32 md:py-0 md:my-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full relative z-0">
           {translatedServices.map((service, index) => (
             <div key={service.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
               <ParallaxSection speed={0.4 + (index * 0.1)} className="h-full">
@@ -303,10 +303,10 @@ export default function Home() {
           </ParallaxSection>
         </div>
 
-        <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 mb-4">
+        <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 mb-4 relative z-10">
           <ArrowRightLeft size={12} /> Swipe
         </div>
-        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-8 md:grid-cols-3 md:overflow-visible pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full mb-20">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-8 md:grid-cols-3 md:overflow-visible py-32 -my-32 md:py-0 md:my-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full mb-20 relative z-0">
           {translatedSkillGroups.map((group, index) => (
             <div key={group.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
               <ParallaxSection speed={0.3 + (index * 0.1)} className="h-full">
@@ -330,7 +330,7 @@ export default function Home() {
                         const logo = getSkillLogo(skill);
                         return (
                           <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 px-4 py-2 uppercase text-white hover:bg-white/10 hover:border-white/20 transition-colors cursor-default rounded-full">
-                            {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
+                            {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
                             {skill}
                           </span>
                         );
@@ -350,7 +350,7 @@ export default function Home() {
               return {
                 node: (
                   <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
-                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
                     {skill}
                   </span>
                 )
@@ -370,7 +370,7 @@ export default function Home() {
               return {
                 node: (
                   <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
-                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
                     {skill}
                   </span>
                 )

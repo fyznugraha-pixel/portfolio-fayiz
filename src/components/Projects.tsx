@@ -31,7 +31,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer flex flex-col h-full glass-panel transition-colors duration-300 p-6 rounded-3xl">
         <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
           <Image
-            src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
+            src={project.image.startsWith('/portfolio') ? project.image : `/portfolio${project.image}`}
             alt={`${project.title} preview`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -58,7 +58,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               const logo = getSkillLogo(tool);
               return (
                 <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full bg-white/5">
-                  {logo && <img src={`/portofolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
+                  {logo && <img src={`/portfolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
                   {tool}
                 </span>
               );
@@ -79,10 +79,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <>
-      <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-full px-2 mb-4">
+      <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-full px-2 mb-4 relative z-10">
         <ArrowRightLeft size={12} /> Swipe
       </div>
-      <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-12 md:grid-cols-2 md:overflow-visible pb-10 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+      <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-12 md:grid-cols-2 md:overflow-visible py-32 -my-32 md:py-0 md:my-0 -mx-6 px-6 md:mx-0 md:px-0 relative z-0">
       {projects.map((project, index) => (
         <div key={project.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
           <ProjectCard project={project} index={index} />
