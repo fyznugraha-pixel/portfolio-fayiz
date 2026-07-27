@@ -379,7 +379,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
               const logo = getSkillLogo(tool);
               return (
                 <span key={tool} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 bg-white/5 px-4 py-2 uppercase text-white rounded-full">
-                  {logo && <img src={`/portfolio${logo}`} alt={tool} width={16} height={16} className="object-contain" />}
+                  {logo && <img src={`/portofolio${logo}`} alt={tool} width={16} height={16} className="object-contain" />}
                   {tool}
                 </span>
               );
@@ -437,7 +437,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
                   className="flex min-w-full w-full shrink-0 snap-start items-center justify-center relative h-full"
                 >
                   <Image
-                    src={image.startsWith('/portfolio') ? image : `/portfolio${image}`}
+                    src={image.startsWith('/portofolio') ? image : `/portofolio${image}`}
                     alt={`${project.title} preview ${index + 1}`}
                     fill
                     sizes="(max-width: 1440px) 100vw, 1440px"

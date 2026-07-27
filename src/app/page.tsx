@@ -330,7 +330,7 @@ export default function Home() {
                         const logo = getSkillLogo(skill);
                         return (
                           <span key={skill} className="flex items-center gap-2 font-label-mono text-xs border border-white/10 px-4 py-2 uppercase text-white hover:bg-white/10 hover:border-white/20 transition-colors cursor-default rounded-full">
-                            {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
+                            {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="object-contain" />}
                             {skill}
                           </span>
                         );
@@ -350,7 +350,7 @@ export default function Home() {
               return {
                 node: (
                   <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
-                    {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
                     {skill}
                   </span>
                 )
@@ -370,7 +370,7 @@ export default function Home() {
               return {
                 node: (
                   <span className="flex items-center gap-3 font-label-mono text-sm border border-white/10 bg-black/40 px-6 py-3 uppercase text-white cursor-default rounded-full backdrop-blur-sm">
-                    {logo && <img src={`/portfolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
+                    {logo && <img src={`/portofolio${logo}`} alt={skill} width={16} height={16} className="w-4 h-4 object-contain" />}
                     {skill}
                   </span>
                 )

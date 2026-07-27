@@ -133,7 +133,7 @@ export default function Hero() {
                   className={`relative h-40 overflow-hidden group ${index !== 2 ? 'border-r brutalist-border-subtle' : ''}`}
                 >
                   <Image
-                    src={photo.src.startsWith('/portfolio') ? photo.src : `/portfolio${photo.src}`}
+                    src={photo.src.startsWith('/portofolio') ? photo.src : `/portofolio${photo.src}`}
                     alt={photo.alt}
                     fill
                     sizes="150px"
@@ -177,7 +177,7 @@ export default function Hero() {
             {/* Note: top offset is -72px (-40px - 32px) so it aligns perfectly with the outer image */}
             <div className="absolute inset-x-0 bottom-0 -top-[72px] group-hover:-top-[96px] transition-all duration-700">
               <Image
-                src="/portfolio/profile/fayiz.png"
+                src="/portofolio/profile/fayiz.png"
                 alt="Fayiz Apriwansyah Nugraha"
                 fill
                 priority
@@ -190,7 +190,7 @@ export default function Hero() {
           {/* Layer 3: Foreground Pop-out Image (Renders the top half that breaks out of the frame) */}
           <div className="absolute inset-x-0 bottom-0 -top-10 group-hover:-top-16 transition-all duration-700 z-20 pointer-events-none [clip-path:inset(0_0_35%_0)]">
             <Image
-              src="/portfolio/profile/fayiz.png"
+              src="/portofolio/profile/fayiz.png"
               alt="Fayiz Apriwansyah Nugraha"
               fill
               priority

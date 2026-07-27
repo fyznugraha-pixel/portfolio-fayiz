@@ -86,7 +86,7 @@ export default function LogoWall({ speed = 40 }: { speed?: number }) {
         {duplicatedLogos.map((logo, index) => (
           <div key={index} className="flex items-center justify-center transition-all duration-300 w-12 md:w-16 h-12 md:h-16 relative hover:scale-125 cursor-pointer">
             <img
-              src={`/portfolio${logo.src}`}
+              src={`/portofolio${logo.src}`}
               alt={logo.alt}
               className={`absolute inset-0 w-full h-full object-contain ${logo.className || ""}`}
             />
