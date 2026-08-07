@@ -23,7 +23,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
     <div className="w-full relative">
       <div 
         ref={containerRef}
-        className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory gallery-slider hide-scrollbar px-6"
+        className="flex overflow-x-auto gap-8 py-12 -my-12 snap-x snap-mandatory gallery-slider hide-scrollbar px-6"
       >
         {projects.map((project) => (
           <BorderGlow

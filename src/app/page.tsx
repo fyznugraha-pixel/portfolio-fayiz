@@ -24,6 +24,7 @@ import LogoLoop from "@/components/LogoLoop";
 import Hero from "@/components/Hero";
 import LogoWall from "@/components/LogoWall";
 import Projects from "@/components/Projects";
+import ProjectsMobile from "@/components/ProjectsMobile";
 import MagnetButton from "@/components/MagnetButton";
 import ParallaxSection from "@/components/ParallaxSection";
 import { getSkillLogo } from "@/lib/getSkillLogo";
@@ -414,7 +415,12 @@ export default function Home() {
         </div>
 
         <div className="flex-grow w-full">
-          <Projects projects={translatedProjects} />
+          <div className="hidden md:block">
+            <Projects projects={translatedProjects} />
+          </div>
+          <div className="block md:hidden -mx-6 w-[calc(100%+3rem)] relative z-0">
+            <ProjectsMobile projects={translatedProjects} />
+          </div>
         </div>
       </section>
 
