@@ -31,6 +31,24 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
   {
+    title: "Fyurl",
+    slug: "fyurl",
+    category: "Web App / URL Shortener",
+    image: "/projects/fyurl/fyurl-1.png",
+    description:
+      "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda.",
+    tools: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+  },
+  {
+    title: "Tactlink Info",
+    slug: "tactlinkinfo",
+    category: "Web App / Information Portal",
+    image: "/projects/tactlinkinfo/tactlink1.png",
+    description:
+      "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+  },
+  {
     title: "Festival Cisadane 2026",
     slug: "cisadane",
     category: "Web App / Event Website",
@@ -92,15 +110,6 @@ const projects = [
     description:
       "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah.",
     tools: ["Figma", "Mobile UI", "UX Flow", "Prototype"],
-  },
-  {
-    title: "Tactlink Info",
-    slug: "tactlinkinfo",
-    category: "Web App / Information Portal",
-    image: "/projects/tactlinkinfo/tactlink1.png",
-    description:
-      "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
-    tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
   },
 ];
 
@@ -182,6 +191,7 @@ export default function Home() {
     "sistem-parkir": "parkir",
     "upself": "upself",
     "tactlinkinfo": "tactlinkinfo",
+    "fyurl": "fyurl",
   };
 
   const translatedProjects = projects.map(proj => ({

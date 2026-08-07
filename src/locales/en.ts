@@ -88,6 +88,11 @@ export const en = {
         title: "Tactlink Info",
         category: "Web App / Information Portal",
         description: "An integrated digital information portal for enterprise needs. Tactlink Info delivers fast data access and a modern interface to support business operations."
+      },
+      fyurl: {
+        title: "Fyurl",
+        category: "Web App / URL Shortener",
+        description: "Fyurl is a full-featured, free URL shortener platform. Designed with a clean and user-friendly interface to manage and track your links."
       }
     }
   },
@@ -238,6 +243,21 @@ export const en = {
           "Responsive interface design",
           "SEO and performance optimization",
           "Internal API integration"
+        ]
+      },
+      fyurl: {
+        role: "Fullstack Developer",
+        duration: "Personal Project",
+        type: "Web Application",
+        overview: "Fyurl is a full-featured, completely free URL shortener platform. Designed with a clean and user-friendly interface to efficiently manage and track your links.",
+        problem: "Many URL shortener services lock basic features behind a paywall or have overly complex, ad-filled interfaces.",
+        solution: "Built a completely free alternative URL shortener packed with features like custom aliases, analytics, and link management inside a clean and modern dashboard.",
+        features: [
+          "Custom URL aliases",
+          "Link management dashboard",
+          "Click analytics and tracking",
+          "Clean, ad-free interface",
+          "Completely free to use"
         ]
       }
     }

@@ -254,6 +254,33 @@ const projectDetails = {
     ],
     link: "https://www.tactlink.com/links/en",
   },
+  fyurl: {
+    title: "Fyurl",
+    category: "Web App / URL Shortener",
+    images: [
+      "/projects/fyurl/fyurl-1.png",
+      "/projects/fyurl/fyurl-2.png",
+      "/projects/fyurl/fyurl-3.png",
+    ],
+    role: "Fullstack Developer",
+    duration: "Personal Project",
+    type: "Web Application",
+    overview:
+      "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda secara efisien.",
+    problem:
+      "Banyak layanan penyingkat URL yang membatasi fitur dasar di balik paywall atau memiliki antarmuka yang rumit dan penuh iklan.",
+    solution:
+      "Membangun alternatif penyingkat URL yang sepenuhnya gratis dengan fitur lengkap seperti custom alias, analitik, dan manajemen tautan dalam satu dashboard yang bersih dan modern.",
+    tools: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    features: [
+      "Penyingkat URL kustom (Custom Alias)",
+      "Dashboard manajemen tautan",
+      "Analitik klik dan pelacakan",
+      "Antarmuka yang bersih dan bebas iklan",
+      "Akses gratis sepenuhnya",
+    ],
+    link: "https://fylink.fun",
+  },
 };
 
 type ProjectSlug = keyof typeof projectDetails;
@@ -274,6 +301,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
     "sistem-parkir": "parkir",
     "upself": "upself",
     "tactlinkinfo": "tactlinkinfo",
+    "fyurl": "fyurl",
   };
 
   const projectKey = projectSlugToKey[slug];

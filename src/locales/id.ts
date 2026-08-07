@@ -88,6 +88,11 @@ export const id = {
         title: "Tactlink Info",
         category: "Web App / Information Portal",
         description: "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis."
+      },
+      fyurl: {
+        title: "Fyurl",
+        category: "Web App / URL Shortener",
+        description: "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda."
       }
     }
   },
@@ -238,6 +243,21 @@ export const id = {
           "Desain antarmuka responsif",
           "Optimasi SEO dan performa",
           "Integrasi API internal"
+        ]
+      },
+      fyurl: {
+        role: "Fullstack Developer",
+        duration: "Personal Project",
+        type: "Web Application",
+        overview: "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda secara efisien.",
+        problem: "Banyak layanan penyingkat URL yang membatasi fitur dasar di balik paywall atau memiliki antarmuka yang rumit dan penuh iklan.",
+        solution: "Membangun alternatif penyingkat URL yang sepenuhnya gratis dengan fitur lengkap seperti custom alias, analitik, dan manajemen tautan dalam satu dashboard yang bersih dan modern.",
+        features: [
+          "Penyingkat URL kustom (Custom Alias)",
+          "Dashboard manajemen tautan",
+          "Analitik klik dan pelacakan",
+          "Antarmuka yang bersih dan bebas iklan",
+          "Akses gratis sepenuhnya"
         ]
       }
     }

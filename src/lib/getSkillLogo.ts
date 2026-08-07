@@ -6,7 +6,7 @@ export const getSkillLogo = (skill: string) => {
     "TypeScript": "/logo/Typescript.webp",
     "React": "/logo/react.webp",
     "React.js": "/logo/react.webp",
-    "Next.js": "/logo/next-js.png",
+    "Next.js": "/next-icon.svg",
     "Tailwind CSS": "/logo/Tailwind.webp",
     "PHP": "/logo/php.webp",
     "Laravel": "/logo/laravel.webp",
@@ -17,6 +17,13 @@ export const getSkillLogo = (skill: string) => {
     "MySQL": "/logo/mysql.webp",
     "Figma": "/logo/figma.webp",
     "Flutter": "/logo/flutter.png",
+    "UI Design": "/logo/ui-design.svg",
+    "Mobile UI": "/logo/mobile-ui.svg",
+    "Prototyping": "/logo/prototyping.svg",
+    "UX Flow": "/logo/ux-flow.svg",
+    "Design System": "/logo/design-system.svg",
+    "REST API": "/logo/rest-api.svg",
+    "Supabase": "/logo/supabase.svg",
   };
   return logos[skill] || null;
 };

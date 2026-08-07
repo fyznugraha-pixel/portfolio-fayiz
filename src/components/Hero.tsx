@@ -46,6 +46,11 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-2">
           
           <div className="col-span-1 md:col-span-12">
+            {/* SEO H1 Tag - Visually hidden but readable by search engines */}
+            <h1 className="sr-only">
+              Fayiz Apriwansyah Nugraha - Fullstack Web Developer and UI Designer
+            </h1>
+
             <div className="mb-8 md:mb-12 flex flex-col -space-y-4 sm:-space-y-6 md:-space-y-10 cursor-pointer">
               <motion.div 
                 className="w-full text-center"
