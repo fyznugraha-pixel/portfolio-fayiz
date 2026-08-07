@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const logos = [
+const logos: { src: string; alt: string; className?: string }[] = [
   { src: "/logo/HTML.webp", alt: "HTML" },
   { src: "/logo/css.webp", alt: "CSS" },
   { src: "/logo/javascript.png", alt: "JavaScript" },
