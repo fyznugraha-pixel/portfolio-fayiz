@@ -201,6 +201,7 @@ export default function Home() {
     "sistem-parkir": "parkir",
     "upself": "upself",
     "tactlinkinfo": "tactlinkinfo",
+    "bgs": "bgs",
     "fyurl": "fyurl",
   };
 
