@@ -93,6 +93,11 @@ export const id = {
         title: "Fyurl",
         category: "Web App / URL Shortener",
         description: "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda."
+      },
+      bgs: {
+        title: "Bandung Great Sale",
+        category: "Web App / Catalog Directory",
+        description: "Bandung Great Sale adalah platform katalog diskon dan promosi event perbelanjaan terbesar di Bandung. Website ini dirancang untuk memudahkan masyarakat menemukan penawaran terbaik dari berbagai merchant yang berpartisipasi."
       }
     }
   },
