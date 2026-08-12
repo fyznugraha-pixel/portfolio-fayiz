@@ -284,7 +284,7 @@ const projectDetails = {
       "Desain antarmuka responsif",
       "Optimasi performa dan SEO",
     ],
-    link: "https://bandunggreatsale.com",
+    link: "https://bandunggreatsale.id",
   },
   fyurl: {
     title: "Fyurl",
