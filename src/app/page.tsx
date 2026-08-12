@@ -32,10 +32,19 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
   {
+    title: "Bandung Great Sale",
+    slug: "bgs",
+    category: "Web App / Catalog Directory",
+    image: "/projects/bgs/bgs1.webp",
+    description:
+      "Bandung Great Sale adalah platform katalog diskon dan promosi event perbelanjaan terbesar di Bandung. Website ini dirancang untuk memudahkan masyarakat menemukan penawaran terbaik dari berbagai merchant yang berpartisipasi.",
+    tools: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+  },
+  {
     title: "Fyurl",
     slug: "fyurl",
     category: "Web App / URL Shortener",
-    image: "/projects/fyurl/fyurl-1.png",
+    image: "/projects/fyurl/fyurl-1.webp",
     description:
       "Fyurl adalah platform penyingkat URL gratis dengan fitur lengkap. Dirancang dengan antarmuka yang bersih dan mudah digunakan untuk mengelola serta melacak tautan Anda.",
     tools: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
@@ -44,7 +53,7 @@ const projects = [
     title: "Tactlink Info",
     slug: "tactlinkinfo",
     category: "Web App / Information Portal",
-    image: "/projects/tactlinkinfo/tactlink1.png",
+    image: "/projects/tactlinkinfo/tactlink1.webp",
     description:
       "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
@@ -53,7 +62,7 @@ const projects = [
     title: "Festival Cisadane 2026",
     slug: "cisadane",
     category: "Web App / Event Website",
-    image: "/projects/cisadane/cisadane1.png",
+    image: "/projects/cisadane/cisadane1.webp",
     description:
       "Festival Cisadane 2026 adalah website event yang dirancang untuk menghadirkan pengalaman digital yang merepresentasikan semangat, budaya, dan energi Festival Cisadane secara modern dan interaktif.",
     tools: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
@@ -62,7 +71,7 @@ const projects = [
     title: "Asia Africa Festival",
     slug: "asia-afrika-festival",
     category: "Web App / Event Registration",
-    image: "/projects/aaf/aaf.png",
+    image: "/projects/aaf/aaf.webp",
     description:
       "Asia Africa Festival 2026 Website adalah platform event berbasis Next.js dan Supabase untuk menampilkan informasi festival, program acara, registrasi visitor, serta dashboard admin untuk mengelola data pendaftar.",
     tools: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
@@ -71,7 +80,7 @@ const projects = [
     title: "Campus Care",
     slug: "campus-care",
     category: "Web App & Flutter Mobile App",
-    image: "/projects/campus-care/campus-care.png",
+    image: "/projects/campus-care/campus-care.webp",
     description:
       "Campus Care adalah sistem berbasis web dan mobile untuk mendukung layanan kampus. Pada versi web, sistem menyediakan fitur Lost & Found serta pengelolaan laporan fasilitas. Sementara pada aplikasi mobile, fitur utamanya berfokus pada pelaporan fasilitas kampus agar mahasiswa dapat membuat dan memantau laporan dengan lebih mudah.",
     tools: ["Flutter", "Laravel", "REST API", "MySQL", "UI Design"],
@@ -80,7 +89,7 @@ const projects = [
     title: "LiteraPlus",
     slug: "literaplus",
     category: "Web App / Microservice",
-    image: "/projects/literaplus/literaplus.png",
+    image: "/projects/literaplus/literaplus.webp",
     description:
       "Platform microservice untuk mendukung sistem toko buku melalui fitur donasi buku, barter buku, reward point, dan transaksi layanan. LiteraPlus dirancang sebagai layanan terpisah yang tetap terintegrasi dengan sistem utama.",
     tools: ["NodeJS", "JavaScript", "MySQL", "Microservice"],
@@ -89,7 +98,7 @@ const projects = [
     title: "PT Proteksindo",
     slug: "proteksindo",
     category: "UI Design / Figma",
-    image: "/projects/proteksindo/proteksindo.png",
+    image: "/projects/proteksindo/proteksindo.webp",
     description:
       "Desain antarmuka berbasis Figma untuk kebutuhan digital PT Proteksindo. Project ini berfokus pada tampilan company profile yang profesional, rapi, modern, dan mudah dipahami untuk memperkuat identitas visual perusahaan.",
     tools: ["Figma", "UI Design", "Prototype"],
@@ -98,7 +107,7 @@ const projects = [
     title: "Sistem Parkir",
     slug: "sistem-parkir",
     category: "Web App / Laravel Project",
-    image: "/projects/parkir/parkir.png",
+    image: "/projects/parkir/parkir.webp",
     description:
       "Sistem Parkir adalah aplikasi web berbasis Laravel dan PHP untuk mengelola akses parkir kampus. Project ini memiliki fitur dashboard admin, scan QR code KTM/kartu pegawai, pengelolaan pengguna, kendaraan, akses parkir, serta log aktivitas parkir.",
     tools: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
@@ -107,7 +116,7 @@ const projects = [
     title: "UpSelf",
     slug: "upself",
     category: "UI Design / Upskilling Platform",
-    image: "/projects/upself/upself.png",
+    image: "/projects/upself/upself.webp",
     description:
       "Konsep aplikasi pengumpul informasi seputar internship, bootcamp, seminar, lomba, dan peluang pengembangan diri lainnya. UpSelf dirancang untuk membantu mahasiswa dan kalangan muda menemukan kesempatan upskilling dengan lebih mudah.",
     tools: ["Figma", "Mobile UI", "UX Flow", "Prototype"],

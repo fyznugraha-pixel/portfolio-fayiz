@@ -259,6 +259,21 @@ export const id = {
           "Antarmuka yang bersih dan bebas iklan",
           "Akses gratis sepenuhnya"
         ]
+      },
+      bgs: {
+        role: "Frontend Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "Bandung Great Sale adalah platform katalog diskon dan promosi event perbelanjaan terbesar di Bandung. Website ini dirancang untuk memudahkan masyarakat menemukan penawaran terbaik dari berbagai merchant yang berpartisipasi.",
+        problem: "Masyarakat dan wisatawan kesulitan mendapatkan informasi terpusat mengenai merchant mana saja yang berpartisipasi dan diskon apa yang ditawarkan selama periode Bandung Great Sale.",
+        solution: "Membangun platform direktori merchant dan promosi berbasis web yang cepat, responsif, dan mudah diakses dari perangkat apapun.",
+        features: [
+          "Direktori merchant partisipan",
+          "Katalog promosi dan diskon",
+          "Pencarian dan filter merchant",
+          "Desain antarmuka responsif",
+          "Optimasi performa dan SEO"
+        ]
       }
     }
   }

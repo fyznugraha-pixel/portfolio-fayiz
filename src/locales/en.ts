@@ -259,6 +259,21 @@ export const en = {
           "Clean, ad-free interface",
           "Completely free to use"
         ]
+      },
+      bgs: {
+        role: "Frontend Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "Bandung Great Sale is a catalog platform for discounts and promotions during Bandung's largest shopping event. The website is designed to help people easily find the best offers from various participating merchants.",
+        problem: "Locals and tourists struggle to find centralized information about which merchants are participating and what discounts are offered during the Bandung Great Sale period.",
+        solution: "Built a web-based merchant and promotion directory platform that is fast, responsive, and easily accessible from any device.",
+        features: [
+          "Participating merchant directory",
+          "Promotions and discount catalog",
+          "Merchant search and filter",
+          "Responsive interface design",
+          "SEO and performance optimization"
+        ]
       }
     }
   }
