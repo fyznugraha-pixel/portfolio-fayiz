@@ -267,7 +267,7 @@ const projectDetails = {
       "/projects/bgs/bgs7.webp",
       "/projects/bgs/bgs8.webp",
     ],
-    role: "Frontend Developer",
+    role: "Fullstack Developer",
     duration: "Client Project",
     type: "Web Application",
     overview:

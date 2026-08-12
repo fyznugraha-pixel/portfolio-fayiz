@@ -266,7 +266,7 @@ export const en = {
         ]
       },
       bgs: {
-        role: "Frontend Developer",
+        role: "Fullstack Developer",
         duration: "Client Project",
         type: "Web Application",
         overview: "Bandung Great Sale is a catalog platform for discounts and promotions during Bandung's largest shopping event. The website is designed to help people easily find the best offers from various participating merchants.",
