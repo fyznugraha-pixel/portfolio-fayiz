@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 interface ParallaxSectionProps {
@@ -17,6 +17,16 @@ export default function ParallaxSection({
   id,
 }: ParallaxSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   
   // Track scroll progress of this specific section relative to the viewport
   const { scrollYProgress } = useScroll({
@@ -38,7 +48,7 @@ export default function ParallaxSection({
 
   return (
     <section id={id} ref={ref} className={`relative w-full ${className}`}>
-      <motion.div style={{ y }} className="w-full h-full">
+      <motion.div style={{ y: isMobile ? 0 : y }} className="w-full h-full">
         {children}
       </motion.div>
     </section>
