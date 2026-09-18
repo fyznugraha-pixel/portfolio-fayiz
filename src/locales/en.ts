@@ -98,6 +98,11 @@ export const en = {
         title: "Bandung Great Sale",
         category: "Web App / Catalog Directory",
         description: "Bandung Great Sale is a catalog platform for discounts and promotions during Bandung's largest shopping event. The website is designed to help people easily find the best offers from various participating merchants."
+      },
+      ticbandung: {
+        title: "TIC Bandung",
+        category: "Web App / Tourism Platform",
+        description: "TIC (Tourism Information Center) Bandung is a tourism directory platform providing comprehensive information on tourist destinations, culinary spots, and events in Bandung."
       }
     }
   },
@@ -244,10 +249,40 @@ export const en = {
         solution: "Developed an information portal using modern frameworks (React & Next.js) with performance optimization and responsive interfaces.",
         features: [
           "Centralized information portal",
-          "Dynamic statistical views",
+          "Dynamic statistical display",
           "Responsive interface design",
           "SEO and performance optimization",
           "Internal API integration"
+        ]
+      },
+      ticbandung: {
+        role: "Fullstack Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "TIC (Tourism Information Center) Bandung is a tourism directory platform providing comprehensive information on tourist destinations, culinary spots, and events in Bandung.",
+        problem: "Tourists often struggle to find centralized, reliable, and up-to-date tourism information about Bandung.",
+        solution: "Building an integrated tourism information portal that helps tourists plan their trips with interactive destination details.",
+        features: [
+          "Tourist destinations directory",
+          "Culinary and event catalogs",
+          "Interactive map",
+          "Responsive interface design",
+          "Tourism SEO optimization"
+        ]
+      },
+      bgs: {
+        role: "Fullstack Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "Bandung Great Sale is a catalog platform for discounts and promotions during Bandung's largest shopping event. The website is designed to help people easily find the best offers from various participating merchants.",
+        problem: "Locals and tourists struggle to find centralized information about which merchants are participating and what discounts are offered during the Bandung Great Sale period.",
+        solution: "Built a web-based merchant and promotion directory platform that is fast, responsive, and easily accessible from any device.",
+        features: [
+          "Participating merchant directory",
+          "Promotions and discount catalog",
+          "Merchant search and filter",
+          "Responsive interface design",
+          "SEO and performance optimization"
         ]
       },
       fyurl: {

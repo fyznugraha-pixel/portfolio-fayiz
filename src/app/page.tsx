@@ -32,6 +32,14 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
   {
+    title: "TIC Bandung",
+    slug: "tic-bandung",
+    category: "Web App / Tourism Platform",
+    image: "/projects/tic-bandung/tic-1.webp",
+    description: "TIC (Tourism Information Center) Bandung adalah platform direktori pariwisata yang memberikan informasi lengkap tentang destinasi wisata, kuliner, dan event di kota Bandung.",
+    tools: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+  },
+  {
     title: "Bandung Great Sale",
     slug: "bgs",
     category: "Web App / Catalog Directory",
@@ -201,6 +209,7 @@ export default function Home() {
     "sistem-parkir": "parkir",
     "upself": "upself",
     "tactlinkinfo": "tactlinkinfo",
+    "tic-bandung": "ticbandung",
     "bgs": "bgs",
     "fyurl": "fyurl",
   };

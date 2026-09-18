@@ -98,6 +98,11 @@ export const id = {
         title: "Bandung Great Sale",
         category: "Web App / Catalog Directory",
         description: "Bandung Great Sale adalah platform katalog diskon dan promosi event perbelanjaan terbesar di Bandung. Website ini dirancang untuk memudahkan masyarakat menemukan penawaran terbaik dari berbagai merchant yang berpartisipasi."
+      },
+      ticbandung: {
+        title: "TIC Bandung",
+        category: "Web App / Tourism Platform",
+        description: "TIC (Tourism Information Center) Bandung adalah platform direktori pariwisata yang memberikan informasi lengkap tentang destinasi wisata, kuliner, dan event di kota Bandung."
       }
     }
   },
