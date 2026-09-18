@@ -299,7 +299,7 @@ export const en = {
           "Clean, ad-free interface",
           "Completely free to use"
         ]
-
+      }
     }
   }
 };
