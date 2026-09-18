@@ -284,6 +284,21 @@ export const id = {
           "Desain antarmuka responsif",
           "Optimasi performa dan SEO"
         ]
+      },
+      ticbandung: {
+        role: "Fullstack Developer",
+        duration: "Client Project",
+        type: "Web Application",
+        overview: "TIC (Tourism Information Center) Bandung adalah platform direktori pariwisata yang memberikan informasi lengkap tentang destinasi wisata, kuliner, dan event di kota Bandung.",
+        problem: "Wisatawan sering kesulitan menemukan informasi pariwisata yang terpusat, terpercaya, dan terkini tentang kota Bandung.",
+        solution: "Membangun portal informasi pariwisata terpadu yang memudahkan wisatawan merencanakan perjalanan mereka dengan informasi destinasi yang interaktif.",
+        features: [
+          "Direktori destinasi wisata",
+          "Katalog kuliner dan event",
+          "Peta interaktif",
+          "Desain antarmuka responsif",
+          "Optimasi SEO untuk pencarian pariwisata"
+        ]
       }
     }
   }
