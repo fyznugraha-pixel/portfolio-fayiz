@@ -293,6 +293,7 @@ export const id = {
         problem: "Wisatawan sering kesulitan menemukan informasi pariwisata yang terpusat, terpercaya, dan terkini tentang kota Bandung.",
         solution: "Membangun portal informasi pariwisata terpadu yang memudahkan wisatawan merencanakan perjalanan mereka dengan informasi destinasi yang interaktif.",
         features: [
+          "Fitur Unggulan CMS terintegrasi",
           "Direktori destinasi wisata",
           "Katalog kuliner dan event",
           "Peta interaktif",

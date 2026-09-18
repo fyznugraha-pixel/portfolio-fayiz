@@ -263,6 +263,7 @@ export const en = {
         problem: "Tourists often struggle to find centralized, reliable, and up-to-date tourism information about Bandung.",
         solution: "Building an integrated tourism information portal that helps tourists plan their trips with interactive destination details.",
         features: [
+          "Integrated Flagship CMS",
           "Tourist destinations directory",
           "Culinary and event catalogs",
           "Interactive map",

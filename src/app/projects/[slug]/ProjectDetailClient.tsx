@@ -281,13 +281,14 @@ const projectDetails = {
       "Membangun portal informasi pariwisata terpadu yang memudahkan wisatawan merencanakan perjalanan mereka dengan informasi destinasi yang interaktif.",
     tools: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     features: [
+      "Fitur Unggulan CMS terintegrasi",
       "Direktori destinasi wisata",
       "Katalog kuliner dan event",
       "Peta interaktif",
       "Desain antarmuka responsif",
       "Optimasi SEO untuk pencarian pariwisata",
     ],
-    link: "https://tic-bandung.com",
+    link: "https://ticbandung.com",
   },
   bgs: {
     title: "Bandung Great Sale",
