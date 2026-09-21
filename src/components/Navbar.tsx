@@ -33,12 +33,16 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleNavbarVisibility = () => {
-      if (isMobileMenuOpen) return;
-      
       const currentScrollY = window.scrollY;
       const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
 
       if (scrollDifference < 8) return;
+
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
 
       if (currentScrollY <= 20) {
         setIsNavbarVisible(true);
