@@ -347,7 +347,7 @@ const projectDetails = {
       "Antarmuka yang bersih dan bebas iklan",
       "Akses gratis sepenuhnya",
     ],
-    link: "https://fylink.fun",
+    link: "https://fyurl.id",
   },
 };
 
