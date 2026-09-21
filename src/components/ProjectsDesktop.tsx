@@ -19,7 +19,7 @@ type Project = {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <BorderGlow className="group cursor-pointer flex flex-col h-full glass-panel glass-panel-hover transition-colors duration-300 p-6 rounded-3xl">
+    <BorderGlow className="group cursor-pointer flex flex-col h-full glass-panel glass-panel-hover transition-colors duration-300 p-6 rounded-2xl">
       <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
         <Image
           src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
@@ -67,7 +67,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsDesktop({ projects }: { projects: Project[] }) {
   return (
-    <div className="grid gap-16 md:grid-cols-2">
+    <div className="grid gap-16 md:grid-cols-3">
       {projects.map((project, index) => (
         <div key={project.title} className="h-full">
           <ProjectCard project={project} />

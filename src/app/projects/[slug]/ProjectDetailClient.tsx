@@ -519,7 +519,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
             </div>
           </div>
 
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="glass-panel p-4 group rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="glass-panel p-4 group rounded-2xl">
             <div
               ref={galleryRef}
               onScroll={handleGalleryScroll}
@@ -565,31 +565,31 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
         </div>
 
         <div className="mt-20 grid gap-6 md:grid-cols-3">
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-2xl">
             <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.role} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.role}</h3>
           </SpotlightCard>
 
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-2xl">
             <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.duration} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.duration}</h3>
           </SpotlightCard>
 
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 glass-panel rounded-2xl">
             <p className="font-label-mono text-sm uppercase text-[#E9333A] mb-2">[ {t.projectDetail.projectType} ]</p>
             <h3 className="font-headline-lg text-2xl font-bold uppercase text-white">{project.type}</h3>
           </SpotlightCard>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-2xl">
             <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-[#E9333A]">{t.projectDetail.problem}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.problem}
             </p>
           </SpotlightCard>
 
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-3xl">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-12 glass-panel rounded-2xl">
             <h2 className="font-headline-lg text-3xl font-bold uppercase mb-6 text-[#E9333A]">{t.projectDetail.solution}</h2>
             <p className="font-body leading-8 text-secondary">
               {project.solution}
@@ -597,7 +597,7 @@ export default function ProjectDetailClient({ slug }: ProjectDetailClientProps) 
           </SpotlightCard>
         </div>
 
-        <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="mt-12 glass-panel p-8 md:p-12 rounded-3xl">
+        <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="mt-12 glass-panel p-8 md:p-12 rounded-2xl">
           <h2 className="font-headline-lg text-3xl font-bold uppercase mb-8 text-white">{t.projectDetail.keyFeatures}</h2>
 
           <div className="grid gap-4 md:grid-cols-2">

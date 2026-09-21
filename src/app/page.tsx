@@ -289,7 +289,7 @@ export default function Home() {
           {translatedServices.map((service, index) => (
             <div key={service.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
               <ParallaxSection speed={0.4 + (index * 0.1)} className="h-full">
-              <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-10 glass-panel min-w-0 rounded-3xl h-full">
+              <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="p-8 md:p-10 glass-panel min-w-0 rounded-2xl h-full">
                 <div className="relative z-10">
                   <div className="mb-6 text-[#E9333A]">
                     {service.icon}
@@ -327,7 +327,7 @@ export default function Home() {
           </ParallaxSection>
 
           <ParallaxSection speed={0.6} className="hidden md:flex justify-end items-end">
-            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-3xl shadow-[0_0_30px_rgba(233,51,58,0.15)] border-white/10 ml-auto">
+            <div className="flex h-32 w-32 items-center justify-center glass-panel text-white rounded-2xl shadow-[0_0_30px_rgba(233,51,58,0.15)] border-white/10 ml-auto">
               <Database size={48} strokeWidth={1.5} className="text-[#E9333A]" />
             </div>
           </ParallaxSection>
@@ -342,7 +342,7 @@ export default function Home() {
               <ParallaxSection speed={0.3 + (index * 0.1)} className="h-full">
                 <SpotlightCard
                   spotlightColor="rgba(255, 255, 255, 0.1)"
-                  className="p-8 glass-panel min-w-0 rounded-3xl h-full flex flex-col"
+                  className="p-8 glass-panel min-w-0 rounded-2xl h-full flex flex-col"
                 >
                   <div className="relative z-10 flex-grow">
                     <div className="mb-6 text-[#E9333A] border border-white/10 bg-white/5 w-14 h-14 flex items-center justify-center rounded-2xl">
@@ -445,7 +445,7 @@ export default function Home() {
 
       <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 w-full mb-20">
         <ParallaxSection speed={0.5}>
-          <SpotlightCard spotlightColor="rgba(233, 51, 58, 0.15)" className="glass-panel p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
+          <SpotlightCard spotlightColor="rgba(233, 51, 58, 0.15)" className="glass-panel p-8 md:p-12 min-w-0 rounded-2xl text-center relative overflow-hidden group">
             <div className="relative z-10 w-full">
               <div className="mb-6 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
                 <ShinyText text={t.contact.tag} disabled={false} speed={3} className="text-[#E9333A]" />
