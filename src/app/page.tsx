@@ -282,10 +282,10 @@ export default function Home() {
           </ParallaxSection>
         </div>
 
-        <div className="mt-12 md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 relative z-10">
+        <div className="mt-12 md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 mb-4 relative z-10">
           <ArrowRightLeft size={12} /> Swipe
         </div>
-        <div className="mt-4 md:mt-12 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-6 md:grid-cols-3 md:overflow-visible py-32 -my-32 md:py-0 md:my-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full relative z-0">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-6 md:grid-cols-3 md:overflow-visible py-12 -my-12 md:py-0 md:my-0 md:mt-12 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full relative z-0">
           {translatedServices.map((service, index) => (
             <div key={service.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
               <ParallaxSection speed={0.4 + (index * 0.1)} className="h-full">
@@ -336,7 +336,7 @@ export default function Home() {
         <div className="md:hidden flex items-center justify-end gap-2 text-xs text-white/40 uppercase tracking-widest font-label-mono w-[calc(100%+3rem)] -mx-6 px-6 mb-4 relative z-10">
           <ArrowRightLeft size={12} /> Swipe
         </div>
-        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-8 md:grid-cols-3 md:overflow-visible py-32 -my-32 md:py-0 md:my-0 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full mb-20 relative z-0">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:gap-8 md:grid-cols-3 md:overflow-visible py-12 -my-12 md:py-0 md:my-0 md:mb-20 -mx-6 px-6 md:mx-0 md:px-0 w-[calc(100%+3rem)] md:w-full relative z-0">
           {translatedSkillGroups.map((group, index) => (
             <div key={group.title} className="min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-none">
               <ParallaxSection speed={0.3 + (index * 0.1)} className="h-full">
@@ -459,12 +459,12 @@ export default function Home() {
                 {t.contact.description}
               </p>
 
-              <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+              <div className="flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-4">
                 <MagnetButton
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=fyznugraha@gmail.com&su=Project%20Inquiry%20-%20Portfolio%20Fayiz&body=Hi%20Fayiz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20tentang%20project%20atau%20kolaborasi.%0A%0ATerima%20kasih."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full p-4 md:px-8 md:py-4 text-sm font-bold bg-[#E9333A] hover:bg-[#FF4D55] text-white transition-all shadow-[0_0_20px_rgba(233,51,58,0.3)] hover:shadow-[0_0_30px_rgba(233,51,58,0.5)] border border-white/10 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full p-3 sm:p-4 md:px-8 md:py-4 text-sm font-bold bg-[#E9333A] hover:bg-[#FF4D55] text-white transition-all shadow-[0_0_20px_rgba(233,51,58,0.3)] hover:shadow-[0_0_30px_rgba(233,51,58,0.5)] border border-white/10 hover:-translate-y-0.5 shrink-0"
                 >
                   <Mail className="md:mr-2" size={18} />
                   <span className="hidden md:inline">EMAIL</span>
@@ -474,7 +474,7 @@ export default function Home() {
                   href="https://wa.me/6287794693241" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full p-4 md:px-8 md:py-4 text-sm font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] border border-white/10 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full p-3 sm:p-4 md:px-8 md:py-4 text-sm font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] border border-white/10 hover:-translate-y-0.5 shrink-0"
                 >
                   <FaWhatsapp className="md:mr-2" size={18} />
                   <span className="hidden md:inline">WHATSAPP</span>
@@ -484,7 +484,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/fayiznugraha" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full p-3 sm:p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5 shrink-0"
                 >
                   <FaLinkedin className="md:mr-2" size={18} />
                   <span className="hidden md:inline">LINKEDIN</span>
@@ -494,7 +494,7 @@ export default function Home() {
                   href="https://instagram.com/faizngraha" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full p-3 sm:p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5 shrink-0"
                 >
                   <FaInstagram className="md:mr-2" size={18} />
                   <span className="hidden md:inline">INSTAGRAM</span>
@@ -504,7 +504,7 @@ export default function Home() {
                   href="https://github.com/fyznugraha-pixel" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full p-3 sm:p-4 md:px-8 md:py-4 text-sm font-bold glass-panel text-white hover:bg-white/10 transition-all border border-white/10 hover:-translate-y-0.5 shrink-0"
                 >
                   <FaGithub className="md:mr-2" size={18} />
                   <span className="hidden md:inline">GITHUB</span>
