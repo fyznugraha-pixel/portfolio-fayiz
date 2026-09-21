@@ -40,22 +40,21 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
             />
           </Link>
 
-          <div className="flex flex-col gap-4 px-4 pb-4">
-            <div className="w-full">
-              <div className="flex justify-between items-start gap-2 mb-3">
-                <h3 className="font-headline-lg text-2xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="font-label-mono text-indigo-400 flex items-center gap-1 uppercase group-hover:text-white transition-colors shrink-0"
-                >
-                  <ArrowRight size={20} />
-                </Link>
-              </div>
-              
-              <p className="font-body text-sm text-secondary group-hover:text-white transition-colors mb-5 line-clamp-3">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-2">
-                {project.tools.slice(0, 3).map((tool) => {
+          <div className="flex flex-col flex-grow w-full z-10 relative px-4 pb-4">
+            <div className="flex justify-between items-start gap-2 mb-3 w-full">
+              <h3 className="font-headline-lg text-2xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="font-label-mono text-indigo-400 flex items-center gap-1 uppercase group-hover:text-white transition-colors shrink-0"
+              >
+                <ArrowRight size={20} />
+              </Link>
+            </div>
+            
+            <p className="font-body text-sm text-secondary group-hover:text-white transition-colors mb-5 line-clamp-3">{project.description}</p>
+            
+            <div className="flex flex-wrap gap-2 mt-auto pt-2">
+              {project.tools.slice(0, 3).map((tool) => {
                   const logo = getSkillLogo(tool);
                   return (
                     <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full">
@@ -71,8 +70,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
                 )}
               </div>
             </div>
-          </div>
-        </BorderGlow>
+          </BorderGlow>
       ))}
       </div>
     </div>
