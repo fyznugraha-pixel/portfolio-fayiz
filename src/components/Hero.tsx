@@ -32,8 +32,8 @@ export default function Hero() {
   const textY2 = useTransform(scrollY, [0, 500], [0, -50]);
 
   return (
-    <div className="w-full relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <>
+      <div className="fixed inset-0 z-[-1] pointer-events-none">
         <Aurora 
           colorStops={["#E9333A", "#FF4D55", "#0A0A0A"]} 
           amplitude={1.2} 
@@ -41,7 +41,8 @@ export default function Hero() {
           blend={0.5} 
         />
       </div>
-      
+
+      <div className="w-full relative min-h-[90vh] flex flex-col justify-center">
       <div className="w-full px-6 max-w-[1440px] mx-auto pt-24 md:pt-32 relative z-10 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-2">
           
@@ -207,5 +208,6 @@ export default function Hero() {
 
       </div>
     </div>
+    </>
   );
 }
