@@ -1,59 +1,23 @@
-"use client";
-
-import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import React from "react";
 
 interface ParallaxSectionProps {
   children: React.ReactNode;
-  speed?: number; // Positive moves slower than scroll (parallax), negative moves faster
+  speed?: number; // Kept for backward compatibility but unused
   className?: string;
   id?: string;
 }
 
 export default function ParallaxSection({
   children,
-  speed = 1,
   className = "",
   id,
 }: ParallaxSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-  
-  // Track scroll progress of this specific section relative to the viewport
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  // Apply a spring to the scroll progress to give that "pulled" elastic feeling
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 60,
-    damping: 20,
-    restDelta: 0.001
-  });
-
-  // When smoothProgress goes from 0 to 1 (section enters bottom, leaves top)
-  // Map it to a Y translation. 
-  // We use 200px to give a more pronounced spreading effect
-  const y = useTransform(smoothProgress, [0, 1], [200 * speed, -200 * speed]);
-
+  // Parallax effect has been completely removed for better performance and stability
   return (
-    <section id={id} ref={ref} className={`relative w-full ${className}`}>
-      <motion.div 
-        style={{ y: isMobile ? 0 : y, willChange: "transform" }} 
-        className="w-full h-full"
-      >
+    <section id={id} className={`relative w-full ${className}`}>
+      <div className="w-full h-full">
         {children}
-      </motion.div>
+      </div>
     </section>
   );
 }
