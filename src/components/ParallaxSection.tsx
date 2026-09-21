@@ -48,7 +48,10 @@ export default function ParallaxSection({
 
   return (
     <section id={id} ref={ref} className={`relative w-full ${className}`}>
-      <motion.div style={{ y: isMobile ? 0 : y }} className="w-full h-full">
+      <motion.div 
+        style={{ y: isMobile ? 0 : y, willChange: "transform" }} 
+        className="w-full h-full"
+      >
         {children}
       </motion.div>
     </section>
