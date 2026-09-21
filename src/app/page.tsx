@@ -452,7 +452,7 @@ export default function Home() {
               </div>
 
               <h2 className="font-display-xl text-4xl font-bold md:text-[80px] uppercase leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto break-words text-white">
-                {t.contact.title}
+                <ShinyText text={t.contact.title} disabled={false} speed={3} className="text-white" />
               </h2>
 
               <p className="mx-auto mb-12 max-w-2xl font-body leading-8 text-secondary break-words">
