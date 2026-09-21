@@ -28,9 +28,9 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <BorderGlow
             key={project.title}
-            className="group block min-w-[90%] snap-center flex-col h-full glass-panel transition-colors duration-300 p-4 rounded-2xl"
+            className="group block min-w-[90%] snap-center flex-col h-full glass-panel transition-colors duration-300 rounded-2xl overflow-hidden"
           >
-          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
+          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border-b border-white/10 mb-6 overflow-hidden bg-white/5">
             <Image
               src={project.image}
               alt={`${project.title} preview`}
@@ -40,7 +40,7 @@ export default function ProjectsMobile({ projects }: { projects: Project[] }) {
             />
           </Link>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 px-4 pb-4">
             <div className="w-full">
               <div className="flex justify-between items-start gap-2 mb-3">
                 <h3 className="font-headline-lg text-2xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>

@@ -28,8 +28,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         direction="vertical"
         className="h-full"
       >
-      <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer flex flex-col h-full glass-panel transition-colors duration-300 p-6 rounded-2xl">
-        <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
+      <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer flex flex-col h-full glass-panel transition-colors duration-300 rounded-2xl overflow-hidden !p-0">
+        <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border-b border-white/10 mb-6 overflow-hidden bg-white/5">
           <Image
             src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
             alt={`${project.title} preview`}
@@ -40,7 +40,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-4 pointer-events-none rounded-xl"></div>
         </Link>
 
-        <div className="flex flex-col flex-grow w-full z-10 relative">
+        <div className="flex flex-col flex-grow w-full z-10 relative px-6 pb-6">
           <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start gap-2 mb-4 w-full">
             <h3 className="font-headline-lg text-2xl md:text-3xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
             <Link

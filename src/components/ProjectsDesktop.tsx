@@ -19,8 +19,8 @@ type Project = {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <BorderGlow className="group cursor-pointer flex flex-col h-full glass-panel glass-panel-hover transition-colors duration-300 p-6 rounded-2xl">
-      <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border border-white/10 mb-6 overflow-hidden bg-white/5 rounded-2xl">
+    <BorderGlow className="group cursor-pointer flex flex-col h-full glass-panel glass-panel-hover transition-colors duration-300 rounded-2xl overflow-hidden">
+      <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-video border-b border-white/10 mb-6 overflow-hidden bg-white/5">
         <Image
           src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
           alt={`${project.title} preview`}
@@ -31,7 +31,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-4 pointer-events-none rounded-xl"></div>
       </Link>
 
-      <div className="flex flex-col flex-grow w-full">
+      <div className="flex flex-col flex-grow w-full px-6 pb-6">
           <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start gap-2 mb-4 w-full">
             <h3 className="font-headline-lg text-3xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
             <Link
