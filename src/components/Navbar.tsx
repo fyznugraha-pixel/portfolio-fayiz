@@ -168,8 +168,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-pure-black transition-all duration-300 overflow-hidden flex flex-col items-center ${
-          isMobileMenuOpen ? "max-h-[400px] py-6 border-b brutalist-border-subtle" : "max-h-0 py-0 border-transparent"
+        className={`md:hidden absolute top-[calc(100%+0.5rem)] left-0 w-full bg-[#09090b]/95 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] rounded-3xl transition-all duration-300 overflow-hidden flex flex-col items-center ${
+          isMobileMenuOpen ? "max-h-[400px] py-6 opacity-100" : "max-h-0 py-0 opacity-0 !border-transparent"
         }`}
       >
         <div className="flex flex-col gap-6 items-center w-full px-6">
