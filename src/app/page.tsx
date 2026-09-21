@@ -61,7 +61,7 @@ const projects = [
     title: "Tactlink Info",
     slug: "tactlinkinfo",
     category: "Web App / Information Portal",
-    image: "/projects/tactlinkinfo/tactlink1.webp",
+    image: "/projects/tactlinkinfo/tct1.webp",
     description:
       "Portal informasi digital terintegrasi untuk kebutuhan perusahaan. Tactlink Info menghadirkan solusi akses data yang cepat dan tampilan antarmuka yang modern untuk mendukung operasional bisnis.",
     tools: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
