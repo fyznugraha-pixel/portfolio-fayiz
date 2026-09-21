@@ -445,7 +445,7 @@ export default function Home() {
 
       <section id="contact" className="relative z-10 mx-auto max-w-[1440px] px-6 py-24 w-full mb-20">
         <ParallaxSection speed={0.5}>
-          <BorderGlow className="glass-panel p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
+          <SpotlightCard spotlightColor="rgba(233, 51, 58, 0.15)" className="glass-panel p-8 md:p-12 min-w-0 rounded-3xl text-center relative overflow-hidden group">
             <div className="relative z-10 w-full">
               <div className="mb-6 inline-block font-body font-bold text-sm uppercase tracking-widest text-[#E9333A]">
                 <ShinyText text={t.contact.tag} disabled={false} speed={3} className="text-[#E9333A]" />
@@ -514,7 +514,7 @@ export default function Home() {
             
             <div className="absolute -bottom-24 -right-24 w-64 h-64 border border-white/10 rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
             <div className="absolute -top-24 -left-24 w-64 h-64 border border-white/10 rounded-full opacity-10 pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
-          </BorderGlow>
+          </SpotlightCard>
         </ParallaxSection>
       </section>
 
