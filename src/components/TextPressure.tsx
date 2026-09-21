@@ -158,6 +158,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
           const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
           const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : '0';
           const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : '1';
+          
+          // Dynamic stroke width: increases when cursor is near
+          const currentStrokeWidth = stroke ? getAttr(d, maxDist, strokeWidth, strokeWidth * 1.5).toFixed(1) : strokeWidth;
 
           const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
 
@@ -167,6 +170,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
           if (alpha && span.style.opacity !== alphaVal) {
             span.style.opacity = alphaVal;
           }
+          if (stroke) {
+            span.style.setProperty('--stroke-width', `${currentStrokeWidth}px`);
+          }
         });
       }
 
@@ -175,7 +181,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
     animate();
     return () => cancelAnimationFrame(rafId);
-  }, [width, weight, italic, alpha]);
+  }, [width, weight, italic, alpha, stroke, strokeWidth]);
 
   const styleElement = useMemo(() => {
     return (
@@ -192,7 +198,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           top: 0;
           color: transparent;
           z-index: -1;
-          -webkit-text-stroke-width: ${strokeWidth}px;
+          -webkit-text-stroke-width: var(--stroke-width, ${strokeWidth}px);
           -webkit-text-stroke-color: ${strokeColor};
         }
       `}</style>
