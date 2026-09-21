@@ -28,46 +28,48 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         direction="vertical"
         className="h-full"
       >
-      <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer flex flex-col h-full glass-panel transition-colors duration-300 rounded-2xl overflow-hidden !p-0">
-        <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border-b border-white/10 mb-6 overflow-hidden bg-white/5">
-          <Image
-            src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
-            alt={`${project.title} preview`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-all duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-4 pointer-events-none rounded-xl"></div>
-        </Link>
+      <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)" className="group cursor-pointer h-full glass-panel transition-colors duration-300 rounded-2xl overflow-hidden p-0">
+        <div className="flex flex-col w-full h-full justify-start">
+          <Link href={`/projects/${project.slug}`} className="block relative w-full aspect-[16/10] border-b border-white/10 mb-6 overflow-hidden bg-white/5">
+            <Image
+              src={project.image.startsWith('/portofolio') ? project.image : `/portofolio${project.image}`}
+              alt={`${project.title} preview`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-all duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-4 pointer-events-none rounded-xl"></div>
+          </Link>
 
-        <div className="flex flex-col flex-grow w-full z-10 relative px-6 pb-6">
-          <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start gap-2 mb-4 w-full">
-            <h3 className="font-headline-lg text-2xl md:text-3xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
-            <Link
-              href={`/projects/${project.slug}`}
-              className="font-label-mono text-[#E9333A] flex items-center gap-2 uppercase group-hover:text-white transition-colors shrink-0"
-            >
-              KNOW MORE <ArrowRight size={16} />
-            </Link>
-          </div>
-          
-          <p className="font-body text-secondary group-hover:text-zinc-300 transition-colors mb-6 line-clamp-3">{project.description}</p>
-          
-          <div className="flex flex-wrap gap-2 mt-auto pt-2">
-            {project.tools.slice(0, 4).map((tool) => {
-              const logo = getSkillLogo(tool);
-              return (
-                <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full bg-white/5">
-                  {logo && <img src={`/portofolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
-                  {tool}
+          <div className="flex flex-col flex-grow w-full z-10 relative px-6 pb-6">
+            <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start gap-2 mb-4 w-full">
+              <h3 className="font-headline-lg text-2xl md:text-3xl font-bold uppercase tracking-tight text-white transition-colors">{project.title}</h3>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="font-label-mono text-[#E9333A] flex items-center gap-2 uppercase group-hover:text-white transition-colors shrink-0"
+              >
+                KNOW MORE <ArrowRight size={16} />
+              </Link>
+            </div>
+            
+            <p className="font-body text-secondary group-hover:text-zinc-300 transition-colors mb-6 line-clamp-3">{project.description}</p>
+            
+            <div className="flex flex-wrap gap-2 mt-auto pt-2">
+              {project.tools.slice(0, 4).map((tool) => {
+                const logo = getSkillLogo(tool);
+                return (
+                  <span key={tool} className="flex items-center gap-1.5 font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full bg-white/5">
+                    {logo && <img src={`/portofolio${logo}`} alt={tool} width={14} height={14} className="object-contain" />}
+                    {tool}
+                  </span>
+                );
+              })}
+              {project.tools.length > 4 && (
+                <span className="font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full bg-white/5">
+                  +{project.tools.length - 4} MORE
                 </span>
-              );
-            })}
-            {project.tools.length > 4 && (
-              <span className="font-label-mono text-xs border border-white/10 group-hover:border-white/30 group-hover:text-white transition-colors px-3 py-1 uppercase text-zinc-400 rounded-full bg-white/5">
-                +{project.tools.length - 4} MORE
-              </span>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </SpotlightCard>

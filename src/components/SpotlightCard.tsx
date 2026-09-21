@@ -12,7 +12,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   spotlightColor = 'rgba(233, 51, 58, 0.25)' // Using theme red as default glare color
 }) => {
   return (
-    <GlareHover className={`relative rounded-2xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 ${className}`} glareColor={spotlightColor} glareOpacity={0.6} transitionDuration={1200} borderColor="transparent">
+    <GlareHover className={`relative rounded-2xl border border-neutral-800 bg-neutral-900 overflow-hidden ${className}`} glareColor={spotlightColor} glareOpacity={0.6} transitionDuration={1200} borderColor="transparent">
       {children}
     </GlareHover>
   );
