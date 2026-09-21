@@ -373,7 +373,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="w-full flex flex-col gap-6">
+        <div className="w-[calc(100%+3rem)] -mx-6 md:w-full md:mx-0 flex flex-col gap-6">
           <LogoLoop
             logos={skillGroups.flatMap(group => group.skills).slice(0, Math.ceil(skillGroups.flatMap(group => group.skills).length / 2)).map(skill => {
               const logo = getSkillLogo(skill);
@@ -391,8 +391,7 @@ export default function Home() {
             pauseOnHover={true}
             logoHeight={48}
             gap={24}
-            fadeOut={true}
-            fadeOutColor="#09090b"
+            fadeOut={false}
           />
           <LogoLoop
             logos={skillGroups.flatMap(group => group.skills).slice(Math.ceil(skillGroups.flatMap(group => group.skills).length / 2)).map(skill => {
@@ -411,8 +410,7 @@ export default function Home() {
             pauseOnHover={true}
             logoHeight={48}
             gap={24}
-            fadeOut={true}
-            fadeOutColor="#09090b"
+            fadeOut={false}
           />
         </div>
       </section>
