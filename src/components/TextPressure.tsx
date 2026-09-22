@@ -214,7 +214,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           flex ? 'flex justify-between' : ''
         } ${stroke ? 'stroke' : ''} uppercase`}
         style={{
-          fontFamily: `${fontFamily}, sans-serif`,
+          fontFamily: `"${fontFamily}", sans-serif`,
           fontSize: dynamicSize ? fontSize : undefined,
           lineHeight: dynamicSize ? lineHeight : undefined,
           transform: dynamicSize ? `scale(1, ${scaleY})` : undefined,
